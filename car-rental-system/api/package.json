@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongoose": "^6.5.0",
+    "nodemon": "^2.0.19"
+  },
+  "name": "api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "P.P.S.Ariyasena,B.M.N.D.S.Ariyarathnna,L.A.M.D.Perera,Y.W.S.H.Wishvajith",
+  "license": "ISC",
+  "description": "Car Rental System"
+}

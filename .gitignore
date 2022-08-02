@@ -1,0 +1,3 @@
+car-rental-system/api/node_modules
+car-rental-system/client/node_modules
+car-rental-system/api/node_modules/bcrypt/lib/binding/napi-v3/bcrypt_lib.node
