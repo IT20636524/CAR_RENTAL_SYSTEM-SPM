@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const UserAuthRoute = require("./routes/UserAuth");
 
 const cors=require("cors");
-
+const StaffRoute = require("./routes/staff");
 const corsOptions ={
    origin:'*', 
    credentials:true,            //access-control-allow-credentials:true
@@ -26,6 +26,7 @@ mongoose.connect(process.env.MONGO_URL,{
 .catch(err=>console.log(err));
 
 app.use("/api/UserAuth", UserAuthRoute);
+app.use("/api/staff", StaffRoute);
 
 app.listen("5000", ()=>{
     console.log("Backend is running.");
