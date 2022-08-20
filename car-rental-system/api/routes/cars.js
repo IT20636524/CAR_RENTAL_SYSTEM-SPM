@@ -22,4 +22,25 @@ router.post("/", async (req, res) => {
     } 
   });
 
+  //GET CAR
+router.get("/:car_Id", async (req, res) => {
+    try {
+      const viewCar = await Car.findOne({'car_Id':req.params.car_Id});
+      res.status(200).json(viewCar);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+  
+  //GET ALL CARS
+  router.get("/", async (req, res) => {
+      
+    try {
+      const viewCars = await Car.find();
+      res.status(200).json(viewCars);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+
   module.exports = router;
