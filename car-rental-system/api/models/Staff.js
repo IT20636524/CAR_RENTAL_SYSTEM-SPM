@@ -31,6 +31,11 @@ const StaffSchema = new mongoose.Schema(
       type: String,
       required: false,
     },
+
+    note: {
+      type: String,
+      required: false,
+    },
     
     image: {
       type: String,
