@@ -11,7 +11,7 @@ const carRoute = require("./routes/cars");
 const PaymentRoute = require("./routes/payments");
 
 const cors=require("cors");
-const StaffRoute = require("./routes/staff");
+
 const corsOptions ={
    origin:'*', 
    credentials:true,            //access-control-allow-credentials:true
@@ -35,7 +35,7 @@ app.use("/api/UserAuth", UserAuthRoute);
 app.use("/api/staff", StaffRoute);
 
 app.use("/api/cards", CardRoute);
-app.use("/api/staff", StaffRoute);
+
 
 app.use("/api/cars", carRoute);
 app.use("/api/payments", PaymentRoute);
