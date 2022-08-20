@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const UserAuthRoute = require("./routes/UserAuth");
 const CardRoute = require("./routes/cards");
+const StaffRoute = require("./routes/staff");
 
 const cors=require("cors");
 
@@ -28,6 +29,7 @@ mongoose.connect(process.env.MONGO_URL,{
 
 app.use("/api/UserAuth", UserAuthRoute);
 app.use("/api/cards", CardRoute);
+app.use("/api/staff", StaffRoute);
 
 app.listen("5000", ()=>{
     console.log("Backend is running.");
