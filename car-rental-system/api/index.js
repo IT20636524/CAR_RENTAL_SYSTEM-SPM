@@ -3,8 +3,13 @@ const app = express();
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const UserAuthRoute = require("./routes/UserAuth");
+const BookingRoute = require("./routes/bookings");
+
+const CardRoute = require("./routes/cards");
 const StaffRoute = require("./routes/staff");
 
+const carRoute = require("./routes/cars");
+const PaymentRoute = require("./routes/payments");
 
 const cors=require("cors");
 
@@ -28,7 +33,15 @@ mongoose.connect(process.env.MONGO_URL,{
 .catch(err=>console.log(err));
 
 app.use("/api/UserAuth", UserAuthRoute);
+app.use("/api/bookings", BookingRoute);
 app.use("/api/staff", StaffRoute);
+
+app.use("/api/cards", CardRoute);
+
+
+app.use("/api/cars", carRoute);
+app.use("/api/payments", PaymentRoute);
+
 
 app.listen("5000", ()=>{
     console.log("Backend is running.");

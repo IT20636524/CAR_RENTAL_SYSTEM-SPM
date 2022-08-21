@@ -28,4 +28,31 @@ router.post("/register", async (req,res) => {
     }
 });
 
+//Login
+router.post("/login", async(req,res) => {
+    try{
+        const user = await User.findOne({ email : req.body.email})
+        !user && res.status(400).json("Wrong credentials")
+
+        const validated = await bcrypt.compare(req.body.password, user.password)
+        !validated && res.status(400).json("Wrong credentials")
+
+        const { password, ...others} = user._doc;
+        res.status(200).json(others);
+    }catch(err){
+        res.status(500).json(err);
+    }
+});
+
+//Get users
+router.get("/:user_id", async(req,res) => {
+    try{
+        const user = await User.findOne({ 'user_id':req.params.user_id });
+        const {password, ...others} = user._doc;
+        res.status(200).json(others);
+    }catch(err){
+        res.status(500).json(err);
+    }
+});
+
 module.exports = router;
