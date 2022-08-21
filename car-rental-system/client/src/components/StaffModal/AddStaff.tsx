@@ -116,7 +116,7 @@ export default function AddStaff() {
   return (
     <>
     
-      <Button className="btn-dashb me-5 rounded " variant="warning" onClick={handleShow} style={{"width":"600px","height":"50px", "marginLeft":"500px", "fontSize":"20px"}}>
+      <Button className="btn-dashb me-5 rounded " variant="warning" onClick={handleShow} style={{"width":"600px","height":"50px", "marginLeft":"400px", "fontSize":"20px"}}>
       Adding Details
       </Button>
 
