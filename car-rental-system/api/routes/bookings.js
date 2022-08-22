@@ -18,4 +18,19 @@ router.post("/add", async (req,res) => {
     }
 });
 
+//Get all bookings
+router.get("/", async(req,res) => {
+    const book_id = req.query.booking_id;
+    try{
+        let bookings;
+        if(book_id) {
+            bookings = await Booking.find({ booking_id });
+        } else {
+            bookings = await Booking.find();
+        }
+    }catch(err){
+        res.status(500).json(err);
+    }
+});
+
 module.exports = router;
