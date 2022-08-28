@@ -57,4 +57,14 @@ router.put("/update/:id", async(req,res) => {
     }
 });
 
+//Delete booking
+router.delete("/delete/:id", async(req,res) => {
+    try{
+        const deletedBooking = await Booking.findOneAndDelete({'booking_id':req.params.id});
+        res.status(200).json("Booking has been deleted");
+    }catch(err){
+        res.status(500).json(err);
+    }
+})
+
 module.exports = router;
