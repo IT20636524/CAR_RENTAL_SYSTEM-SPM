@@ -22,7 +22,7 @@ router.post("/", async (req, res) => {
     } 
   });
 
-  //GET CAR
+//GET CAR
 router.get("/:car_Id", async (req, res) => {
     try {
       const viewCar = await Car.findOne({'car_Id':req.params.car_Id});
@@ -32,15 +32,32 @@ router.get("/:car_Id", async (req, res) => {
     }
   });
   
-  //GET ALL CARS
-  router.get("/", async (req, res) => {
+//GET ALL CARS
+router.get("/", async (req, res) => {
       
-    try {
-      const viewCars = await Car.find();
-      res.status(200).json(viewCars);
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
+  try {
+    const viewCars = await Car.find();
+    res.status(200).json(viewCars);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
-  module.exports = router;
+//UPDATE CAR
+router.put("/update/:car_Id", async(req, res) => {
+
+  try {
+    const updatedCar = await Car.findOneAndUpdate(
+      {':car_Id':req.params.car_Id},
+      {
+        $set: req.body
+      },
+      {new:true}
+    );
+    res.status(200).json(updatedCar);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+module.exports = router;
