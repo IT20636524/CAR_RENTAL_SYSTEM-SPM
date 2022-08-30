@@ -60,4 +60,19 @@ router.put("/update/:car_Id", async(req, res) => {
   }
 });
 
+//DELETE CAR
+router.delete("/delete/:car_Id", async (req, res) => {
+  try {
+    const deletedCar = await Car.findOneAndDelete({'car_Id':req.params.car_Id});
+    try {
+      await deletedCar.delete();
+      res.status(200).json("Car has been deleted...");
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
