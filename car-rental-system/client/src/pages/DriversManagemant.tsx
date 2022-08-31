@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, {  useState,useEffect } from 'react'
 import AddStaff from '../components/StaffModal/AddStaff';
+import UpdateStaff from '../components/StaffModal/UpdateStaff';
 
 export default function DriversManagemant() {
 
@@ -64,6 +65,7 @@ export default function DriversManagemant() {
                                 <td style={{"fontSize":"20px","fontFamily":"Arial-Black"}}>{dm.experience}</td>
                                 <td style={{"fontSize":"20px","fontFamily":"Arial-Black"}}>{dm.note}</td>
                                 <td className="text-center">
+                                <UpdateStaff driver_code={dm.driver_code}/>
                                 
                                 </td>
                             </tr>
