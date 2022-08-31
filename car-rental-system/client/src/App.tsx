@@ -8,6 +8,7 @@ import Dashboard from './pages/Dashboard';
 
 import Homepage from './pages/Home';
 import PaymentView from './pages/PaymentViewPage';
+import Register from './pages/Register';
 
 
 
@@ -23,7 +24,7 @@ function App() {
           <Route path="/adminstaffpage" element={<AdminStaffPage />} />
            <Route path="/add-payment" element={<AddPayment />} />
           <Route path="/paymentview/:payment_id" element={<PaymentView />} />
-          
+          <Route path="/sign-up" element={<Register/>} />
         
         
         </Routes>
