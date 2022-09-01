@@ -4,6 +4,7 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import AddPayment from './pages/AddPaymentPage';
 import AdminStaffPage from './pages/AdminStaffPage';
+import CardViewPage from './pages/CardViewPage';
 import Dashboard from './pages/Dashboard';
 
 import Homepage from './pages/Home';
@@ -25,6 +26,7 @@ function App() {
            <Route path="/add-payment" element={<AddPayment />} />
           <Route path="/paymentview/:payment_id" element={<PaymentView />} />
           <Route path="/sign-up" element={<Register/>} />
+          <Route path="/view-cards" element={<CardViewPage />} />
         
         
         </Routes>
