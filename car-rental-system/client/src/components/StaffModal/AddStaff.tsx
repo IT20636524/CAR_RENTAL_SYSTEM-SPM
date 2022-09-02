@@ -179,7 +179,7 @@ export default function AddStaff() {
     <Form.Label column sm="3" >
     Address
     </Form.Label>
-    <Col sm="5" >
+    <Col sm="7" >
       <Form.Control type="text" placeholder="Enter Address" value={address} onChange={(e)=>setAddress(e.target.value)} />
     </Col>
   </Form.Group>
