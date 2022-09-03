@@ -295,3 +295,13 @@
     background: var(--dark);
     border-color: var(--primary);
 }
+
+/*** BookingSideBar ***/
+.bSidebar{
+    flex:3;
+}
+
+/*** BookingForm ***/
+.bookingForm{
+    flex:9;
+}

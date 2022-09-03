@@ -2,6 +2,7 @@ import React from 'react';
 // import './App.scss';
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import AddBooking from './pages/AddBooking';
 import AddPayment from './pages/AddPaymentPage';
 import AdminStaffPage from './pages/AdminStaffPage';
 import CardViewPage from './pages/CardViewPage';
@@ -26,6 +27,7 @@ function App() {
           <Route path="/sign-up" element={<Register />} />
           <Route path="/view-cards" element={<CardViewPage />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/add-booking" element={<AddBooking/>}/>
 
         </Routes>
       </BrowserRouter>
