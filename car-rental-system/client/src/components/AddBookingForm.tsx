@@ -5,7 +5,7 @@ import Footer from './Footer'
 export default function AddBookingForm() {
     return (
         <div className='bookingForm'>
-            <br/><br/>
+            <br /><br />
             <div className="row">
                 <h3 className='bfFormTitle'>Reserve Your Car Here</h3>
             </div>
@@ -33,6 +33,21 @@ export default function AddBookingForm() {
             </div>
             <div className="row">
                 <p className="col-sm bf-label">Type of service</p>
+                <div className="dropdown col-sm">
+                    <button
+                        className="btn btn-outline-secondary btn-rounded dropdown-toggle"
+                        type="button"
+                        id="dropdownMenuButton"
+                        data-mdb-toggle="dropdown"
+                        aria-expanded="false"
+                    >
+                        Service
+                    </button>
+                    <ul className="dropdown-menu dropdown-toggle" aria-labelledby="dropdownMenuButton">
+                        <li className="dropdown-item">Self Drive</li>
+                        <li className="dropdown-item">With Driver</li>
+                    </ul>
+                </div>
             </div>
             <div className="row">
                 <p className="col-sm bf-label">Selected Model</p>
@@ -63,13 +78,13 @@ export default function AddBookingForm() {
                     <label className="form-label" htmlFor="form12">Example label</label>
                 </div>
             </div>
-            <br/><br/>
+            <br /><br />
             <div className="row">
                 <button type="button" className="btn btn-warning col-sm-2 add-book-btn">Back</button>
                 <button type="button" className="btn btn-success col-sm-2 add-book-btn">Inquiry</button>
             </div>
         </div>
-        
-        
+
+
     )
 }
