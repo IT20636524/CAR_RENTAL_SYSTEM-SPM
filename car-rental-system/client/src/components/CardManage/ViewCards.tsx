@@ -5,7 +5,6 @@ import Cards from '../.././components/Card/Card';
 import CardForm from '../.././components/Card/CardForm';
 import {
   CreditCard,
-  updateLocalStorageCards,
 } from '../.././components/Card/CreditCard';
 import Card from 'react-bootstrap/Card';
 import CreditCardBox from '../Card/Card';
@@ -59,6 +58,7 @@ export default function CardView() {
   async function selectCard(id: any) {
 
     setState(cardsDatas[id]);
+    console.log(cardsDatas)
 
   }
 
@@ -90,10 +90,7 @@ export default function CardView() {
       cardYear:state.cardYear,
       cardCvv:state.cardCvv,
       };
-    console.log(cardData)
-  
-    console.log("st",state);
-
+   
     axios.put(`http://localhost:5000/api/cards/update/${state._id}`,cardData)
   
       .then(function (response) {
@@ -111,6 +108,11 @@ export default function CardView() {
   function handleDeleteAction() {
       
         axios.delete('http://localhost:5000/api/cards/delete/' + state._id)
+        .then(function (response) {
+          console.log(response.data);
+          alert("Are you Sure?")
+          window.location.replace("/view-cards");  
+        });
            
       window.location.replace('/view-cards');
   
@@ -165,11 +167,22 @@ export default function CardView() {
                   <div className="modal-content" style={{ width: "600px" }}>
                     <div className="modal-header" >
                       <h2 className="modal-title" id="exampleModalLabel">Edit Card</h2>
+                     
+                         
+                       
                       <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div className="modal-body" style={{ width: "600px", height: "800px" }}>
+                    <div className="modal-body" >
 
-
+                    <Row className="d-flex float-end">
+                            <Col md={6} className="">
+                             
+                                <Button variant="link" size="sm" onClick={handleDeleteAction} style={{width:"50px", marginRight:"10px"}}>
+                                <i className="fas fa-trash-alt fa-2x" style={{color:"red"}}></i>
+                                </Button>{' '}
+                           
+                            </Col>
+                          </Row>
 
                       <Fragment>
                         <div className="add-card-content">
@@ -191,17 +204,7 @@ export default function CardView() {
                             </CardForm>
                           </div>
                         </div>
-                        <Container>
-                          <Row className="justify-content-center">
-                            <Col md={3} className="">
-                              <div className="d-grid gap-1 delete-card">
-                                <Button variant="link" size="lg" onClick={handleDeleteAction}>
-                                  Delete Card
-                                </Button>{' '}
-                              </div>
-                            </Col>
-                          </Row>
-                        </Container>
+                      
                       </Fragment>
 
 
