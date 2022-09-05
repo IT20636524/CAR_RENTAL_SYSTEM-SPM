@@ -4,14 +4,7 @@ const Card = require("../models/Card");
 //CREATE CARD
 router.post("/", async (req, res) => {
     const newCard = new Card(req.body);
-  
-    let code = 1;
-    try {
-      const cardcount = await Card.find().sort({_id:-1}).limit(1)
-      if(cardcount.length > 0)
-        code += cardcount[0].code
-        newCard.cid = 'CID00'+ code;
-        newCard.code = code;
+    // newCard.set(userid:req.user._id)
   
         try {
           const savedCard = await newCard.save();
@@ -20,16 +13,14 @@ router.post("/", async (req, res) => {
           res.status(500).json(err);
         }
   
-    } catch (error) {
-      console.log(error)
-    }
+ 
   
   });
-  
+
  //UPDATE CARD
-router.put("/update/:cid", async(req, res) => {
+router.put("/update/:id", async(req, res) => {
     try {
-      const updatedCard = await Card.findOneAndUpdate({'cid':req.params.cid},
+      const updatedCard = await Card.findOneAndUpdate({'id':req.params.id},
         {
           $set: req.body
         },{new:true}
@@ -43,9 +34,9 @@ router.put("/update/:cid", async(req, res) => {
 
 
 //DELETE CARD
-router.delete("/delete/:cid", async (req, res) => {
+router.delete("/delete/:id", async (req, res) => {
   try {
-    const card = await Card.findOneAndDelete({'cid':req.params.cid});
+    const card = await Card.findOneAndDelete({'id':req.params.id});
     try {
       await card.delete();
       res.status(200).json("Card has been deleted...");
@@ -58,9 +49,9 @@ router.delete("/delete/:cid", async (req, res) => {
 });
 
 //GET CARD
-router.get("/:cid", async (req, res) => {
+router.get("/:id", async (req, res) => {
   try {
-    const card = await Card.findOne({ 'cid': req.params.cid });
+    const card = await Card.findOne({ 'id': req.params.id });
     res.status(200).json(card);
   } catch (err) {
     res.status(500).json(err);
@@ -79,9 +70,9 @@ router.get("/", async (req, res) => {
 
 
 //   //get All cards entered by user
-// router.get("/card/:booking_id", async (req, res) => {
+// router.get("/card/", async (req, res) => {
 //   try {
-//     const booking = await Booking.find({ 'booking_id': req.params.booking_id });
+//     const booking = await Booking.find({ 'userid': req.user._id });
 //     res.status(200).json(booking);
 //   } catch (err) {
 //     res.status(500).json(err);

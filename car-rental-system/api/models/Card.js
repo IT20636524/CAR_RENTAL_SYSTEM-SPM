@@ -2,35 +2,32 @@ const mongoose = require("mongoose");
   
 const CardSchema = new mongoose.Schema(
   { 
-    cid: {
-      type: String,
-      required: true,
-      unique: true,
-    },
-    card_number: {
+    cardNumber: {
         type: String,
         required: true,
     },
-    card_holder: {
+    cardHolder: {
         type: String,
         required: true,
       },
-    card_month: {
+      cardMonth: {
       type: String,
       required: true,
     },
-    card_year:{
+    cardYear:{
       type: String,
       required:true,
     },
-    card_cvv:{
+    cardCvv:{
       type: String,
       required:true,
     },
-    code:{
-        type: Number,
-        required:true,
-      },
+    // userid:{
+    //   type: mongoose.Schema.Types.ObjectId,
+    //   ref:'User',
+    //   required:true,
+    // },
+   
 
   },
   { timestamps: true }

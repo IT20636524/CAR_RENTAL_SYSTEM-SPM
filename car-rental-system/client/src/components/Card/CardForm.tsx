@@ -25,7 +25,7 @@ export default function CardForm(props: CardFormProps) {
     children,
   } = props;
   const [errors, setErrors] = useState<CreditCard>({
-    id: '',
+    _id: '',
     cardNumber: '',
     cardHolder: '',
     cardMonth: '',
@@ -65,7 +65,7 @@ export default function CardForm(props: CardFormProps) {
   };
   const isFormHasErrors = () => {
     const newErrors: CreditCard = {
-      id: '',
+      _id: '',
       cardNumber: '',
       cardHolder: '',
       cardMonth: '',
