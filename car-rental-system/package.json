@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongoose": "^6.5.0",
+    "node-gyp": "^9.1.0",
+    "nodemon": "^2.0.19",
+    "concurrently":"^6.4.0"
+  },
+  "name": "api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "server": "nodemon api/index.js",
+    "client": "yarn --cwd client start",
+    "dev": "concurrently \"yarn server\" \"yarn client\""
+  },
+  "author": "P.P.S.Ariyasena,B.M.N.D.S.Ariyarathnna,L.A.M.D.Perera,Y.W.S.H.Wishvajith",
+  "license": "ISC",
+  "description": "Car Rental System"
+}
