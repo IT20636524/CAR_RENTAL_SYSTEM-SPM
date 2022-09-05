@@ -20,7 +20,7 @@ router.post("/", async (req, res) => {
  //UPDATE CARD
 router.put("/update/:id", async(req, res) => {
     try {
-      const updatedCard = await Card.findOneAndUpdate({'id':req.params.id},
+      const updatedCard = await Card.findOneAndUpdate({_id:req.params.id},
         {
           $set: req.body
         },{new:true}
@@ -36,7 +36,7 @@ router.put("/update/:id", async(req, res) => {
 //DELETE CARD
 router.delete("/delete/:id", async (req, res) => {
   try {
-    const card = await Card.findOneAndDelete({'id':req.params.id});
+    const card = await Card.findOneAndDelete({_id:req.params.id});
     try {
       await card.delete();
       res.status(200).json("Card has been deleted...");

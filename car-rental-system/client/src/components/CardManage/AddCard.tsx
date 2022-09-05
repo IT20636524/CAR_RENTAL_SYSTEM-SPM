@@ -86,7 +86,7 @@ Add New Card
         <h2 className="modal-title" id="exampleModalLabel">Add Card</h2>
         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div className="modal-body" style={{width:"600px", height:"800px"}}>
+      <div className="modal-body" >
 
 
             
