@@ -174,19 +174,12 @@ export default function CardView() {
                     </div>
                     <div className="modal-body" >
 
-                    <Row className="d-flex float-end">
-                            <Col md={6} className="">
-                             
-                                <Button variant="link" size="sm" onClick={handleDeleteAction} style={{width:"50px", marginRight:"10px"}}>
-                                <i className="fas fa-trash-alt fa-2x" style={{color:"red"}}></i>
-                                </Button>{' '}
-                           
-                            </Col>
-                          </Row>
+                  
 
                       <Fragment>
                         <div className="add-card-content">
                           <div className="wrapper">
+                            
                             <CardForm
                               selectedCreditCard={state}
                               onUpdateState={updateStateValues}
@@ -206,7 +199,15 @@ export default function CardView() {
                         </div>
                       
                       </Fragment>
-
+                      <Row className="d-flex float-end">
+                            <Col md={6} className="">
+                             
+                                <Button variant="link" size="sm" onClick={handleDeleteAction} style={{width:"50px", marginRight:"10px"}}>
+                                <i className="fas fa-trash-alt fa-2x" style={{color:"red"}}></i>
+                                </Button>{' '}
+                           
+                            </Col>
+                          </Row>
 
                     </div>
 
