@@ -295,3 +295,29 @@
     background: var(--dark);
     border-color: var(--primary);
 }
+
+/*** BookingSideBar ***/
+.bSidebar{
+    flex:3;
+}
+
+
+/*** BookingForm ***/
+.bookingForm{
+    flex:9;
+}
+.bfFormTitle{
+    display: flex;
+    justify-content: center;
+}
+.add-book-btn{
+    display: flex;
+    justify-content: center;
+    margin-left: 200px;
+}
+.bf-label{
+    margin-left: 20px;
+}
+.bf-input{
+    margin-right: 20px;
+}
