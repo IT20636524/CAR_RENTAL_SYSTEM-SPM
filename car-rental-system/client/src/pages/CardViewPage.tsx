@@ -3,6 +3,7 @@ import React from 'react'
 
 import { Link } from 'react-router-dom';
 import AddCard from '../components/CardManage/AddCard';
+import CardView from '../components/CardManage/ViewCards';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 
@@ -30,7 +31,9 @@ export default function CardViewPage() {
 
               
 
-
+          <div>
+                <CardView/>  
+                </div>
 
 
             </div>
