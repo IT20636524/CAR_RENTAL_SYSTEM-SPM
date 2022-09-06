@@ -64,7 +64,7 @@ export default function AddStaff() {
       try {
          await axios.post("http://localhost:5000/api/upload", data);
       } catch (err) {
-        alert(err)
+        console.log(err);
       }
     }
 
