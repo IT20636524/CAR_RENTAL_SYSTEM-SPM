@@ -13,7 +13,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "devDependencies": {
-    "eslint-config-react-app": "6.0.0"
+
   },
   "scripts": {
     "server": "nodemon api/index.js",
