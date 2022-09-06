@@ -1,18 +1,20 @@
 {
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "concurrently": "^6.4.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "mongoose": "^6.5.0",
     "node-gyp": "^9.1.0",
-    "nodemon": "^2.0.19",
-    "concurrently":"^6.4.0"
+    "nodemon": "^2.0.19"
   },
   "name": "api",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint-config-react-app": "6.0.0"
+  },
   "scripts": {
     "server": "nodemon api/index.js",
     "client": "yarn --cwd client start",
