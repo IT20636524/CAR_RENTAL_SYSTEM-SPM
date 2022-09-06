@@ -27,7 +27,7 @@ interface CardProp {
   cardCvv: any;
   isCardFlipped: any;
 }
-function Card(props: CardProp) {
+function Cards(props: CardProp) {
   const {
     cardHolder,
     cardNumber,
@@ -215,4 +215,4 @@ function Card(props: CardProp) {
   );
 }
 
-export default Card;
+export default Cards;

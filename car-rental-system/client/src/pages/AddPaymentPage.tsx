@@ -4,8 +4,9 @@ import swal from 'sweetalert';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import axios from 'axios';
-import Footer from '../components/Footer';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
+
 
 export default function AddPayment() {
 
@@ -16,7 +17,7 @@ export default function AddPayment() {
     const [amount, setAmount] = useState("");
     const [contact_number, setContactNumber] = useState("");
   
-    const [subopt, setSubjectOptions] = useState([]);
+ 
     
     const navigate = useNavigate();
 
@@ -60,28 +61,7 @@ export default function AddPayment() {
       
     }
 
-    // const getData = async (e: { keyCode: number; }) => {
-    //   if (e.keyCode === 13) {
-    //     await axios.get(`http://localhost:5000/api/booking/${booking_id}`)
-    //       .then(function (response) {
-    //         if (response.data != null) {
-    //           setName(response.data['name'])
-    //           setContactNumber(response.data['contact_number'])
-    //           setAmount(response.data['amount'])
-    //           setSubjectOptions(response.data['card'])
-    
-    //         } else {
-    //           swal(" invalid student id !", "Please Try Again !", "error");
-    
-    //         }
-    //       })
-    //       .catch(function (error) {
-    //         console.log(error);
-    //         swal(" Details can't search !", "Please Try Again !", "error");
-    
-    //       })
-    //   }
-    // }
+   
     
    
 
@@ -144,9 +124,8 @@ see Your Cards
 
         <select className="form-select mb-4 text-grey" aria-label="Disabled select example" onChange={(e)=>setCard(e.target.value)}>
           <option selected>Select a Card</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
+          <option value="1">1234567812345678</option>
+         
 
           {/* {subopt.map(card => {
                     // eslint-disable-next-line react/jsx-key
@@ -198,6 +177,7 @@ see Your Cards
     </div>
   </div>
   </div>
+
              
              </div>
               <Footer/>
