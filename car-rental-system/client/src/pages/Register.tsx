@@ -1,6 +1,8 @@
 import React from "react";
+import { useContext, useRef } from "react";
 
 export default function Register() {
+    
     return (
         <div>
             <section className="vh-100" style={{backgroundColor: "#eee"}}>
