@@ -68,7 +68,7 @@ export default function AdminHeader() {
                     <div className="nav-item dropdown">
                         <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <i className="fa fa-bell me-lg-2"></i>
-                            <span className="d-none d-lg-inline-flex">Notificatin</span>
+                            <span className="d-none d-lg-inline-flex">Notification</span>
                         </a>
                         <div className="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" className="dropdown-item">

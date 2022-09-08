@@ -3,6 +3,7 @@ import React from 'react';
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import AddPayment from './pages/AddPaymentPage';
+import AdminCarPage from './pages/AdminCarPage';
 import AdminStaffPage from './pages/AdminStaffPage';
 import Dashboard from './pages/Dashboard';
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/adminstaffpage" element={<AdminStaffPage />} />
            <Route path="/add-payment" element={<AddPayment />} />
           <Route path="/paymentview/:payment_id" element={<PaymentView />} />
+          <Route path="/admincarpage" element={<AdminCarPage />} />
           
         
         

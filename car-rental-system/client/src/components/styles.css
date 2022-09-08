@@ -295,3 +295,9 @@
     background: var(--dark);
     border-color: var(--primary);
 }
+
+.top-left {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+}
