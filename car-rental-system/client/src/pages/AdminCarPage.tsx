@@ -5,6 +5,7 @@ import AdminHeader from '../components/AdminHeader'
 import AdminSideNav from '../components/AdminSideNav'
 import AddCar from '../components/CarModal/AddCar';
 import DeleteCar from '../components/CarModal/DeleteCar';
+import UpdateCar from '../components/CarModal/UpdateCar';
 
 export default function AdminCarPage() {
 
@@ -59,6 +60,7 @@ export default function AdminCarPage() {
                                         <td style={{ "fontSize": "20px", "fontFamily": "Arial-Black" }}>{cm.engineCap}</td>
                                         <td style={{ "fontSize": "20px", "fontFamily": "Arial-Black" }}>{cm.costPerDay}</td>
                                         <td className="text-center">
+                                            <UpdateCar car_Id={cm.car_Id} /> &nbsp;&nbsp;
                                             <DeleteCar car_Id={cm.car_Id} />
                                         </td>
                                     </tr>
