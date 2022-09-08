@@ -4,6 +4,7 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import AddBooking from './pages/AddBooking';
 import AddPayment from './pages/AddPaymentPage';
+import AdminCarPage from './pages/AdminCarPage';
 import AdminStaffPage from './pages/AdminStaffPage';
 import CardViewPage from './pages/CardViewPage';
 import Dashboard from './pages/Dashboard';
@@ -29,6 +30,10 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/add-booking" element={<AddBooking/>}/>
 
+          <Route path="/admincarpage" element={<AdminCarPage />} />
+          
+        
+        
         </Routes>
       </BrowserRouter>
     </>
