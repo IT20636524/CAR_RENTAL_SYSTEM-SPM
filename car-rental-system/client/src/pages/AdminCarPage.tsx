@@ -28,7 +28,7 @@ export default function AdminCarPage() {
                 <AdminHeader />
 
                 <div className="container-fluid pt-4 px-4" >
-                    <h1 style={{ "marginLeft": "550px", "marginTop": "50px", "marginBottom": "50px", "color": "white", "fontFamily": "fantasy" }}>Cars</h1>
+                    <h1 style={{ "marginLeft": "550px", "marginTop": "15px", "marginBottom": "50px", "color": "white", "fontFamily": "fantasy" }}>Cars</h1>
                     <div className="bg-secondary text-center rounded p-4" >
                         <div className="d-flex align-items-center justify-content-between mb-4" >
                         </div>

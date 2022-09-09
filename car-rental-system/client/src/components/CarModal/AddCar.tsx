@@ -27,6 +27,19 @@ export default function AddCar() {
   const [file, setFile] = useState<any>();
   const [value, setValue] = useState("default");
 
+  //Clear button
+  const handleClick = (val: any) => {
+    setCategory("");
+    setModel("");
+    setPassengers("");
+    setTransmission("");
+    setAirCondition("");
+    setFuelType("");
+    setEngineCap("");
+    setCostPerDay("");
+    setImage("");
+  };
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (!e.target.files) {
       return;
@@ -111,7 +124,7 @@ export default function AddCar() {
 
   return (
     <div>
-      <Button className="btn-dashb me-5 rounded " variant="warning" onClick={handleShow} style={{ "width": "400px", "height": "50px", "marginLeft": "400px", "fontSize": "20px" }}>
+      <Button className="btn-dashb me-5 rounded " variant="warning" onClick={handleShow} style={{ "width": "400px", "height": "50px", "marginLeft": "400px", "fontSize": "20px", "marginTop": "25px" }}>
         Add Car
       </Button>
 
@@ -121,6 +134,7 @@ export default function AddCar() {
       >
         <Modal.Header>
           <div className="col-md-12 text-center" >
+            <button type="button" className="btn-close d-flex float-end" onClick={handleClose} data-bs-dismiss="modal" aria-label="Close"></button>
             <Modal.Title id="contained-modal-title-vcenter">Add Car</Modal.Title>
           </div>
         </Modal.Header>
@@ -252,10 +266,10 @@ export default function AddCar() {
 
         <Modal.Footer>
           <Button variant="primary" type="submit" onClick={handleSubmit} style={{ height: "40px", width: "20%" }}>
-            Submit
+            Add
           </Button>
-          <Button variant="danger" onClick={handleClose} style={{ height: "40px", width: "20%" }}>
-            Cancel
+          <Button variant="danger" onClick={handleClick} style={{ height: "40px", width: "20%" }}>
+            Clear
           </Button>
         </Modal.Footer>
       </Modal>

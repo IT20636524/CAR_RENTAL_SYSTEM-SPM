@@ -117,7 +117,7 @@ export default function UpdateCar(props: { car_Id: string; }) {
 
     return (
         <div>
-            <Button variant='warning' className='btn-success me-3' onClick={updateShow} style={{ width: "100px" }}>
+            <Button variant='success' className='btn-success me-1' onClick={updateShow} style={{ width: "100px" }}>
                 Edit
             </Button>
 
@@ -260,7 +260,7 @@ export default function UpdateCar(props: { car_Id: string; }) {
 
                 <Modal.Footer>
                     <Button variant="success" onClick={submitForm}>
-                        Update Car
+                        Update
                     </Button>
                     <Button variant="danger" onClick={handleClose}>
                         Exit
