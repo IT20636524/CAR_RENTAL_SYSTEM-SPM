@@ -8,8 +8,7 @@ export default function AddBooking(){
     return(
         <>
             <Header/>
-            <div className="addBook">
-                
+            <div className="addBook">    
                 <AddBookingForm/>
                 <BookingSidebar/>  
             </div>
