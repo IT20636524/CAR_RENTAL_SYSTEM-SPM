@@ -1,8 +1,8 @@
-export const LoginStart = (userCredentials) => ({
+export const LoginStart = (userCredentials:any) => ({
     type: "LOGIN_START"
 })
 
-export const LoginSuccess = (user)=>({
+export const LoginSuccess = (user:any)=>({
     type: "LOGIN_SUCCESS",
     payload:user,
 })

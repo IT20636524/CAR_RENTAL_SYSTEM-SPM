@@ -7,9 +7,9 @@ const INITIAL_STATE={
     error:false,
 };
 
-export const Context = createContext(INITIAL_STATE);
+export const Context = createContext<any>({});
 
-export const ContextProvider = ({children}) => {
+export const ContextProvider = ({children}:any) => {
     const [state, dispatch] = useReducer(Reducer, INITIAL_STATE);
 
     return(
@@ -19,5 +19,5 @@ export const ContextProvider = ({children}) => {
             error:state.error,
             dispatch,
         }}>{children}</Context.Provider>
-    )
+    );
 }

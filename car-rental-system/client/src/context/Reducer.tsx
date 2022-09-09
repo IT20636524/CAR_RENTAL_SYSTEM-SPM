@@ -1,4 +1,4 @@
-const Reducer = (state,action)=>{
+const Reducer = (state:any,action:any)=>{
     switch(action.type){
         case "LOGIN_START":
             return{

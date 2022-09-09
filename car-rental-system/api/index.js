@@ -19,10 +19,10 @@ const corsOptions ={
    optionSuccessStatus:200,
 }
 
-app.use(cors(corsOptions)) 
+// app.use(cors(corsOptions)) 
+app.use(cors()) 
 
 dotenv.config();
-app.use(cors()) 
 app.use(express.json());
 
 mongoose.connect(process.env.MONGO_URL,{

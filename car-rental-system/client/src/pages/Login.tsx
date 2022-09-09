@@ -5,26 +5,30 @@ import "../pages/styles.css"
 
 export default function Login() {
 
-    const emailRef = useRef<HTMLDivElement>(null);
-    const passwordRef = useRef<HTMLDivElement>(null);
-    // const {user, dispatch, isFetching } = useContext(Context)
+    const emailRef = useRef<HTMLInputElement>(null);
+    const passwordRef = useRef<HTMLInputElement>(null);
+    const {user, dispatch, isFetching } = useContext(Context)
 
 
-    const handleSubmit = async (e: { preventDefault: () => void; }) => {
+    const handleSubmit = async (e:any) => {
         e.preventDefault();
-        // dispatch({type:"LOGIN_START"});
+        dispatch({type:"LOGIN_START"});
+        // console.log(emailRef);
+        console.log(passwordRef);
         try{
-            // const res = await axios.post("/UserAuth/login",{
-            //     email: emailRef.current.value,
-            //     password: passwordRef.current.value,
-            // })
-            // dispatch({type:"LOGIN_SUCCESS",payload:res.data});
+            const res = await axios.post("http://localhost:5000/api/UserAuth/login",{
+                email: emailRef.current?.value,
+                password: passwordRef.current?.value,
+            })
+            console.log(res);
+            dispatch({type:"LOGIN_SUCCESS",payload:res.data});
+            
         }catch(err){
-            // dispatch({type:"LOGIN_FAILURE"});
+            dispatch({type:"LOGIN_FAILURE"});
         }
     };
 
-    // console.log(user);
+    console.log(user);
 
     return (
         <>
@@ -56,14 +60,14 @@ export default function Login() {
                                         <br/>
 
                                         {/* <!-- Email input --> */}
-                                        <div className="form-outline mb-4" ref={emailRef}>
-                                            <input type="email" id="form3Example3" className="form-control" />
+                                        <div className="form-outline mb-4" >
+                                            <input type="email" id="form3Example3" className="form-control" ref={emailRef}/>
                                             <label className="form-label" htmlFor="form3Example3">Email address</label>
                                         </div>
 
                                         {/* <!-- Password input --> */}
-                                        <div className="form-outline mb-4" ref={passwordRef}>
-                                            <input type="password" id="form3Example4" className="form-control" />
+                                        <div className="form-outline mb-4" >
+                                            <input type="password" id="form3Example4" className="form-control" ref={passwordRef}/>
                                             <label className="form-label" htmlFor="form3Example4">Password</label>
                                         </div>
 
