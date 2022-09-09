@@ -9,7 +9,6 @@ export default function Login() {
     const passwordRef = useRef<HTMLInputElement>(null);
     const {user, dispatch, isFetching } = useContext(Context)
 
-
     const handleSubmit = async (e:any) => {
         e.preventDefault();
         dispatch({type:"LOGIN_START"});
