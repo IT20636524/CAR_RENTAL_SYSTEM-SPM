@@ -116,7 +116,7 @@ export default function AddStaff() {
   return (
     <>
     
-      <Button className="btn-dashb me-5 rounded " variant="warning" onClick={handleShow} style={{"width":"600px","height":"50px", "marginLeft":"400px", "fontSize":"20px"}}>
+      <Button className="stfbtn "  onClick={handleShow} style={{"width":"500px","height":"50px", "marginLeft":"410px", "fontSize":"20px"}}>
       Adding Details
       </Button>
 
@@ -126,22 +126,22 @@ export default function AddStaff() {
         
       >
         <Modal.Header>
-        <div className="col-md-12 text-center" >
+        <div className="col-md-12 text-center"  >
           <Modal.Title id="contained-modal-title-vcenter">Add Staff Details</Modal.Title>
          </div> 
         </Modal.Header>
      
-        <Modal.Body>
+        <Modal.Body >
 
         
 
 
   <Form onSubmit={handleSubmit}>
-  <div className='row justify-content-center'>
+  <div className='row justify-content-center' >
   <Col sm={3}>
-  <fieldset>
+  <fieldset >
 
-    <Form.Group  className="p-2 bd-highlight d-flex flex-column justify-content-center" >
+    <Form.Group  className="p-2 bd-highlight d-flex flex-column justify-content-center"  >
       
       <MDBCol  className='mb-4'>
       {file && (

@@ -7,14 +7,14 @@
     "express": "^4.18.1",
     "mongoose": "^6.5.0",
     "node-gyp": "^9.1.0",
-    "nodemon": "^2.0.19"
+    "nodemon": "^2.0.19",
+    "react-to-print": "^2.14.7",
+    "sass": "^1.54.9"
   },
   "name": "api",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {
-
-  },
+  "devDependencies": {},
   "scripts": {
     "server": "nodemon api/index.js",
     "client": "yarn --cwd client start",

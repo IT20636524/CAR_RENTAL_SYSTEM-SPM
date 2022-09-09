@@ -131,7 +131,7 @@ export default function UpdateStaff(props: { driver_code: string; }) {
 
     return (
         <>
-            <Button variant='warning' className='btn-success me-3' onClick={updateShow} style={{width:"100px" }}>
+            <Button variant='success' className='stfbtn me-3' onClick={updateShow} style={{width:"100px" }}>
                 Edit
             </Button>
 
