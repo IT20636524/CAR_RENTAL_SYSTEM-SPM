@@ -64,7 +64,7 @@ export default function AddStaff() {
       try {
          await axios.post("http://localhost:5000/api/upload", data);
       } catch (err) {
-        alert(err)
+        console.log(err);
       }
     }
 
@@ -179,7 +179,7 @@ export default function AddStaff() {
     <Form.Label column sm="3" >
     Address
     </Form.Label>
-    <Col sm="5" >
+    <Col sm="7" >
       <Form.Control type="text" placeholder="Enter Address" value={address} onChange={(e)=>setAddress(e.target.value)} />
     </Col>
   </Form.Group>
@@ -188,8 +188,13 @@ export default function AddStaff() {
     <Form.Label column sm="3">
     Contact Number
     </Form.Label>
-    <Col sm="7">
-      <Form.Control type="Email" placeholder="Enter Contact Number"  value={contact_number} onChange={(e)=>setContactNumber(e.target.value)} />
+    <Col sm="7" >
+      {/* <Form.Control type="tel"  placeholder="Enter Contact Number" maxlength="10" value={contact_number} onChange={(e)=>setContactNumber(e.target.value)} /> */}
+      <input
+      placeholder="Enter phone number"
+      value={contact_number}
+      maxLength={10} size={30}
+      onChange={(e)=>setContactNumber(e.target.value)}/>
     </Col>
   </Form.Group>
 
@@ -211,7 +216,11 @@ export default function AddStaff() {
     Driving License No
     </Form.Label>
     <Col sm="7">
-      <Form.Control type="Email" placeholder="Enter Driving License No" value={driving_license_no} onChange={(e)=>setDrivingLicenseNo(e.target.value)} />
+    <input
+      placeholder="Enter Driving License No"
+      value={driving_license_no}
+      maxLength={7} size={30}
+      onChange={(e)=>setDrivingLicenseNo(e.target.value)}/>
     </Col>
   </Form.Group>
 

@@ -30,7 +30,7 @@ export default function AdminSideNav() {
                 <div className="navbar-nav w-100">
                     <a href="/dashboard" className="nav-item nav-link active"><i className="fa fa-tachometer-alt me-2"></i>Dashboard</a><br />
                     
-                    <Link to={"/"} className="nav-item nav-link"><i className="fas fa-car me-3"></i>Cars</Link><br />
+                    <Link to={"/admincarpage"} className="nav-item nav-link"><i className="fas fa-car me-3"></i>Cars</Link><br />
                     <Link to={"/adminstaffpage"} className="nav-item nav-link"><i className="fas fa-users-cog me-3"></i>Drivers</Link><br />
                     <Link to={"/admin-booking"} className="nav-item nav-link"><i className="fab fa-first-order me-3"></i>Bookings</Link><br />
                     <Link to={"/adminpayment"} className="nav-item nav-link"><i className="far fa-credit-card me-3"></i>Payments</Link><br />

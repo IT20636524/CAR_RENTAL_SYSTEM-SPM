@@ -4,8 +4,11 @@ import swal from 'sweetalert';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import axios from 'axios';
-import Footer from '../components/Footer';
 import Header from '../components/Header';
+import BookingDetails from '../components/BookingDetails';
+import Footer from '../components/Footer';
+
+
 
 export default function AddPayment() {
 
@@ -16,7 +19,7 @@ export default function AddPayment() {
     const [amount, setAmount] = useState("");
     const [contact_number, setContactNumber] = useState("");
   
-    const [subopt, setSubjectOptions] = useState([]);
+ 
     
     const navigate = useNavigate();
 
@@ -60,28 +63,7 @@ export default function AddPayment() {
       
     }
 
-    // const getData = async (e: { keyCode: number; }) => {
-    //   if (e.keyCode === 13) {
-    //     await axios.get(`http://localhost:5000/api/booking/${booking_id}`)
-    //       .then(function (response) {
-    //         if (response.data != null) {
-    //           setName(response.data['name'])
-    //           setContactNumber(response.data['contact_number'])
-    //           setAmount(response.data['amount'])
-    //           setSubjectOptions(response.data['card'])
-    
-    //         } else {
-    //           swal(" invalid student id !", "Please Try Again !", "error");
-    
-    //         }
-    //       })
-    //       .catch(function (error) {
-    //         console.log(error);
-    //         swal(" Details can't search !", "Please Try Again !", "error");
-    
-    //       })
-    //   }
-    // }
+   
     
    
 
@@ -91,21 +73,16 @@ export default function AddPayment() {
           <div
             className="hpimage"
             style={{
-            backgroundImage: "url('https://c4.wallpaperflare.com/wallpaper/66/25/239/machine-grey-background-volvo-wallpaper-preview.jpg')",backgroundRepeat: "no-repeat",WebkitBackgroundSize:"cover",backgroundSize:"cover",height: "110vh"}}
+            backgroundImage: "url('https://c4.wallpaperflare.com/wallpaper/66/25/239/machine-grey-background-volvo-wallpaper-preview.jpg')",backgroundRepeat: "no-repeat",WebkitBackgroundSize:"cover",backgroundSize:"cover"}}
             >
 
-<div className="d-flex float-end mb-5">
- 
- <Link to="/view-cards"><button type="button" className="btn btn-warning" style={{width:"200px", height:"50px", margin:"50px"}}>
-see Your Cards
-</button></Link>
-</div>
+
 
 <div className="container">
   <div className="row">
     <div className="col">
 
-    <div className="card" style={{background: "linear-gradient(140deg, rgba(72, 115, 150, 1) 50%, rgba(57, 108, 150, 0.65) 65%, rgba(42, 102, 150, 0.6) 50%, rgba(27, 95, 150, 0.95) 80%, rgba(12, 88, 150, 1) 90%, rgba(0, 83, 150, 0.8) 70%)",marginTop:"50px"}}>
+    <div className="card" style={{height:"660px",background: "linear-gradient(140deg, rgba(72, 115, 150, 1) 50%, rgba(57, 108, 150, 0.65) 65%, rgba(42, 102, 150, 0.6) 50%, rgba(27, 95, 150, 0.95) 80%, rgba(12, 88, 150, 1) 90%, rgba(0, 83, 150, 0.8) 70%)",marginTop:"50px"}}>
         <div className="card-body px-4 px-md-5">
     <section className="mb-4">
 
@@ -129,32 +106,31 @@ see Your Cards
             <label htmlFor="bookingid">Booking ID</label>
           
         </div>
-
+<br />
         <div className="form-floating mb-3">
             <input className="form-control" id="name" type="text" placeholder="Name"  value={name} onChange={(e)=>setName(e.target.value)}/>
             <label htmlFor="name">Name</label>
            
         </div>
-       
+    <br />   
         <div className="form-floating mb-3">
             <input className="form-control" id="contact" type="text" placeholder="Contact Number"  value={contact_number} onChange={(e)=>setContactNumber(e.target.value)}/>
             <label htmlFor="contact">Contact Number</label>
            
         </div>   
-
+<br />
         <select className="form-select mb-4 text-grey" aria-label="Disabled select example" onChange={(e)=>setCard(e.target.value)}>
           <option selected>Select a Card</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-
+          <option value="1">1234567812345678</option>
+         
+<br />
           {/* {subopt.map(card => {
                     // eslint-disable-next-line react/jsx-key
                     return <option value={card}>{card}</option>
                   })} */}
         </select>
 
-      
+    <br />  
 
         <div className="form-floating mb-3">
             <input className="form-control" id="amount" type="text" placeholder="Amount"  value={amount} onChange={(e)=>setAmount(e.target.value)}/>
@@ -163,17 +139,12 @@ see Your Cards
         </div>
 
         </form>
-       
+   <br />  
 
         <div className="text-center">
-        <a href="/add-payment">
-    <button type="button" className="btn btn-primary" style={{marginRight:"100px"}}>
-           Back
-            </button>
-
-    </a>
+       
         <Link to="/payment-view">
-    <button type="button" className="btn btn-primary" onClick={ submitForm}>
+    <button type="button" className="btn btn-primary"style={{width:"400px"}} onClick={ submitForm}>
             Pay Now
             </button>
     </Link>
@@ -194,12 +165,15 @@ see Your Cards
 </div></div>
     
     </div>
-    <div className="col">
+    <div className="col-5 mt-5 ml-5">
+      <BookingDetails/>
     </div>
+    <br />
   </div>
   </div>
+
              
-             </div>
+             </div> 
               <Footer/>
              
 
