@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+.card-user {
+	color:#fff;
+    width: 350px;
+    border-radius: 10px;
+   background: linear-gradient(145deg, #9a40a9, #b74cc9);
+box-shadow:  20px 20px 60px #913ca0, 
+             -20px -20px 60px #c552d8;
+    border: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}
+
+.neo-button {
+    width: 40px;
+    height: 40px;
+    outline: 0 !important;
+    cursor: pointer;
+    color: #fff;
+    font-size: 15px;
+    border: none;
+    margin-right: 10px;
+    border-radius: 50%;
+background: linear-gradient(145deg, #9a40a9, #b74cc9);
+box-shadow: inset 20px 20px 60px #913ca0, 
+             inset -20px -20px 60px #c552d8;
+}
+
+.num{
+	
+	color:#eee !important;
+}
+
+.line{
+	color:#fff;
+}
+
+.neo-button:active {
+   border-radius: 50%;
+background: #AB47BC;
+box-shadow:  28px 28px 57px #933da2, 
+             -28px -28px 57px #c351d6;
+}
+
+.fa-facebook {
+    color: #3b5998
+}
+
+.fa-whatsapp{
+    color: #4eb500
+}
+
+.fa-google {
+    color: #dc4e41
+}
+
+.fa-twitter {
+    color: #55acee
+}
+
+.profile_button{
+	color:#fff;
+	padding:10px; 
+   border:none;
+   outline:0 !important;
+border-radius: 50px;
+background: #AB47BC;
+box-shadow:  28px 28px 57px #933da2, 
+             -28px -28px 57px #c351d6;
+	
+}
