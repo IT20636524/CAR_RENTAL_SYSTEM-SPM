@@ -8,6 +8,7 @@ import {
 import { TextField } from '../components/TextField';
 import * as Yup from 'yup';
 import axios from 'axios';
+import swal from 'sweetalert';
 
 export const Signup = () => {
     const validate = Yup.object({
@@ -43,7 +44,11 @@ export const Signup = () => {
             validationSchema={validate}
             onSubmit={(values: any) => {
                 console.log(values)
-                axios.post('http://localhost:5000/api/UserAuth/register', values)
+                axios.post('http://localhost:5000/api/UserAuth/register', values).then(function (response) {
+                    console.log(response);
+                    swal({ text: "Successfully Added", icon: "success" })
+                })
+                
 
             }}
         >
