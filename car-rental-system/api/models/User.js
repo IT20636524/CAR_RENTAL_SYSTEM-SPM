@@ -20,6 +20,9 @@ const UserSchema = new mongoose.Schema(
             type:String,
             required:true,
         },
+        conpassword:{
+            type:String,
+        },
         profile_pic:{
             type:String,
             default:"",

@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 // import './App.scss';
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import UserProfile from './components/userModal/UserProfile';
+import { Context } from './context/Context';
 import AddBooking from './pages/AddBooking';
 import AddPayment from './pages/AddPaymentPage';
 import AdminBookingPage from './pages/AdminBookingPage';
@@ -14,8 +16,10 @@ import Homepage from './pages/Home';
 import Login from './pages/Login';
 import PaymentView from './pages/PaymentViewPage';
 import Register from './pages/Register';
+// import SignUp from './pages/SignUp';
 
 function App() {
+  const {user}=useContext(Context);
   return (
     <>
       <BrowserRouter>
@@ -28,10 +32,12 @@ function App() {
           <Route path="/paymentview/:payment_id" element={<PaymentView />} />
           <Route path="/sign-up" element={<Register />} />
           <Route path="/view-cards" element={<CardViewPage />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={user?<Homepage/> : <Login />} />
           <Route path="/add-booking" element={<AddBooking/>}/>
           <Route path="/admin-booking" element={<AdminBookingPage/>} />
           <Route path="/admincarpage" element={<AdminCarPage />} />
+          {/* <Route path="/register" element={<SignUp/>} /> */}
+          <Route path="/user-profile" element={<UserProfile/>}/>
 
         </Routes>
       </BrowserRouter>

@@ -1,170 +1,32 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { useContext, useRef } from "react";
-import swal from "sweetalert";
-import * as Yup from 'yup'
-import { Formik, Form } from "formik";
+import '../App.css';
+import rocketImg from '../assets/rocket.png';
+import React from 'react';
+import { Signup } from './SignUp';
 
-export default function Register() {
-
-    //     useEffect(()=>{
-    // if(package.ref != ConpassRef){
-    // coler
-    // }else{
-    //    MDBListGroup() 
-    // }
-    //     },[ConpassRef.current.value])
-
-    // useEffect(()=>{
-    //     var inputVal = document.getElementById("form3Example4c");
-    //     if(passwordRef.current?.value != conPasswordRef.current?.value){
-    //         inputVal.style.color = "red";
-    //     }else{
-    //         inputVal.style.color = "black";
-    //     }
-    // },[conPasswordRef.current?.value,passwordRef.current?.value])
-    const passwordRef = useRef<HTMLInputElement>(null);
-    const conPasswordRef = useRef<HTMLInputElement>(null);
-
-    //yup validation
-    const validate = Yup.object({
-        name: Yup.string()
-        .max(20,'Must be 20 characters or less')
-        .required('Required'),
-        email: Yup.string()
-        .email('Email is invalid')
-        .required('Email is required'),
-        password: Yup.string()
-        .min(6,'Password must be at least 6 characters')
-        .required('Password is required'),
-        conPassword: Yup.string()
-        .oneOf([Yup.ref('password'), null], 'Password must match')
-        .required('Confirm password is required')
-    })
-
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-
-    const [checkboxStatus, setCheckboxStatus] = useState(Array(3).fill(false));
-
-    function buttonHandler(index:any){
-      let status = [...checkboxStatus];
-      status[index] = !status[index]
-      setCheckboxStatus(status)
-    }
-
-
-    const userData = {
-        name,
-        email,
-        password
-    }
-
-    const handleSubmit = (e: any) => {
-        e.preventDefault();
-        if (name.length === 0 || email.length === 0 || password.length === 0) {
-            swal(" Fields Cannot empty !", "Please enter all data !", "error");
-        } else {
-            console.log(userData);
-            axios.post('http://localhost:5000/api/UserAuth/register', userData)
-                .then(function (response) {
-                    console.log(response);
-                    setName('');
-                    setEmail('');
-                    setPassword('');
-                    swal({ text: "Successfully Added", icon: "success" })
-                })
-                .catch(function (error) {
-                    console.log(error);
-                    alert("Not added");
-                });
-        }
-    }
-
+function Register() {
     return (
-        
-        <div>
-            
-            <section className="vh-100" style={{ backgroundColor: "#eee" }}>
-                <div className="container h-100">
-                    <div className="row d-flex justify-content-center align-items-center h-100">
-                        <div className="col-lg-12 col-xl-11">
-                            <div className="card text-black" style={{ borderRadius: "25px" }}>
-                                <div className="card-body p-md-5">
-                                    <div className="row justify-content-center">
-                                        <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
-                                            <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
-
-                                            <form className="mx-1 mx-md-4" onSubmit={handleSubmit}>
-
-                                                <div className="d-flex flex-row align-items-center mb-4">
-                                                    <i className="fas fa-user fa-lg me-3 fa-fw"></i>
-                                                    <div className="form-outline flex-fill mb-0">
-                                                        <input type="text" id="form3Example1c" className="form-control" value={name} onChange={(e) => setName(e.target.value)} />
-                                                        <label className="form-label" htmlFor="form3Example1c" >Your Name</label>
-                                                    </div>
-                                                </div>
-
-                                                <div className="d-flex flex-row align-items-center mb-4">
-                                                    <i className="fas fa-envelope fa-lg me-3 fa-fw"></i>
-                                                    <div className="form-outline flex-fill mb-0">
-                                                        <input type="email" id="form3Example3c" className="form-control" value={email} onChange={(e) => setEmail(e.target.value)} />
-                                                        <label className="form-label" htmlFor="form3Example3c">Your Email</label>
-                                                    </div>
-                                                </div>
-
-                                                <div className="d-flex flex-row align-items-center mb-4">
-                                                    <i className="fas fa-lock fa-lg me-3 fa-fw"></i>
-                                                    <div className="form-outline flex-fill mb-0">
-                                                        <input type="password" id="form3Example4c" className="form-control" value={password} onChange={(e) => setPassword(e.target.value)} ref={passwordRef} />
-                                                        <label className="form-label" htmlFor="form3Example4c">Password</label>
-                                                    </div>
-                                                </div>
-
-                                                <div className="d-flex flex-row align-items-center mb-4">
-                                                    <i className="fas fa-key fa-lg me-3 fa-fw"></i>
-                                                    <div className="form-outline flex-fill mb-0">
-                                                        <input type="password" id="form3Example4cd" className="form-control" />
-                                                        <label className="form-label" htmlFor="form3Example4cd">Repeat your password</label>
-                                                    </div>
-                                                </div>
-
-                                                <div className="form-check d-flex justify-content-center mb-5">
-                                                    {Array(1).fill(0).map((_, index) => <input className="form me-2" type="checkbox" checked={checkboxStatus[index]} onChange={() => buttonHandler(index)} />)}
-                                                    <label className="form-check-label" htmlFor="form2Example3">
-                                                        I agree all statements in <a href="#!">Terms of service</a>
-                                                    </label>
-                                                    {/* <button type="submit" className="btn btn-primary btn-lg" disabled={checkboxStatus.filter(status => status === true).length != 1}>Register</button> */}
-                                                    {/* {Array(1).fill(0).map((_, index) => <input type="checkbox" checked={checkboxStatus[index]} onChange={() => buttonHandler(index)} />)} */}
-                                                </div>
-
-                                                <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                                                <button type="submit" className="btn btn-primary btn-lg" disabled={checkboxStatus.filter(status => status === true).length != 1}>Register</button>
-                                                </div>
-                                                <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                                                    <label>Already have an account..?</label>
-                                                </div>
-                                                <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                                                    <a href="/login">Login</a>
-                                                </div>
-
-                                            </form>
-
-                                        </div>
-                                        <div className="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-
-                                            <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-registration/draw1.png" className="img-fluid" alt="Sample image" />
-
-                                        </div>
+        <>
+           <div className="container mt-3">
+                <div className="row">
+                    <div className="col-md-5">
+                        <div className="card" style={{ height: "660px", width: "1000px", background: "white", margin: "50px 0px 50px 150px" }}>
+                            <div className="card-body px-4 px-md-5">
+                                <div className="row">
+                                    <div className="col-6">   <Signup />
                                     </div>
+                                    <div className="col-6">  <img className="img-fluid w-100 reg-img" src="data:image/png;base64,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" alt="" /></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-        </div>
-    )
+            </div>
+
+
+        </>
+
+    );
 }
+
+export default Register;

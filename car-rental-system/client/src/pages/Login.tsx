@@ -61,13 +61,13 @@ export default function Login() {
                                         {/* <!-- Email input --> */}
                                         <div className="form-outline mb-4" >
                                             <input type="email" id="form3Example3" className="form-control" ref={emailRef}/>
-                                            <label className="form-label" htmlFor="form3Example3">Email address</label>
+                                            <label className="form-label reg-label" htmlFor="form3Example3">Email address</label>
                                         </div>
 
                                         {/* <!-- Password input --> */}
                                         <div className="form-outline mb-4" >
                                             <input type="password" id="form3Example4" className="form-control" ref={passwordRef}/>
-                                            <label className="form-label" htmlFor="form3Example4">Password</label>
+                                            <label className="form-label reg-label" htmlFor="form3Example4">Password</label>
                                         </div>
 
                                         <br/>
@@ -84,7 +84,7 @@ export default function Login() {
                                         {/* <!-- Register buttons --> */}
                                         <div className="text-center">
                                             <p>or sign up with:</p>
-                                            <a href="/sign-up">
+                                            <a className="login-link" href="/sign-up">
                                                 Sign up
                                             </a>
 
