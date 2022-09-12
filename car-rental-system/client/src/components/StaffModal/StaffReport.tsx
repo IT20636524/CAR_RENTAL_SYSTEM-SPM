@@ -93,7 +93,7 @@ content: ()=> componentRef.current,
   return (
     <>
     
-      <Button className="stfbtn" variant="warning" onClick={handleShow} style={{"marginLeft":"910px","marginTop":"60px", "width":"300px","height":"50px","color":"white"}} >
+      <Button className="stfbtn" variant="warning" onClick={handleShow} style={{"marginLeft":"910px","marginTop":"40px", "width":"300px","height":"40px","color":"white"}} >
       Genarate Report
       </Button>
 
