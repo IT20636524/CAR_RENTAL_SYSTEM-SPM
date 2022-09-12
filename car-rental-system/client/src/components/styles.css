@@ -313,11 +313,6 @@
 .add-book-btn{
     display: flex;
     justify-content: center;
-    margin-left: 200px;
+    margin-left: 125px;
 }
-.bf-label{
-    margin-left: 20px;
-}
-.bf-input{
-    margin-right: 20px;
-}
+
