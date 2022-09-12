@@ -28,6 +28,7 @@ router.get("/", async(req,res) => {
         } else {
             bookings = await Booking.find();
         }
+        res.status(200).json(bookings);
     }catch(err){
         res.status(500).json(err);
     }

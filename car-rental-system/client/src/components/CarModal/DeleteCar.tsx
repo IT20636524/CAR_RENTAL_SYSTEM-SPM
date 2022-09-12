@@ -84,7 +84,7 @@ export default function DeleteCar(props: { car_Id: string; }) {
 
     return (
         <div>
-            <Button className='btn-danger me-2' onClick={DeleteShow} style={{ width: "100px" }}>
+            <Button className='btn-danger me-1' onClick={DeleteShow} style={{ width: "100px" }}>
                 Delete
             </Button>
 
@@ -102,10 +102,10 @@ export default function DeleteCar(props: { car_Id: string; }) {
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="success" onClick={submitForm}>
-                        Delete Car
+                        Yes
                     </Button>
                     <Button variant="danger" onClick={handleClose}>
-                        Exit
+                        No
                     </Button>
 
                 </Modal.Footer>

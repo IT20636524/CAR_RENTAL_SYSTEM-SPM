@@ -43,3 +43,26 @@
   .addBook{
     display: flex;
   }
+
+  /* Sign up css */
+  .reg-btn1{
+    margin-left: 0px;
+    display: flex;
+    margin-top: 0px;
+  }
+  .reg-btn2{
+    margin-left: 50px;
+    display: flex;
+    margin-top: 0px;
+  }
+  .reg-label{
+    font-size: 15px;
+  }
+
+.login-link{
+  text-decoration: solid;
+}
+.reg-img{
+  justify-content: center;
+  margin-top:110px;
+}

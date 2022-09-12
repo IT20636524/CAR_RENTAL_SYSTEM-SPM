@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { Context } from '../context/Context';
 
 export default function Header() {
+  const { user, dispatch } = useContext(Context);
+    const handleLogout = () => {
+        dispatch({ type: "LOGOUT" });
+    }
   return (
     <>
 
@@ -145,18 +150,17 @@ export default function Header() {
                 aria-labelledby="navbarDropdownMenuAvatar"
               >
                 <li>
-                  <a className="dropdown-item" href="#">My profile</a>
+                  <a className="dropdown-item" href="/user-profile">My profile</a>
                 </li>
                 <li>
                   <a className="dropdown-item" href="#">Settings</a>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">Logout</a>
+                  <a className="dropdown-item" href="" onClick={handleLogout}>Logout</a>
                 </li>
               </ul>
             </div>
           </div>
-
         </div>
 
       </nav>
