@@ -8,6 +8,7 @@ const CardRoute = require("./routes/cards");
 const StaffRoute = require("./routes/staff");
 const carRoute = require("./routes/cars");
 const PaymentRoute = require("./routes/payments");
+const ContactUsRoute = require("./routes/contactus");
 
 const cors=require("cors");
 
@@ -36,6 +37,7 @@ app.use("/api/staff", StaffRoute);
 app.use("/api/cards", CardRoute);
 app.use("/api/cars", carRoute);
 app.use("/api/payments", PaymentRoute);
+app.use("/api/contactus", ContactUsRoute);
 
 
 app.listen("5000", ()=>{
