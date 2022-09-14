@@ -124,7 +124,7 @@ export default function AddCar() {
 
   return (
     <div>
-      <Button className="btn-dashb me-5 rounded " variant="warning" onClick={handleShow} style={{ "width": "400px", "height": "50px", "marginLeft": "400px", "fontSize": "20px", "marginTop": "25px" }}>
+      <Button className="btn-dashb me-5 rounded " variant="warning" onClick={handleShow} style={{ "width": "300px", "height": "50px", "marginLeft": "450px", "fontSize": "20px", "marginTop": "25px" }}>
         Add Car
       </Button>
 

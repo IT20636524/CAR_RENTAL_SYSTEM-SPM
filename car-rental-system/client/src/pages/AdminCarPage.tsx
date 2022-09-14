@@ -4,6 +4,7 @@ import AdminFooter from '../components/AdminFooter'
 import AdminHeader from '../components/AdminHeader'
 import AdminSideNav from '../components/AdminSideNav'
 import AddCar from '../components/CarModal/AddCar';
+import CarReport from '../components/CarModal/CarReport';
 import DeleteCar from '../components/CarModal/DeleteCar';
 import UpdateCar from '../components/CarModal/UpdateCar';
 
@@ -26,9 +27,10 @@ export default function AdminCarPage() {
             <AdminSideNav />
             <div className="content">
                 <AdminHeader />
+                <CarReport />
 
                 <div className="container-fluid pt-4 px-4" >
-                    <h1 style={{ "marginLeft": "550px", "marginTop": "15px", "marginBottom": "50px", "color": "white", "fontFamily": "fantasy" }}>Cars</h1>
+                    <h1 style={{ "marginLeft": "550px", "marginTop": "10px", "marginBottom": "50px", "color": "white", "fontFamily": "fantasy" }}>Cars</h1>
                     <div className="bg-secondary text-center rounded p-4" >
                         <div className="d-flex align-items-center justify-content-between mb-4" >
                         </div>
