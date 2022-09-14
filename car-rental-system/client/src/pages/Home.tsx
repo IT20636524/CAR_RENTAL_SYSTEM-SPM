@@ -85,7 +85,7 @@ export default function Home() {
             <br />
             <br />
 
-            <Link to={``} className="col-md-3 credit-card">
+            <Link to={`VehicleFleet`} className="col-md-3 credit-card">
 
               <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel" >
                 <div className="carousel-inner">

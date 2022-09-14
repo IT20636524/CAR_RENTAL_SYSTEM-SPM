@@ -16,6 +16,7 @@ import Homepage from './pages/Home';
 import Login from './pages/Login';
 import PaymentView from './pages/PaymentViewPage';
 import Register from './pages/Register';
+import VehicleFleet from './pages/VehicleFleet';
 // import SignUp from './pages/SignUp';
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
           <Route path="/admincarpage" element={<AdminCarPage />} />
           {/* <Route path="/register" element={<SignUp/>} /> */}
           <Route path="/user-profile" element={<UserProfile/>}/>
+          <Route path="/vehiclefleet" element={<VehicleFleet/>}/>
 
         </Routes>
       </BrowserRouter>
