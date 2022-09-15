@@ -11,12 +11,12 @@ import AdminCarPage from './pages/AdminCarPage';
 import AdminStaffPage from './pages/AdminStaffPage';
 import CardViewPage from './pages/CardViewPage';
 import Dashboard from './pages/Dashboard';
-
 import Homepage from './pages/Home';
 import Login from './pages/Login';
 import PaymentView from './pages/PaymentViewPage';
 import Register from './pages/Register';
 import VehicleFleet from './pages/VehicleFleet';
+import ViewBookings from './pages/ViewBookings';
 // import SignUp from './pages/SignUp';
 
 function App() {
@@ -40,6 +40,7 @@ function App() {
           {/* <Route path="/register" element={<SignUp/>} /> */}
           <Route path="/user-profile" element={<UserProfile/>}/>
           <Route path="/vehiclefleet" element={<VehicleFleet/>}/>
+          <Route path="/view-bookings" element={<ViewBookings/>}/>
 
         </Routes>
       </BrowserRouter>

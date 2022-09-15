@@ -44,7 +44,7 @@ export default function Header() {
 
               </li>
               <li className="nav-item">
-                <Link to={"/booking"} className="nav-link">Bookings</Link>
+                <Link to={"/view-bookings"} className="nav-link">Bookings</Link>
 
               </li>
               <li className="nav-item">
