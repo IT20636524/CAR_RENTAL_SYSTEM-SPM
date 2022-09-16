@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 // import './App.scss';
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import UserProfile from './components/userModal/UserProfile';
+import UserProfile from './components/UserProfile/UserProfile';
 import { Context } from './context/Context';
 import AddBooking from './pages/AddBooking';
 import AddPayment from './pages/AddPaymentPage';
