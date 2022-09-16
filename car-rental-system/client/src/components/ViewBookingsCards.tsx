@@ -1,4 +1,5 @@
 import React from 'react'
+import DeleteBookingModal from './BookingModal/DeleteBookingModal'
 import UpdateBookingModal from './BookingModal/UpdateBookingModal'
 
 export default function ViewBookingsCards() {
@@ -18,9 +19,7 @@ export default function ViewBookingsCards() {
                         <div className="card-footer">
                             <button type="button" className="btn btn-success btn-rounded booking-btn">Pay</button>
                             <UpdateBookingModal/>
-                            <button type="button" className="btn btn-danger btn-floating booking-btn3">
-                                <i className="fa-solid fa-trash"></i>
-                            </button>
+                            <DeleteBookingModal/>
                         </div>
                     </div>
                 </div>
@@ -37,9 +36,7 @@ export default function ViewBookingsCards() {
                         <div className="card-footer">
                             <button type="button" className="btn btn-success btn-rounded booking-btn">Pay</button>
                             <UpdateBookingModal/>
-                            <button type="button" className="btn btn-danger btn-floating booking-btn3">
-                                <i className="fa-solid fa-trash"></i>
-                            </button>
+                            <DeleteBookingModal/>
                         </div>
                     </div>
                 </div>
@@ -56,9 +53,7 @@ export default function ViewBookingsCards() {
                         <div className="card-footer">
                             <button type="button" className="btn btn-success btn-rounded booking-btn">Pay</button>
                             <UpdateBookingModal/>
-                            <button type="button" className="btn btn-danger btn-floating booking-btn3">
-                                <i className="fa-solid fa-trash"></i>
-                            </button>
+                            <DeleteBookingModal/>
                         </div>
                     </div>
                 </div>
@@ -75,9 +70,7 @@ export default function ViewBookingsCards() {
                         <div className="card-footer">
                             <button type="button" className="btn btn-success btn-rounded booking-btn">Pay</button>
                             <UpdateBookingModal/>
-                            <button type="button" className="btn btn-danger btn-floating booking-btn3">
-                                <i className="fa-solid fa-trash"></i>
-                            </button>
+                            <DeleteBookingModal/>
                         </div>
                     </div>
                 </div>

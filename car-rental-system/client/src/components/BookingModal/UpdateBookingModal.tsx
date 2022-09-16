@@ -4,7 +4,6 @@ import { Button, Col, Form, Modal, Row } from 'react-bootstrap'
 export default function UpdateBookingModal() {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-
     const [show, setShow] = useState(false);
     return (
         <>
