@@ -331,3 +331,8 @@
 .card-body{
     margin-top: 10px;
 }
+
+/*** Search Booking ***/
+.search{
+    justify-content: right;
+}
