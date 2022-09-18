@@ -17,6 +17,7 @@
     "formik": "^2.2.9",
     "mdb-react-ui-kit": "^4.1.0",
     "mdb-ui-kit": "^4.4.0",
+    "mdbreact": "^5.2.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.5.0",
     "react-dom": "^18.2.0",
