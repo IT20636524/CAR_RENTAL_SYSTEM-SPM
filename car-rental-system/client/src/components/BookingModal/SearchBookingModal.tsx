@@ -8,7 +8,7 @@ export default function SearchBookingModal() {
             <>
                 <Modal.Header>
                     <div className="col-md-12 text-center">
-                        <Modal.Title id="contained-modal-title-vcenter">Student Details</Modal.Title>
+                        <Modal.Title id="contained-modal-title-vcenter">Booking Details</Modal.Title>
                     </div>
                 </Modal.Header>
                 <Modal.Body>
@@ -18,7 +18,7 @@ export default function SearchBookingModal() {
                             <Form.Group as={Col} className="p-2 bd-highlight">
                                 <Col>
                                     <Form.Label as="legend" column sm={2}>
-                                        Student_Image
+                                        Vehicle_Image
                                     </Form.Label>
                                 </Col>
 
@@ -32,75 +32,75 @@ export default function SearchBookingModal() {
 
                         <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
                             <Form.Label column sm="2">
-                                Full Name
+                                Booking id
                             </Form.Label>
                             <Col sm="7">
-                                <Form.Control type="text" placeholder="Enter your Full Name "  />
+                                <Form.Control type="text" placeholder="Booking Id "  />
                             </Col>
                         </Form.Group>
 
                         <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
                             <Form.Label column sm="2">
-                                Age
+                                Name
                             </Form.Label>
-                            <Col sm="5">
-                                <Form.Control type="text" placeholder="Enter your age" />
+                            <Col sm="7">
+                                <Form.Control type="text" placeholder="Name" />
                             </Col>
                         </Form.Group>
 
                         <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
-                            <Form.Label column sm="2">
-                                Gender
-                            </Form.Label>
-                            <Col sm="5">
-                                <Form.Control type="text" placeholder="Enter your gender"  />
-                            </Col>
-                        </Form.Group>
-
-                        <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
-                            <Form.Label column sm="2">
-                                School
-                            </Form.Label>
-                            <Col sm="7">
-                                <Form.Control type="text" placeholder="Enter your School" />
-                            </Col>
-                        </Form.Group>
-
-
-                        <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
-                            <Form.Label column sm="2">
-                                Email Address
-                            </Form.Label>
-                            <Col sm="7">
-                                <Form.Control type="Email" placeholder="Enter your  Email Address"  />
-                            </Col>
-                        </Form.Group>
-
-
-                        <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
                             <Form.Label column sm="2">
                                 Address
                             </Form.Label>
                             <Col sm="7">
-                                <Form.Control type="textarea" placeholder="Enter your Address"/>
+                                <Form.Control type="text" placeholder="Address"  />
                             </Col>
                         </Form.Group>
 
                         <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
                             <Form.Label column sm="2">
-                                Phone Number
+                                Contact Number
                             </Form.Label>
                             <Col sm="7">
-                                <Form.Control type="tel" placeholder="Enter your Phone Number" maxLength={10} />
+                                <Form.Control type="text" placeholder="Contact Number" maxLength={10} />
+                            </Col>
+                        </Form.Group>
+
+
+                        <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
+                            <Form.Label column sm="2">
+                                Type Of Service
+                            </Form.Label>
+                            <Col sm="7">
+                                <Form.Control type="text" placeholder="Type Of Service"  />
+                            </Col>
+                        </Form.Group>
+
+
+                        <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
+                            <Form.Label column sm="2">
+                                Selected Model
+                            </Form.Label>
+                            <Col sm="7">
+                                <Form.Control type="text" placeholder="Selected Model"/>
+                            </Col>
+                        </Form.Group>
+
+                        <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
+                            <Form.Label column sm="2">
+                                No of Days
+                            </Form.Label>
+                            <Col sm="7">
+                                <Form.Control type="text" placeholder="No of Days" />
                             </Col>
                         </Form.Group>
 
                         <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
                             <Form.Label column sm="2">
-                                Grade
+                                Location
                             </Form.Label>
                             <Col sm="7">
-                                <Form.Control type="text" placeholder="Enter your Grade"/>
+                                <Form.Control type="text" placeholder="Location"/>
                             </Col>
                         </Form.Group>
 
