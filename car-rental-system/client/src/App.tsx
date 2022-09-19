@@ -8,6 +8,7 @@ import AddBooking from './pages/AddBooking';
 import AddPayment from './pages/AddPaymentPage';
 import AdminBookingPage from './pages/AdminBookingPage';
 import AdminCarPage from './pages/AdminCarPage';
+import AdminPaymentView from './pages/AdminPaymentView';
 import AdminStaffPage from './pages/AdminStaffPage';
 import CardViewPage from './pages/CardViewPage';
 import Dashboard from './pages/Dashboard';
@@ -41,6 +42,8 @@ function App() {
           <Route path="/user-profile" element={<UserProfile/>}/>
           <Route path="/vehiclefleet" element={<VehicleFleet/>}/>
           <Route path="/view-bookings" element={<ViewBookings/>}/>
+          <Route path="/adminpayment" element={<AdminPaymentView />} />
+        
 
         </Routes>
       </BrowserRouter>
