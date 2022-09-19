@@ -40,11 +40,11 @@ export default function PaymentReport() {
                 centered
 
             >
-                <Modal.Header closeButton>
+                <Modal.Header closeButton style={{backgroundColor:"grey"}}>
 
                 </Modal.Header>
 
-                <Modal.Body>
+                <Modal.Body style={{backgroundColor:"grey"}}>
 
                     <div className="container-fluid pt-4 px-4" ref={componentRef} >
 
@@ -98,7 +98,7 @@ export default function PaymentReport() {
 
 
                 </Modal.Body>
-                <Modal.Footer>
+                <Modal.Footer style={{backgroundColor:"grey"}}>
                     <ReactToPrint
                         trigger={() => <Button variant="primary" style={{ "width": "300px", "height": "40px", "color": "white", borderRadius: "50px", background: "linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%" }}>
                             Print Report
