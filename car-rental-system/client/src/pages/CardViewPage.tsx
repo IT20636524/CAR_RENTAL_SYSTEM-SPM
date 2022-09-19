@@ -16,23 +16,23 @@ export default function CardViewPage() {
             <div
                 className="hpimage"
                 style={{
-                    backgroundColor:"light",height:"100vh"
+                    backgroundColor: "light", height: "100vh"
                 }}
             >
-                 
-    
-   <div  className="d-flex float-start mt-5 ms-5">
-               <AddCard/>
+
+
+                <div className="d-flex float-start mt-5 ms-5">
+                    <AddCard />
                 </div>
 
-                <Link to="/add-payment"><button type="button" className="btn btn-warning float-end mt-5 ms-5" style={{width:"200px", height:"50px", margin:"50px"}}>
-          Back to Payment
-          </button></Link>
+                <Link to="/add-payment"><button type="button" className="btn btn-warning float-end mt-5 ms-5" style={{ width: "200px", height: "50px", margin: "50px" }}>
+                    Back to Payment
+                </button></Link>
 
-              
 
-          <div>
-                <CardView/>  
+
+                <div>
+                    <CardView />
                 </div>
 
 

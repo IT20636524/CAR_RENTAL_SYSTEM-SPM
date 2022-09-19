@@ -150,77 +150,77 @@ export default function CardForm(props: CardFormProps) {
                 Expiration Date
               </label>
               <div>
-              <Form.Control
-                as="select"
-                className="card-input__input -select mb-0" style={{marginRight:"100px"}}
-                value={selectedCreditCard.cardMonth}
-                name="cardMonth"
-                onChange={handleFormChange}
-                isInvalid={!!errors.cardMonth}
-              >
-                <option value="" disabled>
-                  Month
-                </option>
-
-                {monthsArr.map((val, index) => (
-                  <option key={index} value={val}>
-                    {val}
+                <Form.Control
+                  as="select"
+                  className="card-input__input -select mb-0" style={{ marginRight: "100px" }}
+                  value={selectedCreditCard.cardMonth}
+                  name="cardMonth"
+                  onChange={handleFormChange}
+                  isInvalid={!!errors.cardMonth}
+                >
+                  <option value="" disabled>
+                    Month
                   </option>
-                ))}
-              </Form.Control>
-              <Form.Control.Feedback type="invalid">
-                {errors.cardMonth}
-              </Form.Control.Feedback>
+
+                  {monthsArr.map((val, index) => (
+                    <option key={index} value={val}>
+                      {val}
+                    </option>
+                  ))}
+                </Form.Control>
+                <Form.Control.Feedback type="invalid">
+                  {errors.cardMonth}
+                </Form.Control.Feedback>
               </div>
               <div>
-              <Form.Control
-                as="select"
-                name="cardYear"
-                className="card-input__input -select mb-0" style={{marginRight:"100px"}}
-                value={selectedCreditCard.cardYear}
-                onChange={handleFormChange}
-                isInvalid={!!errors.cardYear}
-              >
-                <option value="" disabled>
-                  Year
-                </option>
-
-                {yearsArr.map((val, index) => (
-                  <option key={index} value={val}>
-                    {val}
+                <Form.Control
+                  as="select"
+                  name="cardYear"
+                  className="card-input__input -select mb-0" style={{ marginRight: "100px" }}
+                  value={selectedCreditCard.cardYear}
+                  onChange={handleFormChange}
+                  isInvalid={!!errors.cardYear}
+                >
+                  <option value="" disabled>
+                    Year
                   </option>
-                ))}
-              </Form.Control>
-              <Form.Control.Feedback type="invalid">
-                {errors.cardYear}
-              </Form.Control.Feedback>
+
+                  {yearsArr.map((val, index) => (
+                    <option key={index} value={val}>
+                      {val}
+                    </option>
+                  ))}
+                </Form.Control>
+                <Form.Control.Feedback type="invalid">
+                  {errors.cardYear}
+                </Form.Control.Feedback>
               </div>
             </div>
           </div>
-        
+
         </div>
         <div className="card-form__col -cvv">
-            <div className="card-input mb-5">
-              <label htmlFor="cardCvv" className="card-input__label">
-                CVV (Security Code)
-              </label>
-              <Form.Control
-                type="text"
-                className="card-input__input mb-0"
-                maxLength={4}
-                autoComplete="off"
-                name="cardCvv"
-                value={selectedCreditCard.cardCvv}
-                onChange={handleFormChangeNumbers}
-                onFocus={onCvvFocus}
-                onBlur={onCvvBlur}
-                isInvalid={!!errors.cardCvv}
-              />
-              <Form.Control.Feedback type="invalid">
-                {errors.cardCvv}
-              </Form.Control.Feedback>
-            </div>
+          <div className="card-input mb-5">
+            <label htmlFor="cardCvv" className="card-input__label">
+              CVV (Security Code)
+            </label>
+            <Form.Control
+              type="text"
+              className="card-input__input mb-0"
+              maxLength={4}
+              autoComplete="off"
+              name="cardCvv"
+              value={selectedCreditCard.cardCvv}
+              onChange={handleFormChangeNumbers}
+              onFocus={onCvvFocus}
+              onBlur={onCvvBlur}
+              isInvalid={!!errors.cardCvv}
+            />
+            <Form.Control.Feedback type="invalid">
+              {errors.cardCvv}
+            </Form.Control.Feedback>
           </div>
+        </div>
         <div className="card-form__row">
           <div className="card-form__col">
             <div className="d-grid gap-2">
