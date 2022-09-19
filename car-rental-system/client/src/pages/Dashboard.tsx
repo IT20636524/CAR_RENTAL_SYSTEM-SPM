@@ -1,4 +1,4 @@
-import React  from 'react'
+import React from 'react'
 import AdminDashboard from '../components/AdminDashboard'
 import AdminFooter from '../components/AdminFooter'
 import AdminHeader from '../components/AdminHeader'
@@ -11,19 +11,19 @@ export default function Dashboard() {
 
     return (
         <>
-       
-          
-            <AdminSideNav/>
-          
-            <div className="content">
-            <AdminHeader/>          
-            <AdminDashboard/>
-            <AdminFooter/>
-          </div>
 
- 
-    </>
-       
-          
+
+            <AdminSideNav />
+
+            <div className="content">
+                <AdminHeader />
+                <AdminDashboard />
+                <AdminFooter />
+            </div>
+
+
+        </>
+
+
     )
 }

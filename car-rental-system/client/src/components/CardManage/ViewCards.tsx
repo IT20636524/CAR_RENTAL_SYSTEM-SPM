@@ -12,7 +12,7 @@ import axios from 'axios';
 import Modal from 'react-bootstrap/Modal';
 
 const initialState: CreditCard = {
-  _id:'',
+  _id: '',
   cardNumber: '',
   cardHolder: '',
   cardMonth: '',
@@ -24,7 +24,7 @@ export default function CardView() {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  
+
   const [show, setShow] = useState(false);
 
   const navigate = useNavigate();
@@ -39,7 +39,7 @@ export default function CardView() {
     const fetchcloth = async () => {
 
       const res = await axios.get('http://localhost:5000/api/cards')
-      const cards: CreditCard[]=res.data
+      const cards: CreditCard[] = res.data
       setCardsDatas(cards)
       console.log(cards)
 
@@ -88,17 +88,17 @@ export default function CardView() {
   );
 
   function handleSubmitAction() {
-    
-    const cardData ={
-      cardNumber:state.cardNumber,
-      cardHolder:state.cardHolder ,
-      cardMonth:state.cardMonth ,
-      cardYear:state.cardYear,
-      cardCvv:state.cardCvv,
-      };
-   
-    axios.put(`http://localhost:5000/api/cards/update/${state._id}`,cardData)
-  
+
+    const cardData = {
+      cardNumber: state.cardNumber,
+      cardHolder: state.cardHolder,
+      cardMonth: state.cardMonth,
+      cardYear: state.cardYear,
+      cardCvv: state.cardCvv,
+    };
+
+    axios.put(`http://localhost:5000/api/cards/update/${state._id}`, cardData)
+
       .then(function (response) {
         console.log(response.data);
         setID('');
@@ -107,34 +107,34 @@ export default function CardView() {
         setCardMonth('');
         setCardYear('');
         setCardCVV('');
-        window.location.replace("/view-cards");  
+        window.location.replace("/view-cards");
       });
 
   }
   function handleDeleteAction() {
-      
-        axios.delete('http://localhost:5000/api/cards/delete/' + state._id)
-        .then(function (response) {
-          console.log(response.data);
-          
-          window.location.replace("/view-cards");  
-        });
-           
-      window.location.replace('/view-cards');
-  
+
+    axios.delete('http://localhost:5000/api/cards/delete/' + state._id)
+      .then(function (response) {
+        console.log(response.data);
+
+        window.location.replace("/view-cards");
+      });
+
+    window.location.replace('/view-cards');
+
   }
   const DeleteShow = () => {
-   
+
     axios.get("http://localhost:5000/api/staff/" + state._id)
-    .then(function (response) {
-         
+      .then(function (response) {
+
         setShow(true)
 
 
-    })
+      })
 
 
-};
+  };
 
   return (
     <>
@@ -185,19 +185,19 @@ export default function CardView() {
                   <div className="modal-content" style={{ width: "600px" }}>
                     <div className="modal-header" >
                       <h2 className="modal-title" id="exampleModalLabel">Edit Card</h2>
-                     
-                         
-                       
+
+
+
                       <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div className="modal-body" >
 
-                  
+
 
                       <Fragment>
                         <div className="add-card-content">
                           <div className="wrapper">
-                            
+
                             <CardForm
                               selectedCreditCard={state}
                               onUpdateState={updateStateValues}
@@ -215,42 +215,42 @@ export default function CardView() {
                             </CardForm>
                           </div>
                         </div>
-                      
+
                       </Fragment>
                       <Row className="d-flex float-end">
-                            <Col md={6} className="">
-                             
-                                <Button variant="link" size="sm"  onClick={DeleteShow} style={{width:"50px", marginRight:"10px"}}>
-                                <i className="fas fa-trash-alt fa-2x" style={{color:"red"}}></i>
-                                </Button>{' '}
-                           
-                            </Col>
-                          </Row>
-                          <Modal show={show}
-                size="lg"
-                centered
-            >
-                <Modal.Header>
+                        <Col md={6} className="">
 
-                    <Modal.Title id="contained-modal-title-vcenter">Delete Card</Modal.Title>
+                          <Button variant="link" size="sm" onClick={DeleteShow} style={{ width: "50px", marginRight: "10px" }}>
+                            <i className="fas fa-trash-alt fa-2x" style={{ color: "red" }}></i>
+                          </Button>{' '}
 
-                </Modal.Header>
-                <Modal.Body>
+                        </Col>
+                      </Row>
+                      <Modal show={show}
+                        size="lg"
+                        centered
+                      >
+                        <Modal.Header>
+
+                          <Modal.Title id="contained-modal-title-vcenter">Delete Card</Modal.Title>
+
+                        </Modal.Header>
+                        <Modal.Body>
 
 
-                  <h5>Are you sure you want to remove this card?</h5>
+                          <h5>Are you sure you want to remove this card?</h5>
 
-                </Modal.Body>
-                <Modal.Footer>
-                    <Button variant="success" onClick={handleDeleteAction}>
-                        Delete Card
-                    </Button>
-                    <Button variant="danger" onClick={handleClose}>
-                        Exit
-                    </Button>
+                        </Modal.Body>
+                        <Modal.Footer>
+                          <Button variant="success" onClick={handleDeleteAction}>
+                            Delete Card
+                          </Button>
+                          <Button variant="danger" onClick={handleClose}>
+                            Exit
+                          </Button>
 
-                </Modal.Footer>
-            </Modal>
+                        </Modal.Footer>
+                      </Modal>
 
                     </div>
 
