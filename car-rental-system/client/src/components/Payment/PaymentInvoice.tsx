@@ -1,42 +1,20 @@
-import React, { useState, useEffect, useRef } from 'react'
-import BookingCard from './BookingCard'
-import ReactToPrint from 'react-to-print';
-import { type } from 'os';
+import React from 'react'
+
 
 export default function PaymentInvoice() {
-    const componentRef = useRef(null);
-
+ 
     return (
         <div>
-            <div ref={componentRef}>
-                <div className="container" >
-                    <div className="row">
-                        <div className="col-7">
-
-
-
-                            <div className="card">
+       
+                            <div className="card" style={{background: "white"}}>
                                 <div className="card-body">
+                                    <h2 className='text-center'>payment Invoice</h2>
                                     <div className="container mb-6 mt-3">
                                         <div className="row d-flex align-items-baseline">
-                                            <div className="col-xl-8">
-                                            </div>
-                                            <div className="col-xl-4">
-                                                <a className="btn btn-light text-capitalize border-0 m-1" data-mdb-ripple-color="dark"><i
-                                                    className="fas fa-print text-primary"></i> Print</a>
-                                                <ReactToPrint
-                                                    trigger={() => <a className="btn btn-light text-capitalize" data-mdb-ripple-color="dark">
-                                                        <i className="far fa-file-pdf text-danger"></i> Export</a>}
-                                                    content={() => componentRef.current}
-
-
-                                                />
-
-
-                                            </div>
+                                       
                                             <hr />
                                         </div>
-                                        <div ref={componentRef}>
+                                   
                                             <div className="container" >
                                                 <p style={{ color: "#7e8d9f", fontSize: "20px" }}>Invoice---<strong>ID: #123-123</strong></p>
 
@@ -141,22 +119,14 @@ export default function PaymentInvoice() {
                                         </div>
                                     </div>
                                 </div>
-
+                                <br />
 
 
                             </div>
 
 
-                            <br />
-                        </div>
-                        <div className="col-3 mt-5">
-                            <BookingCard />
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
+                         
+               
 
     )
 }

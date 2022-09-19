@@ -16,9 +16,7 @@ export default function BookingDetails() {
 
             <BookingCard />
 
-            {/* <Link to="/add-booking"><button type="button" className="btn btn-warning" style={{ width: "400px", height: "35px", float: "right",marginLeft:"50px" }}>
-                Back To Change
-            </button></Link><br /><br /> */}
+          
         </div>
     )
 }

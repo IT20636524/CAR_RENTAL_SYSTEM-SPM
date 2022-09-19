@@ -165,7 +165,7 @@ export default function AddPayment() {
 </div></div>
     
     </div>
-    <div className="col-5 mt-5 ml-5">
+    <div className="col-5 mt-5" style={{ marginLeft: "80px" }}>
       <BookingDetails/>
     </div>
     <br />
