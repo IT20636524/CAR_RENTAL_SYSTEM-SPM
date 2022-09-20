@@ -11,6 +11,7 @@ import AdminCarPage from './pages/AdminCarPage';
 import AdminPaymentView from './pages/AdminPaymentView';
 import AdminStaffPage from './pages/AdminStaffPage';
 import CardViewPage from './pages/CardViewPage';
+import ContactUs from './pages/ContactUs';
 import Dashboard from './pages/Dashboard';
 import Homepage from './pages/Home';
 import Login from './pages/Login';
@@ -43,6 +44,7 @@ function App() {
           <Route path="/vehiclefleet" element={<VehicleFleet/>}/>
           <Route path="/view-bookings" element={<ViewBookings/>}/>
           <Route path="/adminpayment" element={<AdminPaymentView />} />
+          <Route path="/contactus" element={<ContactUs />} />
         
 
         </Routes>
