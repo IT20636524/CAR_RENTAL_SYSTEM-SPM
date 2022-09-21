@@ -10,6 +10,7 @@
     "mdb-react-ui-kit": "^4.2.0",
     "mdbreact": "^5.2.0",
     "mongoose": "^6.5.0",
+    "multer": "^1.4.5-lts.1",
     "node-gyp": "^9.1.0",
     "nodemon": "^2.0.19",
     "react-to-print": "^2.14.7",

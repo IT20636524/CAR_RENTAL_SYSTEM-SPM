@@ -17,6 +17,7 @@ import Homepage from './pages/Home';
 import Login from './pages/Login';
 import PaymentView from './pages/PaymentViewPage';
 import Register from './pages/Register';
+import Staff from './pages/StaffPage';
 import VehicleFleet from './pages/VehicleFleet';
 import ViewBookings from './pages/ViewBookings';
 // import SignUp from './pages/SignUp';
@@ -45,6 +46,7 @@ function App() {
           <Route path="/view-bookings" element={<ViewBookings/>}/>
           <Route path="/adminpayment" element={<AdminPaymentView />} />
           <Route path="/contactus" element={<ContactUs />} />
+          <Route path="/staff" element={<Staff />} />
         
 
         </Routes>
