@@ -4,6 +4,7 @@ import React, { useContext } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import UserProfile from './components/UserProfile/UserProfile';
 import { Context } from './context/Context';
+import AboutUsPage from './pages/AboutUsPage';
 import AddBooking from './pages/AddBooking';
 import AddPayment from './pages/AddPaymentPage';
 import AdminBookingPage from './pages/AdminBookingPage';
@@ -43,7 +44,8 @@ function App() {
           <Route path="/vehiclefleet" element={<VehicleFleet/>}/>
           <Route path="/view-bookings" element={<ViewBookings/>}/>
           <Route path="/adminpayment" element={<AdminPaymentView />} />
-        
+          <Route path="/about-us" element={<AboutUsPage />} />
+          
 
         </Routes>
       </BrowserRouter>

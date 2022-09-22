@@ -41,26 +41,28 @@ export default function AdminPayments() {
                         <table className="table text-start align-middle table-bordered table-hover mb-0" >
                         <thead className="thead-dark">
                             <tr>
-                            <th scope="col" style={{"fontSize":"20px","color":"white"}}>payment_id</th>
-                                <th scope="col" style={{"fontSize":"20px","color":"white"}}>booking_id</th>
-                                <th scope="col" style={{"fontSize":"20px","color":"white"}}>name</th>
-                                <th scope="col" style={{"fontSize":"20px","color":"white"}}>card </th>
-                                <th scope="col" style={{"fontSize":"20px","color":"white"}}>amount</th>
-                                <th scope="col" style={{"fontSize":"20px","color":"white"}}>contact_number</th>
-                               
+                            <th scope="col" style={{ "fontSize": "20px", "color": "white" }}>Payment Id</th>
+                                                <th scope="col" style={{ "fontSize": "20px", "color": "white" }}>Booking Id</th>
+                                                <th scope="col" style={{ "fontSize": "20px", "color": "white" }}>Name</th>
+                                                <th scope="col" style={{ "fontSize": "20px", "color": "white" }}>Card </th>
+                                                <th scope="col" style={{ "fontSize": "20px", "color": "white" }}>Amount</th>
+                                                <th scope="col" style={{ "fontSize": "20px", "color": "white" }}>Contact Number</th>
+                                                <th scope="col" style={{ "fontSize": "20px", "color": "white" }}>Date</th>
+                                
                                 
                             </tr>
                         </thead>
                         <tbody style={{color:"white"}}>
                             {pay.map(dm=>(
                             <tr key={dm.payment_id}>
-                                <td style={{"fontSize":"20px","fontFamily":"Arial-Black"}}>{dm.payment_id}</td>
-                                <td style={{"fontSize":"20px","fontFamily":"Arial-Black"}}>{dm.booking_id}</td>
-                                <td style={{"fontSize":"20px","fontFamily":"Arial-Black"}}>{dm.name}</td>
-                                <td style={{"fontSize":"20px","fontFamily":"Arial-Black"}}>{dm.card}</td>
-                                <td style={{"fontSize":"20px","fontFamily":"Arial-Black"}}>{dm.amount}</td>
-                                <td style={{"fontSize":"20px","fontFamily":"Arial-Black"}}>{dm.contact_number}</td>
-                            
+                               <td style={{ "fontSize": "20px", "fontFamily": "Arial-Black" }}>{dm.payment_id}</td>
+                                                    <td style={{ "fontSize": "20px", "fontFamily": "Arial-Black" }}>{dm.booking_id}</td>
+                                                    <td style={{ "fontSize": "20px", "fontFamily": "Arial-Black" }}>{dm.name}</td>
+                                                    <td style={{ "fontSize": "20px", "fontFamily": "Arial-Black" }}>{dm.card}</td>
+                                                    <td style={{ "fontSize": "20px", "fontFamily": "Arial-Black" }}>{dm.amount}</td>
+                                                    <td style={{ "fontSize": "20px", "fontFamily": "Arial-Black" }}>{dm.contact_number}</td>
+                                                    <td style={{ "fontSize": "20px", "fontFamily": "Arial-Black" }}>{dm.createdAt}</td>
+
                                
                             </tr>
                             ))}

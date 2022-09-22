@@ -5,13 +5,11 @@ import AdminSideNav from '../components/AdminSideNav'
 import AdminPayments from '../components/Payment/AdminPaymentTable'
 import PaymentReport from '../components/Payment/PaymentReport'
 import SearchPayment from '../components/Payment/SearchPayment'
-
+import { useState } from 'react';
 import "../components/styles.css"
 
-
-
 export default function AdminPaymentView() {
-
+    
     return (
         <>
 
@@ -26,7 +24,7 @@ export default function AdminPaymentView() {
                     </div>
 
                     <div className='text-end col-8 mt-5 me-1'>
-                        <PaymentReport />
+                        <PaymentReport  />
 
                     </div>
                 </div>
