@@ -12,7 +12,6 @@ const ContactUsRoute = require("./routes/contactus");
 const multer = require("multer");
 const path = require("path");
 
-
 const cors=require("cors");
 
 const corsOptions ={
@@ -35,29 +34,25 @@ mongoose.connect(process.env.MONGO_URL,{
 .catch(err=>console.log(err));
 
 const storage = multer.diskStorage({
-   
     destination: (req, file, cb) => {
       console.log(req);
-      cb(null, "images");
+      cb(null, "api/images");
     },
     filename: (req, file, cb) => {
       cb(null, req.body.name);
     },
-  });
-  
-  const upload = multer({ storage: storage });
-  app.post("/api/upload", upload.single("file"), (req, res) => {
-   
-    res.status(200).json("File has been uploaded");
-  });
+});
 
-  const update = multer({ storage: storage });
-  app.put("/api/update", update.single("file"), (req, res) => {
-    res.status(200).json("File has been updated");
-  });
+const upload = multer({ storage: storage });
+app.post("/api/upload", upload.single("file"), (req, res) => {
+  res.status(200).json("File has been uploaded");
+});
 
+const update = multer({ storage: storage });
+app.put("/api/update", update.single("file"), (req, res) => {
+  res.status(200).json("File has been updated");
+});
 
-app.use("/images", express.static(path.join(__dirname, "/images")));
 app.use("/api/UserAuth", UserAuthRoute);
 app.use("/api/bookings", BookingRoute);
 app.use("/api/staff", StaffRoute);
@@ -65,8 +60,7 @@ app.use("/api/cards", CardRoute);
 app.use("/api/cars", carRoute);
 app.use("/api/payments", PaymentRoute);
 app.use("/api/contactus", ContactUsRoute);
-
-
+app.use("/images", express.static(path.join(__dirname, "/images")));
 
 app.listen("5000", ()=>{
     console.log("Backend is running.");

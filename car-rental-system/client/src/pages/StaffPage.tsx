@@ -28,6 +28,7 @@ export default function Staff() {
       
       setStaff(res.data);
       setImages(res.data['image'])
+      
 
       console.log(res.data);
         
