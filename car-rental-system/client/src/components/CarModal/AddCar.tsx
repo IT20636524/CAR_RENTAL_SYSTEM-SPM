@@ -24,7 +24,7 @@ export default function AddCar() {
   const [costPerDay, setCostPerDay] = useState("");
   const [image, setImage] = useState("aa");
 
-  const [file, setFile] = useState<any>();
+  const [file, setFile] = useState<any>(null);
   const [value, setValue] = useState("default");
 
   //Clear button
@@ -101,10 +101,10 @@ export default function AddCar() {
         swal({
           text: "Successfully Added", icon: "success", buttons: {
             cancel: { text: 'Cancel' },
-            confirm: { text: 'Confirm' },
+            confirm: { text: 'OK' },
           }
         }).then((value) => {
-          window.location.href = '/admincarpage';
+          // window.location.href = '/admincarpage';
         });
       }).catch(function (error) {
         console.log(error);
@@ -113,10 +113,10 @@ export default function AddCar() {
       swal({
         text: "Successfully Added", icon: "success", buttons: {
           cancel: { text: 'Cancel' },
-          confirm: { text: 'Confirm' },
+          confirm: { text: 'OK' },
         }
       }).then((value) => {
-        window.location.href = '/admincarpage' + car_Id;
+        // window.location.href = '/admincarpage' + car_Id;
       });
     }
 

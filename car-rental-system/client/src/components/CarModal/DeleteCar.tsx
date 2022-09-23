@@ -71,7 +71,7 @@ export default function DeleteCar(props: { car_Id: string; }) {
             swal({
                 text: "Car Successfully Deleted", icon: "success", buttons: {
                     cancel: { text: 'Cancel' },
-                    confirm: { text: 'Confirm' },
+                    confirm: { text: 'OK' },
                 }
             })
                 .then((value) => {

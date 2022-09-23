@@ -51,7 +51,7 @@ export default function VehicleFleet() {
         <div className="row row-cols-1 row-cols-md-6 g-2" style={{ "marginLeft": "10px", "marginRight": "10px" }}>
           <div key={lcr.car_Id} className="col">
             <div className="card" >
-              <img src={lcr.image} className="card-img-top" alt="Fissure in Sandstone" />
+              <img src={PF+lcr.image} className="card-img-top" alt="" />
               <div className="card-body">
                 <h5 className="card-title">{lcr.model}</h5>
                 <a href="#!" className="btn btn-primary">Button</a>
@@ -67,7 +67,7 @@ export default function VehicleFleet() {
         <div className="row row-cols-1 row-cols-md-6 g-2" style={{ "marginLeft": "10px", "marginRight": "10px" }}>
           <div key={pcr.car_Id} className="col">
             <div className="card" >
-              <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" className="card-img-top" alt="Fissure in Sandstone" />
+              <img src={PF+pcr.image} className="card-img-top" alt="" />
               <div className="card-body">
                 <h5 className="card-title">{pcr.model}</h5>
                 <a href="#!" className="btn btn-primary">Button</a>
@@ -83,7 +83,7 @@ export default function VehicleFleet() {
         <div className="row row-cols-1 row-cols-md-6 g-2" style={{ "marginLeft": "10px", "marginRight": "10px" }}>
           <div key={gcr.car_Id} className="col">
             <div className="card" >
-              <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" className="card-img-top" alt="Fissure in Sandstone" />
+              <img src={PF+gcr.image} className="card-img-top" alt="" />
               <div className="card-body">
                 <h5 className="card-title">{gcr.model}</h5>
                 <a href="#!" className="btn btn-primary">Button</a>

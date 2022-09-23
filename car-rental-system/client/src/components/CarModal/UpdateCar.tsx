@@ -23,7 +23,7 @@ export default function UpdateCar(props: { car_Id: string; }) {
     const [engineCap, setEngineCap] = useState("");
     const [costPerDay, setCostPerDay] = useState("");
     const [image, setImage] = useState("");
-    const PF = "http://localhost:5000/image/";
+    const PF = "http://localhost:5000/images/";
     const [file, setFile] = useState<any>();
 
     const handleUpdate = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -104,7 +104,7 @@ export default function UpdateCar(props: { car_Id: string; }) {
             swal({
                 text: "Car Successfully Updated", icon: "success", buttons: {
                     cancel: { text: 'Cancel' },
-                    confirm: { text: 'Confirm' },
+                    confirm: { text: 'OK' },
                 }
             }).then((value) => {
                 window.location.replace("/admincarpage");
