@@ -1,10 +1,25 @@
+import axios from 'axios';
 import React, { useState } from 'react'
 import { Button, Modal } from 'react-bootstrap';
+import swal from 'sweetalert';
 
 export default function DeleteBookingModal() {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const [show, setShow] = useState(false);
+    const [bookingId, setBookingId]=useState("");
+
+    function submitForm(e:any){
+        e.preventDefault();
+        axios.delete(`http://localhost:5000/api/bookings/delete/B004`).then(function (response){
+            swal({ text: "Booking Successfully Deleted", icon: "success"
+              });
+            setShow(false);
+        }).catch(function(error){
+            console.log(error);
+        });
+    }   
+
     return (
         <>
             <button type="button" className="btn btn-danger btn-floating booking-btn3" onClick={handleShow}>
@@ -22,7 +37,7 @@ export default function DeleteBookingModal() {
                     <h5>Are you sure you want to delete this booking?</h5>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="success" >
+                    <Button variant="success" type='submit' onClick={submitForm}>
                         Yes
                     </Button>
                     <Button variant="danger" onClick={handleClose}>
