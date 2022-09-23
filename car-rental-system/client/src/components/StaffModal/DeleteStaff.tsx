@@ -96,7 +96,7 @@ export default function DeleteStaff(props: { driver_code: string; }) {
             </Button>
 
             <Modal show={show}
-                size="lg"
+                md={2}
                 centered
             >
                 <Modal.Header>

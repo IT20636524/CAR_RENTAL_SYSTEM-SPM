@@ -153,7 +153,7 @@ export default function UpdateStaff(props: { driver_code: string; }) {
   <Col sm={3}>
   <fieldset>
   <Form.Group >
-<h5  >Staff Image</h5> 
+
 {file && (
         <img className='img-fluid rounded' src={URL.createObjectURL(file)} alt="" /> 
         

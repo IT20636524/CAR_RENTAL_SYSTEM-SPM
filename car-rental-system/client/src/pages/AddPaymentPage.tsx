@@ -5,8 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import axios from 'axios';
 import Header from '../components/Header';
-import BookingDetails from '../components/BookingDetails';
 import Footer from '../components/Footer';
+import BookingDetails from '../components/Payment/BookingDetails';
 
 
 
@@ -98,29 +98,29 @@ export default function AddPayment() {
 
 <div className="row">
 
-    <div className="col-md-9 mb-md-0 mb-5">
+    <div className="col-md-9 mb-md-0 mb-5" >
         <form id="contact-form" name="contact-form" action="mail.php" method="POST" onSubmit={submitForm}>
 
         <div className="form-floating mb-3">
-            <input className="form-control" id="bookingid" type="text" placeholder="Booking ID" value={booking_id} onChange={(e)=>setBookingId(e.target.value)} />
-            <label htmlFor="bookingid">Booking ID</label>
+            <input className="form-control" id="bookingid" type="text" placeholder="Booking ID" value={booking_id} onChange={(e)=>setBookingId(e.target.value)}/>
+            <label htmlFor="bookingid"  style={{fontSize:"16px"}} >Booking ID</label>
           
         </div>
 <br />
         <div className="form-floating mb-3">
             <input className="form-control" id="name" type="text" placeholder="Name"  value={name} onChange={(e)=>setName(e.target.value)}/>
-            <label htmlFor="name">Name</label>
+            <label htmlFor="name" style={{fontSize:"16px"}}>Name</label>
            
         </div>
     <br />   
         <div className="form-floating mb-3">
             <input className="form-control" id="contact" type="text" placeholder="Contact Number"  value={contact_number} onChange={(e)=>setContactNumber(e.target.value)}/>
-            <label htmlFor="contact">Contact Number</label>
+            <label htmlFor="contact" style={{fontSize:"16px"}}>Contact Number</label>
            
         </div>   
 <br />
         <select className="form-select mb-4 text-grey" aria-label="Disabled select example" onChange={(e)=>setCard(e.target.value)}>
-          <option selected>Select a Card</option>
+          <option selected style={{fontSize:"16px"}}>Select a Card</option>
           <option value="1">1234567812345678</option>
          
 <br />
@@ -134,7 +134,7 @@ export default function AddPayment() {
 
         <div className="form-floating mb-3">
             <input className="form-control" id="amount" type="text" placeholder="Amount"  value={amount} onChange={(e)=>setAmount(e.target.value)}/>
-            <label htmlFor="amount">Amount</label>
+            <label htmlFor="amount" style={{fontSize:"16px"}}>Amount</label>
            
         </div>
 
@@ -165,7 +165,7 @@ export default function AddPayment() {
 </div></div>
     
     </div>
-    <div className="col-5 mt-5 ml-5">
+    <div className="col-5 mt-5" style={{ marginLeft: "80px" }}>
       <BookingDetails/>
     </div>
     <br />
