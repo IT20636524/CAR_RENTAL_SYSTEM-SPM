@@ -258,7 +258,6 @@ export default function ContactUs() {
   <tr>
     <td className="stftable">
       <div className="col-lg-9 p-4  border border-dark"  >    
-          <i className="bi bi-envelope"></i>
           <i className="fas fa-envelope fa-2x" style={{marginRight:"80px",marginBottom:"20px",color:"#1A237E"}}></i>
           <h3 style={{fontSize:"30px",fontFamily:"fantasy",marginRight:"60px"}}>Email Us</h3>
           <p style={{color:"black",fontStyle:"italic",marginRight:"40px"}}>hr@gorent.com<br/>contact@gorent.com</p>
@@ -267,10 +266,10 @@ export default function ContactUs() {
 
         <td className="stftable">
         <div className="col-lg-9 p-4  border border-dark" style={{width:"250px"}}>
-          <i className="bi bi-clock"></i>
-          <i className="fas fa-handshake fa-2x" style={{marginRight:"80px",marginBottom:"20px",color:"#1A237E"}}></i>
+          <i className="fas fa-user-clock fa-2x" style={{marginRight:"80px",marginBottom:"20px",color:"#1A237E"}}></i>
           <h3 style={{fontSize:"30px",fontFamily:"fantasy",marginRight:"30px"}}>Open Hours</h3>
-          <p style={{color:"black",fontStyle:"italic",marginRight:"50px",marginBottom:"40px"}}>24 Hours</p>
+          
+          <p style={{color:"black",fontStyle:"italic",marginRight:"50px",marginBottom:"45px"}}>24 Hours</p>
           </div>
         </td>
    

@@ -34,6 +34,7 @@ export default function AdminSideNav() {
                                 <Link to={"/adminstaffpage"} className="nav-item nav-link"><i className="fas fa-users-cog me-3"></i>Drivers</Link><br />
                                 <Link to={"/admin-booking"} className="nav-item nav-link"><i className="fab fa-first-order me-3"></i>Bookings</Link><br />
                                 <Link to={"/adminpayment"} className="nav-item nav-link"><i className="far fa-credit-card me-3"></i>Payments</Link><br />
+                                <Link to={"/admincontactus"} className="nav-item nav-link"><i className="fas fa-comment-alt me-3"></i>Messages</Link><br />
                                 <Link to={"/dashboard"} className="nav-item nav-link"><i className="fas fa-cogs me-3"></i>Settings</Link><br />
                                 <Link to={"/dashboard"} className="nav-item nav-link"><i className="fa fa-adjust me-3"></i>Mode</Link>
 
