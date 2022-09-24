@@ -49,7 +49,7 @@ function App() {
           <Route path="/adminpayment" element={<AdminPaymentView />} />
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/staff" element={<Staff />} />
-        
+          <Route path="/admincontactus" element={<AdminContactUsPage />} />
           <Route path="/about-us" element={<AboutUsPage />} />
           
 
