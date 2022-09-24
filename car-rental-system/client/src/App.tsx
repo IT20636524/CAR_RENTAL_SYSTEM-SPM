@@ -8,6 +8,7 @@ import AddBooking from './pages/AddBooking';
 import AddPayment from './pages/AddPaymentPage';
 import AdminBookingPage from './pages/AdminBookingPage';
 import AdminCarPage from './pages/AdminCarPage';
+import AdminContactUsPage from './pages/AdminContactUsPage';
 import AdminPaymentView from './pages/AdminPaymentView';
 import AdminStaffPage from './pages/AdminStaffPage';
 import CardViewPage from './pages/CardViewPage';
@@ -47,7 +48,7 @@ function App() {
           <Route path="/adminpayment" element={<AdminPaymentView />} />
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/staff" element={<Staff />} />
-        
+          <Route path="/admincontactus" element={<AdminContactUsPage />} />
 
         </Routes>
       </BrowserRouter>
