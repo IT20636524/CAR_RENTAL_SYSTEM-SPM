@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { Button, Modal } from 'react-bootstrap';
 import swal from 'sweetalert';
 
-export default function DeleteBookingModal() {
+export default function DeleteBookingModal({booking_id,getData}:any) {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const [show, setShow] = useState(false);
@@ -11,9 +11,10 @@ export default function DeleteBookingModal() {
 
     function submitForm(e:any){
         e.preventDefault();
-        axios.delete(`http://localhost:5000/api/bookings/delete/B004`).then(function (response){
+        axios.delete(`http://localhost:5000/api/bookings/delete/`+booking_id).then(function (response){
             swal({ text: "Booking Successfully Deleted", icon: "success"
               });
+            getData()
             setShow(false);
         }).catch(function(error){
             console.log(error);

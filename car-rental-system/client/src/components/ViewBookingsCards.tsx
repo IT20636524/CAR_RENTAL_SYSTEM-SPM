@@ -49,7 +49,7 @@ export default function ViewBookingsCards() {
                             <div className="card-footer">
                                 <button type="button" className="btn btn-success btn-rounded booking-btn">Pay</button>
                                 <UpdateBookingModal booking_id={bm.booking_id} getData={getData}/>
-                                <DeleteBookingModal />
+                                <DeleteBookingModal booking_id={bm.booking_id} getData={getData}/>
                             </div>
                         </div>
                     </div>
