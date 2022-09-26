@@ -29,8 +29,8 @@ const SearchBooking = (props: any) => {
                 size="lg"
                 centered
             >
-                {/* <SearchBookingModal booking_id={bookingId}/> */}
-                <SearchBookingModal/>
+                <SearchBookingModal bookingId={bookingId}/>
+                {/* <SearchBookingModal/> */}
                 <Modal.Footer>
                     <Button variant="danger" onClick={handleClose}>
                         Cancel
