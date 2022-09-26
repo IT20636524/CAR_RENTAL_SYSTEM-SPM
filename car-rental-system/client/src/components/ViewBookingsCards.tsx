@@ -4,22 +4,38 @@ import React, { useEffect, useState } from 'react'
 import DeleteBookingModal from './BookingModal/DeleteBookingModal'
 import UpdateBookingModal from './BookingModal/UpdateBookingModal'
 
-export default function ViewBookingsCards() {
-    const [bookings, setBookings] = useState([]);
+interface bookings{
+    booking_id:string,
+    name:string,
+    address:string,
+    contact_number:string,
+    type_of_service:string,
+    selected_model:string,
+    no_of_days:string,
+    location:string,
+    vehicle_pic:string
+}
 
+export default function ViewBookingsCards() {
+    const [bookings, setBookings] = useState<bookings[]>([]);
     useEffect(() => {
+        getData()
+    },[]);
+
+    const getData =()=>{
+
         axios.get("http://localhost:5000/api/bookings").then(res => {
-            console.log(res);
+            console.log(res.data);
             setBookings(res.data);
         }).catch(error => {
             console.log(error);
         })
-    });
+    }
 
     return (
         <>
             <div className="row row-cols-1 row-cols-md-4 g-4">
-                {/* {bookings.map(bm => (
+                {bookings.map(bm => (
                     <div className="col" key={bm.booking_id}>
                         <div className="card h-100">
                             <div className="card-imag h-50">
@@ -32,64 +48,14 @@ export default function ViewBookingsCards() {
                             </div>
                             <div className="card-footer">
                                 <button type="button" className="btn btn-success btn-rounded booking-btn">Pay</button>
-                                <UpdateBookingModal booking_id={bm.booking_id} />
+                                <UpdateBookingModal booking_id={bm.booking_id} getData={getData}/>
                                 <DeleteBookingModal />
                             </div>
                         </div>
                     </div>
-                ))} */}
-
-                <div className="col">
-                    <div className="card h-100">
-                        <div className="card-image  h-50">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGRRkfQf1rRVlkgyYdQbY5rnGQM-crEQB_mg&usqp=CAU" className="card-img-top" alt="Palm Springs Road" />
-                        </div>
-                        <div className="card-body">
-                            <h5 className="card-title">Car Model</h5>
-                            <p>Booking Id</p>
-                            <p>Location</p>
-                        </div>
-                        <div className="card-footer">
-                            <button type="button" className="btn btn-success btn-rounded booking-btn">Pay</button>
-                            <UpdateBookingModal />
-                            <DeleteBookingModal/>
-                        </div>
-                    </div>
-                </div>
-                <div className="col">
-                    <div className="card h-100">
-                        <div className="card-image h-50">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJSL1y7znQ_F5h1dg2ApgLVX9kLIdn6LWfLg&usqp=CAU" className="card-img-top" alt="Los Angeles Skyscrapers" />
-                        </div>
-                        <div className="card-body">
-                            <h5 className="card-title">Car Model</h5>
-                            <p>Booking Id</p>
-                            <p>Location</p>
-                        </div>
-                        <div className="card-footer">
-                            <button type="button" className="btn btn-success btn-rounded booking-btn">Pay</button>
-                            <UpdateBookingModal />
-                            <DeleteBookingModal/>
-                        </div>
-                    </div>
-                </div>
-                <div className="col">
-                    <div className="card h-100">
-                        <div className="card-image h-50">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzuUOLArkFFzr4mLo-EmJLHMOcbr4AHVsG4w&usqp=CAU" className="card-img-top" alt="Skyscrapers"/>
-                        </div>
-                        <div className="card-body">
-                            <h5 className="card-title">Car Model</h5>
-                            <p>Booking Id</p>
-                            <p>Location</p>
-                        </div>
-                        <div className="card-footer">
-                            <button type="button" className="btn btn-success btn-rounded booking-btn">Pay</button>
-                            <UpdateBookingModal />
-                            <DeleteBookingModal/>
-                        </div>
-                    </div>
-                </div>
+                ))}
+                
+                
             </div>
         </>
     )
