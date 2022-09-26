@@ -3,7 +3,8 @@ import React, { useState } from 'react'
 import { Button, Col, Form, Modal, Row } from 'react-bootstrap'
 import swal from 'sweetalert';
 
-export default function UpdateBookingModal() {
+
+export default function UpdateBookingModal({booking_id,getData}:any) {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const [show, setShow] = useState(false);
@@ -32,7 +33,7 @@ export default function UpdateBookingModal() {
     }
 
     const updateShow = () =>{
-        axios.get("http://localhost:5000/api/bookings/B002")
+        axios.get("http://localhost:5000/api/bookings/"+booking_id)
         .then(function(response){
             setName(response.data['name']);
             setAddress(response.data['address']);
@@ -48,9 +49,10 @@ export default function UpdateBookingModal() {
     function submitForm(e:any){
         e.preventDefault();
         console.log(bookingData);
-        axios.put("http://localhost:5000/api/bookings/update/B002",bookingData)
+        axios.put("http://localhost:5000/api/bookings/update/"+booking_id,bookingData)
         .then(function(response) {
             console.log(response);
+            getData()
             setName('');
             setAddress('');
             setContactNumber('');

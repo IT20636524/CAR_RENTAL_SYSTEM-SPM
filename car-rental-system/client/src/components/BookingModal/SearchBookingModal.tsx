@@ -3,7 +3,7 @@ import { MDBCol } from 'mdb-react-ui-kit'
 import React, { useState } from 'react'
 import { Col, Form, Modal, Row } from 'react-bootstrap'
 
-export default function SearchBookingModal() {
+export default function SearchBookingModal({bookingId}:any) {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const [show, setShow] = useState(false);
@@ -20,7 +20,7 @@ export default function SearchBookingModal() {
     const [vehicle_pic, setVehiclePic]=useState("");
 
 
-    axios.get("http://localhost:5000/api/bookings/B002")
+    axios.get("http://localhost:5000/api/bookings/"+bookingId)
     .then(function(response){
         setBookingId(response.data['booking_id']);
         setName(response.data['name']);
