@@ -79,4 +79,14 @@ router.route("/countDocuments/:name/:paymentStatus").get(function(req, res) {
     });
   });
 
+//
+router.route("/countDocuments/:name").get(function(req, res) {
+    Booking.count({ name:req.params.name,timestamp:Date()}, function(err, result) {
+      if (err) {
+        res.send(err);
+      } else {
+        res.json(result);
+      }
+    });
+  });
 module.exports = router;
