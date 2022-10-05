@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import Button from 'react-bootstrap/Button';
 import { Col, Row, Form } from "react-bootstrap";
 import Modal from 'react-bootstrap/Modal';
@@ -9,10 +9,30 @@ import { Context } from '../../context/Context';
 import Header from '../Header';
 import Footer from '../Footer';
 import '@fortawesome/fontawesome-svg-core/styles.css'
+import axios from 'axios';
 
 export default function UserProfile() {
 
     const { user, dispatch } = useContext(Context);
+    const [paid,setPaid] = useState(0);
+    const [pending,setPending] = useState(0);
+    const [newly_created,setNewlyCreated] = useState(0);
+
+    useEffect(()=>{
+        const data1=('http://localhost:5000/api/bookings/countDocuments/Prathibha') ;
+            axios.get(data1).then(function(response){
+                setNewlyCreated(response.data)
+            });
+        const data2=('http://localhost:5000/api/bookings/countDocuments/Prathibha/pending') ;
+            axios.get(data2).then(function(response){
+                setPending(response.data)
+            });
+        const data3=('http://localhost:5000/api/bookings/countDocuments/Prathibha/paid') ;
+            axios.get(data3).then(function(response){
+                setPaid(response.data)
+            });
+    })
+    
     return (
         <div>
             <Header/>
@@ -27,15 +47,15 @@ export default function UserProfile() {
 
                             <div className="col-md-4">
                                 <h5>New</h5>
-                                <span className="num">1</span>
+                                <span className="num">{newly_created}</span>
                             </div>
                             <div className="col-md-4">
                                 <h5>Pending</h5>
-                                <span className="num">0</span>
+                                <span className="num">{pending}</span>
                             </div>
                             <div className="col-md-4">
                                 <h5>Done</h5>
-                                <span className="num">0</span>
+                                <span className="num">{paid}</span>
                             </div>
 
                         </div>
