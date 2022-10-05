@@ -68,4 +68,15 @@ router.delete("/delete/:id", async(req,res) => {
     }
 })
 
+//Get booking count
+router.route("/countDocuments/:name/:paymentStatus").get(function(req, res) {
+    Booking.count({ name:req.params.name,payment_status: req.params.paymentStatus}, function(err, result) {
+      if (err) {
+        res.send(err);
+      } else {
+        res.json(result);
+      }
+    });
+  });
+
 module.exports = router;

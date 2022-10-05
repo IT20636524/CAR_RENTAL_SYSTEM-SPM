@@ -38,6 +38,10 @@ const BookingSchema = new mongoose.Schema(
         vehicle_pic:{
             type:String,
             default:"",
+        },
+        payment_status:{
+            type:String,
+            default:"pending",
         }
     },
     {timestamps:true}
