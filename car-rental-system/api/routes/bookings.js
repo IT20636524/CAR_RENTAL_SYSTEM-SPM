@@ -79,7 +79,7 @@ router.route("/countDocuments/:name/:paymentStatus").get(function(req, res) {
     });
   });
 
-//
+//Get today booking count
 router.route("/countDocuments/:name").get(function(req, res) {
     Booking.count({ name:req.params.name,timestamp:Date()}, function(err, result) {
       if (err) {
@@ -89,4 +89,5 @@ router.route("/countDocuments/:name").get(function(req, res) {
       }
     });
   });
+
 module.exports = router;

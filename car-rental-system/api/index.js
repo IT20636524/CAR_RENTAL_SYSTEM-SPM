@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const UserAuthRoute = require("./routes/UserAuth");
 const BookingRoute = require("./routes/bookings");
+const AcceptedBookingRoute = require("./routes/acceptedBookings");
 const CardRoute = require("./routes/cards");
 const StaffRoute = require("./routes/staff");
 const carRoute = require("./routes/cars");
@@ -55,6 +56,7 @@ app.put("/api/update", update.single("file"), (req, res) => {
 
 app.use("/api/UserAuth", UserAuthRoute);
 app.use("/api/bookings", BookingRoute);
+app.use("/api/acceptedbookings", AcceptedBookingRoute);
 app.use("/api/staff", StaffRoute);
 app.use("/api/cards", CardRoute);
 app.use("/api/cars", carRoute);
