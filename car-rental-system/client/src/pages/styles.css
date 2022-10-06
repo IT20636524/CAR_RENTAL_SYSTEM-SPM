@@ -71,3 +71,8 @@
 .viewBooking{
   margin: 20px;
 }
+
+/* Admin Booking css */
+.admin-booking-table{
+  margin: 0;
+}
