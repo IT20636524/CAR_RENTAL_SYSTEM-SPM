@@ -15,6 +15,7 @@ export default function AddBookingForm() {
     const [image, setImage] = useState("");
     const PF = "http://localhost:5000/image/"
     const [name, setName] = useState("");
+    const [email,setEmail] = useState("");
     const [address, setAddress] = useState("");
     const [contact_number, setContactNumber] = useState("");
     const [type_of_service, setTypeOfService] = useState("");
@@ -35,6 +36,7 @@ export default function AddBookingForm() {
 
     const bookingData = {
         name,
+        email,
         address,
         contact_number,
         type_of_service,
