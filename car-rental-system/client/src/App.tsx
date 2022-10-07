@@ -12,6 +12,7 @@ import AdminCarPage from './pages/AdminCarPage';
 import AdminContactUsPage from './pages/AdminContactUsPage';
 import AdminPaymentView from './pages/AdminPaymentView';
 import AdminStaffPage from './pages/AdminStaffPage';
+import CarDetailsPage from './pages/CarDetailsPage';
 import CardViewPage from './pages/CardViewPage';
 import ContactUs from './pages/ContactUs';
 import Dashboard from './pages/Dashboard';
@@ -51,6 +52,7 @@ function App() {
           <Route path="/staff" element={<Staff />} />
           <Route path="/admincontactus" element={<AdminContactUsPage />} />
           <Route path="/about-us" element={<AboutUsPage />} />
+          <Route path="/CarDetailsPage/:id" element={<CarDetailsPage />} />
           
 
         </Routes>
