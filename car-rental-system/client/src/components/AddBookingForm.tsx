@@ -78,9 +78,9 @@ export default function AddBookingForm() {
                 <h3 className='bfFormTitle'>Reserve Your Car Here</h3>
             </div>
             <br /><br />
-            <Form onSubmit={handleSubmit}>
+            <Form onSubmit={handleSubmit} className="bFormItem">
                 <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
-                    <Form.Label column sm="2">
+                    <Form.Label column sm="2" className='bFormLables'>
                         Your Name
                     </Form.Label>
                     <Col sm="7">
@@ -88,7 +88,7 @@ export default function AddBookingForm() {
                     </Col>
                 </Form.Group>
                 <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
-                    <Form.Label column sm="2">
+                    <Form.Label column sm="2" className='bFormLables'>
                         Your Address
                     </Form.Label>
                     <Col sm="7">
@@ -96,7 +96,7 @@ export default function AddBookingForm() {
                     </Col>
                 </Form.Group>
                 <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
-                    <Form.Label column sm="2">
+                    <Form.Label column sm="2" className='bFormLables'>
                         Your Contact Number
                     </Form.Label>
                     <Col sm="7">
@@ -104,7 +104,7 @@ export default function AddBookingForm() {
                     </Col>
                 </Form.Group>
                 <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
-                    <Form.Label column sm="2">
+                    <Form.Label column sm="2" className='bFormLables'>
                         Type of Service
                     </Form.Label>
                     <Col sm={7}>
@@ -116,7 +116,7 @@ export default function AddBookingForm() {
                     </Col>
                 </Form.Group>
                 <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
-                    <Form.Label column sm="2">
+                    <Form.Label column sm="2" className='bFormLables'>
                         Selected Model
                     </Form.Label>
                     <Col sm="7">
@@ -124,7 +124,7 @@ export default function AddBookingForm() {
                     </Col>
                 </Form.Group>
                 <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
-                    <Form.Label column sm="2">
+                    <Form.Label column sm="2" className='bFormLables'>
                         No of Days
                     </Form.Label>
                     <Col sm="7">
@@ -132,7 +132,7 @@ export default function AddBookingForm() {
                     </Col>
                 </Form.Group>
                 <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
-                    <Form.Label column sm="2">
+                    <Form.Label column sm="2" className='bFormLables'>
                         Location
                     </Form.Label>
                     <Col sm="7">

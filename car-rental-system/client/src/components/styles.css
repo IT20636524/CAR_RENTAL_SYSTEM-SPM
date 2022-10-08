@@ -299,21 +299,46 @@
 /*** BookingSideBar ***/
 .bSidebar{
     flex:3;
+    background: rgb(2,0,36);
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 29%, rgba(7,57,153,1) 48%, rgba(5,102,182,1) 74%, rgba(0,212,255,1) 100%);
+}
+.bSidebarItem{
+    margin-left: 10px;
+}
+.bSidebarImg{
+    margin-left: 10%;
+    margin-top: 20px;
+}
+.bSidebarTitle{
+    color: rgb(255, 255, 255);
+}
+.bSidebarLables{
+    color: aliceblue;
 }
 
 
 /*** BookingForm ***/
 .bookingForm{
     flex:9;
+    background: rgb(2,0,36);
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 29%, rgba(7,57,153,1) 48%, rgba(5,102,182,1) 74%, rgba(0,212,255,1) 100%);
 }
 .bfFormTitle{
     display: flex;
     justify-content: center;
+    color: aliceblue;
 }
 .add-book-btn{
     display: flex;
     justify-content: center;
     margin-left: 125px;
+}
+.bFormItem{
+    margin-left: 20px;
+}
+
+.bFormLables{
+    color: aliceblue;
 }
 
 /*** ViewBookingCard ***/

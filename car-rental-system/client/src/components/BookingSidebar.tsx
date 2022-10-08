@@ -36,12 +36,13 @@ export default function BookingSidebar() {
                         src={PF+image}
                         alt="image"
                         width={300}
+                        className='bSidebarImg'
                     />
                     <br /><br />
                     <span className="bSidebarTitle"><h3>SPECIFICATIONS</h3></span>
                     <br />
-                    <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
-                        <Form.Label column sm="3">
+                    <Form.Group as={Row} className="mb-3 " controlId="formPlaintextEmail">
+                        <Form.Label column sm="3" className="bSidebarLables">
                             Passengers
                         </Form.Label>
                         <Col sm="7">
@@ -49,7 +50,7 @@ export default function BookingSidebar() {
                         </Col>
                     </Form.Group>
                     <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
-                        <Form.Label column sm="3">
+                        <Form.Label column sm="3" className="bSidebarLables">
                             Transmission
                         </Form.Label>
                         <Col sm="7">
@@ -57,7 +58,7 @@ export default function BookingSidebar() {
                         </Col>
                     </Form.Group>
                     <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
-                        <Form.Label column sm="3">
+                        <Form.Label column sm="3" className="bSidebarLables">
                             Air Condition
                         </Form.Label>
                         <Col sm="7">
@@ -65,7 +66,7 @@ export default function BookingSidebar() {
                         </Col>
                     </Form.Group>
                     <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
-                        <Form.Label column sm="3">
+                        <Form.Label column sm="3" className="bSidebarLables">
                             Fuel Type
                         </Form.Label>
                         <Col sm="7">
@@ -73,7 +74,7 @@ export default function BookingSidebar() {
                         </Col>
                     </Form.Group>
                     <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
-                        <Form.Label column sm="3">
+                        <Form.Label column sm="3" className="bSidebarLables">
                             Engine Capacity
                         </Form.Label>
                         <Col sm="7">
@@ -81,7 +82,7 @@ export default function BookingSidebar() {
                         </Col>
                     </Form.Group>
                     <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
-                        <Form.Label column sm="3">
+                        <Form.Label column sm="3" className="bSidebarLables">
                             Cost Per Day
                         </Form.Label>
                         <Col sm="7">
