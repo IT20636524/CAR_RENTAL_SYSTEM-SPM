@@ -336,3 +336,17 @@
 .search{
     justify-content: right;
 }
+
+
+.staff-card {
+	color:#fff;
+    width: 350px;
+    border-radius: 10px;
+   background: linear-gradient(145deg, #01579B, #01579B);
+box-shadow:  10px 10px 30px #80D8FF, 
+             -10px -10px 30px #80D8FF;
+    border: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}

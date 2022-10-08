@@ -56,11 +56,11 @@ export default function Staff() {
     {staff.map(stf=>(
       <Link to={`/${stf.driver_code}`} key={stf.driver_code} className="col-lg-3 credit-card ">
       
-                        <div  className="card border border-dark " style={{ marginLeft:"70px",marginBottom:"40px", width: "15rem", height: "20rem" }}>
+                        <div  className="card border staff-card" style={{ marginLeft:"70px",marginBottom:"40px", width: "15rem", height: "20rem" }}>
                             <div className="card-img-top">
 
                             
-                            <img  src={PF+stf.image} className='img-fluid rounded border border-5' style={{height:"200px", width:"200px",marginLeft:"20px", marginTop:"10px" }}alt=''  />
+                            <img  src={PF+stf.image} className='img-fluid rounded border ' style={{height:"200px", width:"200px",marginLeft:"20px", marginTop:"10px" }}alt=''  />
                             {/* <img  src="https://www.pngkit.com/png/detail/20-204640_mens-formal-wear-png.png" className='img-fluid rounded' style={{height:"200px", width:"200px",marginLeft:"10px" }}alt=''  /> */}
                             </div>
                             <div className="card-body ">
