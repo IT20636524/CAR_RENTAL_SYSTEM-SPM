@@ -17,6 +17,7 @@ import CardViewPage from './pages/CardViewPage';
 import ContactUs from './pages/ContactUs';
 import Dashboard from './pages/Dashboard';
 import Homepage from './pages/Home';
+import Inquiries from './pages/Inquiries';
 import Login from './pages/Login';
 import PaymentView from './pages/PaymentViewPage';
 import Register from './pages/Register';
@@ -53,8 +54,7 @@ function App() {
           <Route path="/admincontactus" element={<AdminContactUsPage />} />
           <Route path="/about-us" element={<AboutUsPage />} />
           <Route path="/CarDetailsPage/:id" element={<CarDetailsPage />} />
-          
-
+          <Route path='/inquiries' element={<Inquiries/>}/>
         </Routes>
       </BrowserRouter>
     </>

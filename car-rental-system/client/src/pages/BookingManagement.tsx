@@ -55,7 +55,7 @@ export default function BookingManagement() {
         vehicle_pic
     }
 
-    // add booking details
+    // accept booking details
     const handleSubmit =(e:any)=>{
         e.preventDefault();
         if(name.length === 0 || address.length === 0 || contact_number.length === 0 || no_of_days.length === 0 || location.length === 0){
