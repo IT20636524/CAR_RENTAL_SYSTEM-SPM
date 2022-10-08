@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import swal from 'sweetalert';
 
 interface bookings {
     booking_id: string,
@@ -17,6 +18,17 @@ interface bookings {
 
 export default function BookingManagement() {
     const [bookings, setBookings] = useState<bookings[]>([]);
+    const [name,setName] = useState("");
+    const [email,setEmail] = useState("");
+    const [address,setAddress] = useState("");
+    const [contact_number,setContactNumber] = useState("");
+    const [type_of_service,setTypeOfService] = useState("");
+    const [selected_model,setSelectedModel] = useState("");
+    const [no_of_days,setNoOfDays] = useState("");
+    const [location,setLocation] = useState("");
+    const [vehicle_pic,setVehiclePic] = useState("");
+
+
     useEffect(() => {
         getData()
     }, []);
@@ -30,6 +42,44 @@ export default function BookingManagement() {
             console.log(error);
         })
     }
+
+    const bookingData = {
+        name,
+        email,
+        address,
+        contact_number,
+        type_of_service,
+        selected_model,
+        no_of_days,
+        location,
+        vehicle_pic
+    }
+
+    // add booking details
+    const handleSubmit =(e:any)=>{
+        e.preventDefault();
+        if(name.length === 0 || address.length === 0 || contact_number.length === 0 || no_of_days.length === 0 || location.length === 0){
+            swal(" Fields Cannot empty !","Please enter all data !", "error");
+        }else{
+            console.log(bookingData);
+            axios.post('http://localhost:5000/api/bookings/add',bookingData)
+            .then(function(response) {
+                console.log(response);
+                setName('');
+                setAddress('');
+                setContactNumber('');
+                setTypeOfService('');
+                setNoOfDays('');
+                setLocation('');
+                swal({ text: "Accepted", icon: "success"})
+            })
+            .catch(function(error) {
+                console.log(error);
+                alert("Not added");
+            });
+        }
+    }
+
     return (
         <div>
             <table className="table align-middle mb-0 bg-white admin-booking-table">
@@ -81,6 +131,7 @@ export default function BookingManagement() {
                                     type="button"
                                     className="btn btn-link btn-rounded btn-sm fw-bold"
                                     data-mdb-ripple-color="dark"
+                                    onClick={handleSubmit}
                                 >
                                     Accept
                                 </button>

@@ -13,7 +13,7 @@ export default function BookingSidebar() {
     const [costPerDay, setCostPerDay] = useState("");
     const [model, setModel] = useState("");
     const [image, setImage] = useState("");
-    const PF = "http://localhost:5000/image/"
+    const PF = "http://localhost:5000/images/"
 
 
     axios.get("http://localhost:5000/api/cars/CI001").then(function (response) {
@@ -34,12 +34,14 @@ export default function BookingSidebar() {
                 <Form>
                     <img
                         src={PF+image}
-                        alt=""
+                        alt="image"
+                        width={300}
                     />
-                    <span className="bSidebarTitle"><h3>SPECIFICATIONS</h3></span>
                     <br /><br />
+                    <span className="bSidebarTitle"><h3>SPECIFICATIONS</h3></span>
+                    <br />
                     <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
-                        <Form.Label column sm="2">
+                        <Form.Label column sm="3">
                             Passengers
                         </Form.Label>
                         <Col sm="7">
@@ -47,7 +49,7 @@ export default function BookingSidebar() {
                         </Col>
                     </Form.Group>
                     <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
-                        <Form.Label column sm="2">
+                        <Form.Label column sm="3">
                             Transmission
                         </Form.Label>
                         <Col sm="7">
@@ -55,7 +57,7 @@ export default function BookingSidebar() {
                         </Col>
                     </Form.Group>
                     <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
-                        <Form.Label column sm="2">
+                        <Form.Label column sm="3">
                             Air Condition
                         </Form.Label>
                         <Col sm="7">
@@ -63,7 +65,7 @@ export default function BookingSidebar() {
                         </Col>
                     </Form.Group>
                     <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
-                        <Form.Label column sm="2">
+                        <Form.Label column sm="3">
                             Fuel Type
                         </Form.Label>
                         <Col sm="7">
@@ -71,7 +73,7 @@ export default function BookingSidebar() {
                         </Col>
                     </Form.Group>
                     <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
-                        <Form.Label column sm="2">
+                        <Form.Label column sm="3">
                             Engine Capacity
                         </Form.Label>
                         <Col sm="7">
@@ -79,7 +81,7 @@ export default function BookingSidebar() {
                         </Col>
                     </Form.Group>
                     <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
-                        <Form.Label column sm="2">
+                        <Form.Label column sm="3">
                             Cost Per Day
                         </Form.Label>
                         <Col sm="7">
