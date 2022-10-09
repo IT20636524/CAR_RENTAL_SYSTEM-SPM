@@ -12,6 +12,7 @@ const PaymentRoute = require("./routes/payments");
 const ContactUsRoute = require("./routes/contactus");
 const multer = require("multer");
 const path = require("path");
+const jwt = require("jsonwebtoken");
 
 const cors=require("cors");
 

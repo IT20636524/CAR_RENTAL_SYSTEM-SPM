@@ -58,8 +58,7 @@ export default function Inquiries() {
               <img src={PF + lcr.image} className="card-img-top" alt="" />
               <div className="card-body">
                 <h5 className="card-title">{lcr.model}</h5>
-                <a href="/add-booking" className="btn btn-info inquiryBtn btn-grad">Inquiry</a>
-                {/* <Link to = {`CarDetailsPage/:id`} className="btn btn-info inquiryBtn btn-grad" >Details</Link> */}
+                <Link to = {`/add-booking/${lcr.car_Id}`} className="btn btn-info inquiryBtn btn-grad" >Inquiry</Link>
               </div>
             </div>
           </div>
@@ -76,7 +75,7 @@ export default function Inquiries() {
               <img src={PF + pcr.image} className="card-img-top" alt="" />
               <div className="card-body">
                 <h5 className="card-title">{pcr.model}</h5>
-                <a href="/add-booking" className="btn btn-info inquiryBtn btn-grad">Inquiry</a>
+                <Link to = {`/add-booking/${pcr.car_Id}`} className="btn btn-info inquiryBtn btn-grad" >Inquiry</Link>
               </div>
             </div>
           </div>
@@ -93,7 +92,7 @@ export default function Inquiries() {
               <img src={PF + gcr.image} className="card-img-top" alt="" />
               <div className="card-body">
                 <h5 className="card-title">{gcr.model}</h5>
-                <a href="/add-booking" className="btn btn-info inquiryBtn btn-grad">Inquiry</a>
+                <Link to = {`/add-booking/${gcr.car_Id}`} className="btn btn-info inquiryBtn btn-grad" >Inquiry</Link>
               </div>
             </div>
           </div>

@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import { Col, Row, Form } from "react-bootstrap";
+import { useParams } from 'react-router-dom';
 import '../components/styles.css'
 
 export default function BookingSidebar() {
@@ -14,9 +15,10 @@ export default function BookingSidebar() {
     const [model, setModel] = useState("");
     const [image, setImage] = useState("");
     const PF = "http://localhost:5000/images/"
+    const {id}=useParams();
 
 
-    axios.get("http://localhost:5000/api/cars/CI001").then(function (response) {
+    axios.get("http://localhost:5000/api/cars/"+id).then(function (response) {
         console.log(response);
         setPassengers(response.data['passengers']);
         setTransmission(response.data['transmission']);

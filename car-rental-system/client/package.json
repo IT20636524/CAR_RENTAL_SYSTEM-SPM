@@ -15,6 +15,7 @@
     "axios": "^0.27.2",
     "bootstrap": "^5.2.0",
     "formik": "^2.2.9",
+    "jwt-decode": "^3.1.2",
     "mdb-react-ui-kit": "^4.1.0",
     "mdb-ui-kit": "^4.4.0",
     "mdbreact": "^5.2.0",
