@@ -359,5 +359,8 @@
 
 /*** Search Booking ***/
 .search{
-    justify-content: right;
+    justify-content: end;
+}
+.reportBtn{
+    justify-content: start;
 }
