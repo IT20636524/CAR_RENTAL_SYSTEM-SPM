@@ -1,10 +1,11 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
 import '../components/styles.css'
 import { Col, Row, Form } from "react-bootstrap";
 import Footer from './Footer'
 import { Context } from '../context/Context';
 import swal from 'sweetalert';
+import { useParams } from 'react-router-dom';
 
 
 export default function AddBookingForm() {
@@ -14,7 +15,7 @@ export default function AddBookingForm() {
     const [model, setModel] = useState("");
     const [image, setImage] = useState("");
     const PF = "http://localhost:5000/image/"
-    const [name, setName] = useState("");
+    const [name, setName] = useState('');
     const [email,setEmail] = useState("");
     const [address, setAddress] = useState("");
     const [contact_number, setContactNumber] = useState("");
@@ -23,15 +24,27 @@ export default function AddBookingForm() {
     const [no_of_days, setNoOfDays] = useState("");
     const [location, setLocation] = useState("");
     const [vehicle_pic, setVehiclePic]=useState("");
+    const [cost,setCost]=useState("");
+    const [cost_per_day,setCostPerDay]=useState("");
+    const {id}=useParams();
+//    setName(localStorage.getItem('user').name)
+    //access web token
+    const config = {
+        headers: { Authorization: `Bearer ${localStorage.getItem('access_token')}` }
+    };
+
 
     // get car details
-    axios.get("http://localhost:5000/api/cars/CI001").then(function (response) {
+    axios.get("http://localhost:5000/api/cars/"+id,config).then(function (response) {
         console.log(response);
         setCar_Id(response.data['car_Id']);
         setModel(response.data['model']);
         setImage(response.data['image']);
         setSelectedModel(response.data['model']);
         setVehiclePic(response.data['image']);
+        setCost(response.data['costPerDay']);
+        setCostPerDay(response.data['costPerDay']);
+
     })
 
     const bookingData = {
@@ -43,8 +56,15 @@ export default function AddBookingForm() {
         selected_model,
         no_of_days,
         location,
-        image
+        vehicle_pic,
+        cost_per_day
     }
+
+    useEffect(()=>{
+        const user=JSON.parse(localStorage.getItem('user')||"{}");
+        setName(user?.name);
+        setEmail(user?.email);
+    },[])
 
     // add booking details
     const handleSubmit =(e:any)=>{
@@ -53,10 +73,9 @@ export default function AddBookingForm() {
             swal(" Fields Cannot empty !","Please enter all data !", "error");
         }else{
             console.log(bookingData);
-            axios.post('http://localhost:5000/api/bookings/add',bookingData)
+            axios.post('http://localhost:5000/api/bookings/add',bookingData,config)
             .then(function(response) {
                 console.log(response);
-                setName('');
                 setAddress('');
                 setContactNumber('');
                 setTypeOfService('');

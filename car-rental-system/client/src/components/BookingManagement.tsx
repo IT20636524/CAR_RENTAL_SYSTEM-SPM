@@ -19,16 +19,16 @@ interface bookings {
 
 export default function BookingManagement() {
     const [bookings, setBookings] = useState<bookings[]>([]);
-    const [name,setName] = useState("");
-    const [email,setEmail] = useState("");
-    const [address,setAddress] = useState("");
-    const [contact_number,setContactNumber] = useState("");
-    const [type_of_service,setTypeOfService] = useState("");
-    const [selected_model,setSelectedModel] = useState("");
-    const [no_of_days,setNoOfDays] = useState("");
-    const [location,setLocation] = useState("");
-    const [vehicle_pic,setVehiclePic] = useState("");
-
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [address, setAddress] = useState("");
+    const [contact_number, setContactNumber] = useState("");
+    const [type_of_service, setTypeOfService] = useState("");
+    const [selected_model, setSelectedModel] = useState("");
+    const [no_of_days, setNoOfDays] = useState("");
+    const [location, setLocation] = useState("");
+    const [vehicle_pic, setVehiclePic] = useState("");
+    const PF = "http://localhost:5000/images/"
 
     useEffect(() => {
         getData()
@@ -57,28 +57,30 @@ export default function BookingManagement() {
     }
 
     // accept booking details
-    const handleSubmit =(e:any)=>{
-        e.preventDefault();
-        if(name.length === 0 || address.length === 0 || contact_number.length === 0 || no_of_days.length === 0 || location.length === 0){
-            swal(" Fields Cannot empty !","Please enter all data !", "error");
-        }else{
-            console.log(bookingData);
-            axios.post('http://localhost:5000/api/bookings/add',bookingData)
-            .then(function(response) {
+    const handleSubmit = (e: any) => {
+        console.log(e)
+        const bookingData = {
+            name: e.name,
+            address: e.address,
+            contact_number: e.contact_number,
+            type_of_service: e.type_of_service,
+            selected_model: e.selected_model,
+            no_of_days: e.no_of_days,
+            location: e.location,
+            vehicle_pic: e.vehicle_pic
+        }
+        console.log(bookingData);
+        axios.post('http://localhost:5000/api/acceptedbookings/add', bookingData)
+            .then(function (response) {
                 console.log(response);
-                setName('');
-                setAddress('');
-                setContactNumber('');
-                setTypeOfService('');
-                setNoOfDays('');
-                setLocation('');
-                swal({ text: "Accepted", icon: "success"})
+                console.log("successful")
+                swal({ text: "Accepted", icon: "success" })
             })
-            .catch(function(error) {
+            .catch(function (error) {
                 console.log(error);
                 alert("Not added");
             });
-        }
+
     }
 
     return (
@@ -100,12 +102,12 @@ export default function BookingManagement() {
                 </thead>
                 <tbody>
                     {/* <tr> */}
-                        {bookings.map(bm => (
-                            <tr key={bm.booking_id} className='table-secondary'>
+                    {bookings.map(bm => (
+                        <tr key={bm.booking_id} className='table-secondary'>
                             <td >
                                 <div className="d-flex align-items-center">
                                     <img
-                                        src="https://mdbootstrap.com/img/new/avatars/8.jpg"
+                                        src={PF + bm.vehicle_pic}
                                         alt=""
                                         style={{ width: "45px", height: "45px" }}
                                         className="rounded-circle"
@@ -124,21 +126,21 @@ export default function BookingManagement() {
                             <td>{bm.no_of_days}</td>
                             <td>{bm.location}</td>
                             <td align='center'>
-                                {bm.payment_status=='paid'?<span className="badge rounded-pill bg-success d-inline">{bm.payment_status}</span> : <span className="badge rounded-pill bg-danger  d-inline">{bm.payment_status}</span>}
-                                
+                                {bm.payment_status == 'paid' ? <span className="badge rounded-pill bg-success d-inline">{bm.payment_status}</span> : <span className="badge rounded-pill bg-danger  d-inline">{bm.payment_status}</span>}
+
                             </td>
                             <td>
                                 <button
                                     type="button"
-                                    className="btn btn-link btn-rounded btn-sm fw-bold"
+                                    className="btn btn-info btn-grad2"
                                     data-mdb-ripple-color="dark"
-                                    onClick={handleSubmit}
+                                    onClick={() => handleSubmit(bm)}
                                 >
                                     Accept
                                 </button>
                             </td>
-                            </tr>
-                        ))}
+                        </tr>
+                    ))}
                 </tbody>
             </table>
             <br />

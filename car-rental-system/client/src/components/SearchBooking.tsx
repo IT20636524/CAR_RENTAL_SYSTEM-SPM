@@ -20,7 +20,6 @@ const SearchBooking = (props: any) => {
         <div>
             <div className="row search">
                 <div className="col-sm-10"></div>
-                <div className="col-sm-5"></div>
                 <MDBCol md="4">
                     <input className="form-control form-control-sm ml-3 w-75 float-right" type="text" placeholder="Search Booking" aria-label="Search"  onKeyDown={(e) => searchId(e)} onChange={(e)=>{setBookingId(e.target.value)}}/>
                 </MDBCol>

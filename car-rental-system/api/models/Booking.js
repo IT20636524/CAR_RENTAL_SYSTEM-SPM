@@ -39,6 +39,10 @@ const BookingSchema = new mongoose.Schema(
             type:String,
             required:true,
         },
+        cost_per_day:{
+            type:String,
+            required:true,
+        },
         vehicle_pic:{
             type:String,
             default:"",

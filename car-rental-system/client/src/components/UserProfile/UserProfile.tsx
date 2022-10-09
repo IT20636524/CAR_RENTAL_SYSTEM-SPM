@@ -5,7 +5,6 @@ import Modal from 'react-bootstrap/Modal';
 import { MDBCol } from 'mdb-react-ui-kit';
 import { useState } from 'react';
 import './UserProfile.css'
-import { Context } from '../../context/Context';
 import Header from '../Header';
 import Footer from '../Footer';
 import '@fortawesome/fontawesome-svg-core/styles.css'
@@ -13,34 +12,44 @@ import axios from 'axios';
 
 export default function UserProfile() {
 
-    const { user, dispatch } = useContext(Context);
+    const config = {
+        headers: { Authorization: `Bearer ${localStorage.getItem('access_token')}` }
+    };
     const [paid,setPaid] = useState(0);
     const [pending,setPending] = useState(0);
     const [newly_created,setNewlyCreated] = useState(0);
+    const [name, setName] = useState('');
+    const [email,setEmail] = useState("");
 
     useEffect(()=>{
-        const data1=('http://localhost:5000/api/bookings/countDocuments/Prathibha') ;
-            axios.get(data1).then(function(response){
+        const data1=(`http://localhost:5000/api/bookings/countDocuments/${name}`) ;
+            axios.get(data1,config).then(function(response){
                 setNewlyCreated(response.data)
             });
-        const data2=('http://localhost:5000/api/bookings/countDocuments/Prathibha/pending') ;
-            axios.get(data2).then(function(response){
+        const data2=(`http://localhost:5000/api/bookings/countDocuments/${name}/pending`) ;
+            axios.get(data2,config).then(function(response){
                 setPending(response.data)
             });
-        const data3=('http://localhost:5000/api/bookings/countDocuments/Prathibha/paid') ;
-            axios.get(data3).then(function(response){
+        const data3=(`http://localhost:5000/api/bookings/countDocuments/${name}/paid`) ;
+            axios.get(data3,config).then(function(response){
                 setPaid(response.data)
             });
     })
+
+    useEffect(()=>{
+        const user=JSON.parse(localStorage.getItem('user')||"{}");
+        setName(user?.name);
+        setEmail(user?.email);
+    },[])
     
     return (
-        <div>
+        <div className='profilepage'>
             <Header/>
             <div className="container d-flex justify-content-center">
                 <div className="card-user p-3 py-4">
                     <div className="text-center">
                         <img src="https://i.imgur.com/stD0Q19.jpg" width="100" className="rounded-circle" />
-                        <h3 className="mt-2">Prathibha</h3>
+                        <h3 className="mt-2">{name}</h3>
                         <span className="mt-1 clearfix">Bookings</span>
 
                         <div className="row mt-3 mb-3">

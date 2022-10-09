@@ -8,7 +8,7 @@ export default function SearchBookingModal({bookingId}:any) {
     const handleShow = () => setShow(true);
     const [show, setShow] = useState(false);
 
-    const PF = "http://localhost:5000/image/"
+    const PF = "http://localhost:5000/images/"
     const [booking_id,setBookingId] =useState("");
     const [name, setName] = useState("");
     const [address, setAddress] = useState("");
@@ -30,6 +30,7 @@ export default function SearchBookingModal({bookingId}:any) {
         setSelectedModel(response.data['selected_model']);
         setNoOfDays(response.data['no_of_days']);
         setLocation(response.data['location']);
+        setVehiclePic(response.data['vehicle_pic']);
         setShow(true);
     })
 
@@ -54,7 +55,7 @@ export default function SearchBookingModal({bookingId}:any) {
 
                                 <Col sm={7}>
                                     <MDBCol lg='4' md='12' className='mb-4'>
-                                        {/* <img src={PF + profile_pic} className='img-fluid rounded' alt='' /> */}
+                                        <img src={PF+vehicle_pic} className='img-fluid rounded' alt='' />
                                     </MDBCol>
                                 </Col>
                             </Form.Group>
