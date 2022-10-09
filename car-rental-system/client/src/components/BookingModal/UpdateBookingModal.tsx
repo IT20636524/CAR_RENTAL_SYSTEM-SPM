@@ -11,7 +11,6 @@ export default function UpdateBookingModal({booking_id,getData}:any) {
 
     const [model, setModel] = useState("");
     const [image, setImage] = useState("");
-    const PF = "http://localhost:5000/image/"
     const [name, setName] = useState("");
     const [address, setAddress] = useState("");
     const [contact_number, setContactNumber] = useState("");
@@ -20,6 +19,7 @@ export default function UpdateBookingModal({booking_id,getData}:any) {
     const [no_of_days, setNoOfDays] = useState("");
     const [location, setLocation] = useState("");
     const [vehicle_pic, setVehiclePic]=useState("");
+    const PF = "http://localhost:5000/images/"
 
     const bookingData = {
         name,
@@ -42,6 +42,7 @@ export default function UpdateBookingModal({booking_id,getData}:any) {
             setSelectedModel(response.data['selected_model']);
             setNoOfDays(response.data['no_of_days']);
             setLocation(response.data['location']);
+            setVehiclePic(response.data['vehicle_pic'])
             setShow(true);
         })
     }
@@ -88,7 +89,7 @@ export default function UpdateBookingModal({booking_id,getData}:any) {
                             <Col sm={3}>
                                 <fieldset>
                                     <Form.Group >
-                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRZZBzLh0tpsFysBbq__xw0sFY7JLyyAN1fQ&usqp=CAU" className='img-fluid rounded' alt='' style={{ width: '300px', height: 'auto', float: 'left', marginBottom: '10px' }} />
+                                        <img src={PF+vehicle_pic} className='img-fluid rounded' alt='' style={{ width: '300px', height: 'auto', float: 'left', marginBottom: '10px' }} />
                                     </Form.Group>
 
 

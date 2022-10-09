@@ -43,7 +43,7 @@ export default function UserProfile() {
     },[])
     
     return (
-        <div>
+        <div className='profilepage'>
             <Header/>
             <div className="container d-flex justify-content-center">
                 <div className="card-user p-3 py-4">
