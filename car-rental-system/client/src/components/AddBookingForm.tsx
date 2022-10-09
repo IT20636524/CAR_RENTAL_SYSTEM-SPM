@@ -24,6 +24,8 @@ export default function AddBookingForm() {
     const [no_of_days, setNoOfDays] = useState("");
     const [location, setLocation] = useState("");
     const [vehicle_pic, setVehiclePic]=useState("");
+    const [cost,setCost]=useState("");
+    const [cost_per_day,setCostPerDay]=useState("");
     const {id}=useParams();
 //    setName(localStorage.getItem('user').name)
     //access web token
@@ -40,6 +42,9 @@ export default function AddBookingForm() {
         setImage(response.data['image']);
         setSelectedModel(response.data['model']);
         setVehiclePic(response.data['image']);
+        setCost(response.data['costPerDay']);
+        setCostPerDay(response.data['costPerDay']);
+
     })
 
     const bookingData = {
@@ -51,7 +56,8 @@ export default function AddBookingForm() {
         selected_model,
         no_of_days,
         location,
-        vehicle_pic
+        vehicle_pic,
+        cost_per_day
     }
 
     useEffect(()=>{
@@ -70,7 +76,6 @@ export default function AddBookingForm() {
             axios.post('http://localhost:5000/api/bookings/add',bookingData,config)
             .then(function(response) {
                 console.log(response);
-                setName('');
                 setAddress('');
                 setContactNumber('');
                 setTypeOfService('');
