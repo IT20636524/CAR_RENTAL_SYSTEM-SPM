@@ -1,8 +1,13 @@
 const router = require("express").Router();
 const Card = require("../models/Card");
+const protect = require('../middleware/middleware.js');
+
 
 //CREATE CARD
-router.post("/", async (req, res) => {
+router.post("/",protect, async (req, res) => {
+
+  // console.log(req.user);
+req.body.userid = req.user._id;
     const newCard = new Card(req.body);
     // newCard.set(userid:req.user._id)
   
@@ -18,7 +23,7 @@ router.post("/", async (req, res) => {
   });
 
  //UPDATE CARD
-router.put("/update/:id", async(req, res) => {
+router.put("/update/:id",protect, async(req, res) => {
     try {
       const updatedCard = await Card.findOneAndUpdate({_id:req.params.id},
         {
@@ -34,7 +39,7 @@ router.put("/update/:id", async(req, res) => {
 
 
 //DELETE CARD
-router.delete("/delete/:id", async (req, res) => {
+router.delete("/delete/:id",protect, async (req, res) => {
   try {
     const card = await Card.findOneAndDelete({_id:req.params.id});
     try {
@@ -49,7 +54,7 @@ router.delete("/delete/:id", async (req, res) => {
 });
 
 //GET CARD
-router.get("/:id", async (req, res) => {
+router.get("/:id",protect, async (req, res) => {
   try {
     const card = await Card.findOne({ 'id': req.params.id });
     res.status(200).json(card);
@@ -58,16 +63,25 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-//GET ALL CARD
-router.get("/", async (req, res) => {
-    try {
-      const card = await Card.find();
-      res.status(200).json(card);
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
+// //GET ALL CARD
+// router.get("/",protect, async (req, res) => {
+//     try {
+//       const card = await Card.find();
+//       res.status(200).json(card);
+//     } catch (err) {
+//       res.status(500).json(err);
+//     }
+//   });
 
+  //GET ALL CARD
+router.get("/",protect, async (req, res) => {
+  try {
+    const card = await Card.find({ 'userid': req.user._id});
+    res.status(200).json(card);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 //   //get All cards entered by user
 // router.get("/card/", async (req, res) => {

@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useContext, useRef, useState } from "react";
 import { Context } from "../context/Context";
 import "../pages/styles.css"
-import jwt_decode from "jwt-decode";
+// import jwt_decode from "jwt-decode";
 
 export default function Login() {
 

@@ -10,7 +10,7 @@ export default function Header() {
   return (
     <>
 
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg navbar-light">
 
         <div className="container-fluid">
 
@@ -68,20 +68,20 @@ export default function Header() {
           </div>
 
           <a href="/login">
-            <button type="button" className="btn btn-warning me-3">
+            <button type="button" className="btn btn-light me-3" style={{width:"100px", height:"35px", fontSize:"13px"}}>
               Login
             </button>
 
           </a>
           <a href="/sign-up">
 
-            <button type="button" className="btn btn-warning me-3">
+            <button type="button" className="btn btn-light me-3" style={{width:"100px", height:"35px", fontSize:"13px"}}>
               Sign up
             </button>
 
           </a>
 
-          <form className="d-flex input-group w-auto">
+          <form className="d-flex input-group w-auto me-4">
             <input
               type="search"
               className="form-control rounded"

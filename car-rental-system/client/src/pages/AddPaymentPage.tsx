@@ -33,8 +33,12 @@ export default function AddPayment() {
         contact_number,
     }
     
-  
-  
+    
+  // if(x= ''){
+  //   setAmount((res.data.amount +1000)*no of days)
+  // }else{
+  // setAmount((res.data.amount)*no of days )
+  // }
     function submitForm(e: { preventDefault: () => void; }){
       e.preventDefault();
       if(booking_id.length === 0 || name.length === 0 || card.length === 0|| amount.length === 0 || contact_number.length === 0  ){
