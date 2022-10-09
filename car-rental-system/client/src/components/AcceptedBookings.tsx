@@ -16,6 +16,8 @@ interface bookings {
     payment_status: string
 }
 
+const PF = "http://localhost:5000/images/"
+
 export default function AcceptedBookings() {
     const [bookings, setBookings] = useState<bookings[]>([]);
     // const [name,setName] = useState("");
@@ -35,7 +37,7 @@ export default function AcceptedBookings() {
 
     const getData = () => {
 
-        axios.get("http://localhost:5000/api/bookings").then(res => {
+        axios.get("http://localhost:5000/api/acceptedbookings/").then(res => {
             console.log(res.data);
             setBookings(res.data);
         }).catch(error => {
@@ -67,7 +69,7 @@ export default function AcceptedBookings() {
                             <td >
                                 <div className="d-flex align-items-center">
                                     <img
-                                        src="https://mdbootstrap.com/img/new/avatars/8.jpg"
+                                        src={PF + bm.vehicle_pic}
                                         alt=""
                                         style={{ width: "45px", height: "45px" }}
                                         className="rounded-circle"
