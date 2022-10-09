@@ -1,14 +1,14 @@
 const router =require("express").Router();
-const Booking = require("../models/Booking");
+const AcceptedBooking = require("../models/AcceptedBooking");
 
 // Add accepted bookings
 router.post("/add", async (req,res) => {
-    const newBooking = new Booking(req.body);
+    const newAcceptedBooking = new AcceptedBooking(req.body);
     try{
-        const bookingcount = await Booking.count()
-        newBooking.booking_id = 'AB00' + (parseInt(bookingcount)+1)
+        const bookingcount = await AcceptedBooking.count()
+        newAcceptedBooking.booking_id = 'AB00' + (parseInt(bookingcount)+1)
         try{
-            const booking = await newBooking.save();
+            const booking = await newAcceptedBooking.save();
             res.status(200).json(booking);
         } catch (err){
             res.status(500).json(err);
