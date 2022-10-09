@@ -1,33 +1,48 @@
 import axios from "axios";
-import React, { useContext, useRef } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { Context } from "../context/Context";
 import "../pages/styles.css"
+import jwt_decode from "jwt-decode";
 
 export default function Login() {
 
-    const emailRef = useRef<HTMLInputElement>(null);
-    const passwordRef = useRef<HTMLInputElement>(null);
-    const {user, dispatch, isFetching } = useContext(Context)
-
     const handleSubmit = async (e:any) => {
         e.preventDefault();
-        dispatch({type:"LOGIN_START"});
-        // console.log(emailRef);
-        console.log(passwordRef);
-        try{
-            const res = await axios.post("http://localhost:5000/api/UserAuth/login",{
-                email: emailRef.current?.value,
-                password: passwordRef.current?.value,
-            })
-            console.log(res);
-            dispatch({type:"LOGIN_SUCCESS",payload:res.data});
-            
-        }catch(err){
-            dispatch({type:"LOGIN_FAILURE"});
+        try {
+          const res = await axios.post("http://localhost:5000/api/UserAuth/login", { 
+            email: emailRef.current?.value,
+            password: passwordRef.current?.value,
+           });
+          localStorage.setItem('user', JSON.stringify(res.data.data.user))
+          localStorage.setItem('access_token', res.data.data.access_token)
+        } catch (err) {
+          console.log(err);
         }
-    };
+      };
 
-    console.log(user);
+    const emailRef = useRef<HTMLInputElement>(null);
+    const passwordRef = useRef<HTMLInputElement>(null);
+    // const {user, dispatch, isFetching } = useContext(Context)
+
+    // const handleSubmit = async (e:any) => {
+    //     e.preventDefault();
+    //     dispatch({type:"LOGIN_START"});
+    //     // console.log(emailRef);
+    //     console.log(passwordRef);
+    //     try{
+    //         const res = await axios.post("http://localhost:5000/api/UserAuth/login",{
+    //             email: emailRef.current?.value,
+    //             password: passwordRef.current?.value,
+    //         })
+    //         console.log(res);
+    //         dispatch({type:"LOGIN_SUCCESS",payload:res.data});
+            
+    //     }catch(err){
+    //         dispatch({type:"LOGIN_FAILURE"});
+    //     }
+    // };
+
+    // console.log(user);
 
     return (
         <>
@@ -55,6 +70,7 @@ export default function Login() {
                             <div className="card bg-glass">
                                 <div className="card-body px-4 py-5 px-md-5">
                                     <form onSubmit={handleSubmit}>
+                                        {/* <form> */}
                                         <br/>
                                         <br/>
 

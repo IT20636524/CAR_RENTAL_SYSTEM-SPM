@@ -1,4 +1,15 @@
 {
+  
+  "name": "api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "P.P.S.Ariyasena,B.M.N.D.S.Ariyarathnna,L.A.M.D.Perera,Y.W.S.H.Wishvajith",
+  "license": "ISC",
+  "description": "Car Rental System",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
@@ -10,15 +21,5 @@
     "node-gyp": "^9.1.0",
     "nodemon": "^2.0.19",
     "path": "^0.12.7"
-  },
-  "name": "api",
-  "version": "1.0.0",
-  "main": "index.js",
-  "devDependencies": {},
-  "scripts": {
-    "start": "nodemon index.js"
-  },
-  "author": "P.P.S.Ariyasena,B.M.N.D.S.Ariyarathnna,L.A.M.D.Perera,Y.W.S.H.Wishvajith",
-  "license": "ISC",
-  "description": "Car Rental System"
+  }
 }

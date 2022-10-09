@@ -22,6 +22,8 @@ export default function ViewBookingsCards() {
         getData()
     },[]);
 
+    const PF = "http://localhost:5000/images/"
+
     const getData =()=>{
 
         axios.get("http://localhost:5000/api/bookings").then(res => {
@@ -39,7 +41,7 @@ export default function ViewBookingsCards() {
                     <div className="col" key={bm.booking_id}>
                         <div className="card h-100">
                             <div className="card-imag h-50">
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRZZBzLh0tpsFysBbq__xw0sFY7JLyyAN1fQ&usqp=CAU" className="card-img-top" alt="Hollywood Sign on The Hill" />
+                                <img src={PF+bm.vehicle_pic} className="card-img-top" alt="Hollywood Sign on The Hill" />
                             </div>
                             <div className="card-body">
                                 <h5 className="card-title">Car Model</h5>
