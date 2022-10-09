@@ -18,5 +18,22 @@ router.post("/add", async (req,res) => {
     }
 });
 
+//Get all accepted bookings
+router.get("/", async(req,res) => {
+    const book_id = req.query.booking_id;
+    try{
+        let bookings;
+        if(book_id) {
+            bookings = await AcceptedBooking.find({ booking_id });
+        } else {
+            bookings = await AcceptedBooking.find();
+        }
+        res.status(200).json(bookings);
+    }catch(err){
+        res.status(500).json(err);
+    }
+});
+
+
 
 module.exports = router;
