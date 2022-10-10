@@ -16,6 +16,7 @@ import CarDetailsPage from './pages/CarDetailsPage';
 import CardViewPage from './pages/CardViewPage';
 import ContactUs from './pages/ContactUs';
 import Dashboard from './pages/Dashboard';
+import DriverView from './pages/DriverView';
 import Homepage from './pages/Home';
 import Inquiries from './pages/Inquiries';
 import Login from './pages/Login';

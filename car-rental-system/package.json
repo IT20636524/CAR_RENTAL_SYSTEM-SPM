@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
+    "@types/jquery": "^3.5.14",
     "bcrypt": "^5.0.1",
     "concurrently": "^6.4.0",
     "cors": "^2.8.5",
