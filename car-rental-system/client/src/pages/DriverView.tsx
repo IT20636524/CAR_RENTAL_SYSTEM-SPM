@@ -4,6 +4,7 @@ import { useParams  } from "react-router-dom";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import SearchStaff from '../components/StaffModal/SearchStaff';
+import Feedback from '../components/StaffModal/Feedback';
 
 
 
@@ -46,58 +47,89 @@ const PF = "http://localhost:5000/images/"
                                         <div className="row d-flex align-items-baseline">
                                         <div className="col-xl-8"></div>
                                         <hr />
+                                        <div className="container px-4">
+            </div>
 
 
-                        <div className="container px-4">
-  <div className="row gx-1" >
-    <div className="col">
-    <div   className="card-img-top " style={{ marginLeft:"30px",marginBottom:"40px", width: "15rem", height: "25rem",marginTop:"30px" }}>
-                            <img  src={PF+posts.image}  className='img-fluid rounded border border-5' style={{height:"300px", width:"200px",marginLeft:"20px", marginTop:"10px"}}alt=''  />
-                           
-                            </div>
-                            <br/>
 
-                            {/* <div className='heart-btn'>
-                             <div className='heart-content'>
-                                <span className='heart'><i className="fas fa-heart  fa-lg"></i></span>
-                                <SearchStaff/>
-                                </div>
-                            </div> */}
+
+
+<section className=" text-center text-lg-start">
+  <div className="card mb-3">
+    <div className="row g-0 d-flex align-items-center">
+      <div className="col-lg-4 d-none d-lg-flex">
+        <img src={PF+posts.image} alt="Trendy Pants and Shoes"
+          className="w-100 rounded-t-5 rounded-tr-lg-0 rounded-bl-lg-5" 
+          style={{height:"300px"}}/>
+      </div>
+      <div className="col-lg-8">
+        <div className="card-body py-5 px-md-5">
+
+          <p style={{color:"#191970",fontSize:"21px",fontStyle:"italic",fontWeight:"bold"}}>{posts.note}</p> 
+
+        </div>
+      </div>
     </div>
-    <div className="col">
-    <div   className="card-img-top col-xl-3">
+  </div>
+</section>
 
-      <label style={{fontSize:"15px",color:"black"}}><i className="far fa-user  " style={{marginRight:"10px", marginTop:"50px",color:"black"}}></i>NAME</label>
-      <p style={{fontSize:"30px",fontFamily:"monospace",color:"black"}}>{posts.driver_name}</p>
+
+<div className="container">
+  <div className="row">
+    <div className="col-sm">
+    <label style={{fontSize:"20px",color:"#9FA6B2"}}><i className="far fa-user  " style={{marginRight:"10px", color:"#9FA6B2"}}></i>NAME</label>
+      <p style={{fontSize:"30px",fontFamily:"monospace",color:"white",marginLeft:"30px"}}>{posts.driver_name}</p>
       
-      <label style={{fontSize:"15px",color:"black"}}><i className="fas fa-map-marker-alt" style={{marginRight:"10px",color:"black"}}></i>ADDress</label>
-      <p style={{fontSize:"30px",fontFamily:"monospace",color:"black"}}>{posts.address}</p>
+      <label style={{fontSize:"20px",color:"#9FA6B2"}}><i className="fas fa-map-marker-alt" style={{marginRight:"10px",color:"#9FA6B2"}}></i>ADDRESS</label>
+      <p style={{fontSize:"30px",fontFamily:"monospace",color:"white",marginLeft:"30px"}}>{posts.address}</p>
 
-      <label style={{fontSize:"15px",color:"black"}}><i className="fas fa-phone-alt " style={{marginRight:"10px",color:"black"}}></i>CONTACT NUMBER</label>
-      <p style={{fontSize:"30px",fontFamily:"monospace",color:"black"}}>{posts.contact_number}</p>
-
-      <label style={{fontSize:"15px",color:"black"}}><i className="fas fa-user-friends" style={{marginRight:"10px",color:"black"}}></i>GENDER</label>
-      <p style={{fontSize:"30px",fontFamily:"monospace",color:"black"}}>{posts.gender}</p>
+      <label style={{fontSize:"20px",color:"#9FA6B2"}}><i className="fas fa-phone-alt " style={{marginRight:"10px",color:"#9FA6B2"}}></i>CONTACT NUMBER</label>
+      <p style={{fontSize:"30px",fontFamily:"monospace",color:"white",marginLeft:"30px"}}>{posts.contact_number}</p>
+    </div>
+    <div className="col-sm">
+    <label style={{fontSize:"20px",color:"#9FA6B2"}}><i className="fas fa-user-friends" style={{marginRight:"10px",color:"#9FA6B2"}}></i>GENDER</label>
+      <p style={{fontSize:"30px",fontFamily:"monospace",color:"white",marginLeft:"30px"}}>{posts.gender}</p>
        
 
-      <label style={{fontSize:"15px",color:"black"}}><i className="fas fa-user-tie " style={{marginRight:"10px",color:"black"}}></i>LICENSE NO</label>
-      <p style={{fontSize:"30px",fontFamily:"monospace",color:"black"}}>{posts.driving_license_no}</p>
+      <label style={{fontSize:"20px",color:"#9FA6B2"}}><i className="fas fa-user-tie " style={{marginRight:"10px",color:"#9FA6B2"}}></i>LICENSE NO</label>
+      <p style={{fontSize:"30px",fontFamily:"monospace",color:"white",marginLeft:"30px"}}>{posts.driving_license_no}</p>
 
-      <label style={{fontSize:"15px",color:"black"}}><i className="fas fa-male  " style={{marginRight:"10px",color:"black"}}></i>EXPERIENCE</label>
-      <p style={{fontSize:"30px",fontFamily:"monospace",color:"black"}}>{posts.experience}</p>
- 
-        </div>
+      <label style={{fontSize:"20px",color:"#9FA6B2"}}><i className="fas fa-male  " style={{marginRight:"10px",color:"#9FA6B2"}}></i>EXPERIENCE</label>
+      <p style={{fontSize:"30px",fontFamily:"monospace",color:"white",marginLeft:"30px"}}>{posts.experience}</p>
     </div>
-    <p style={{color:"#191970",fontSize:"21px",fontStyle:"revert"}}>{posts.note}</p>  
   </div>
 </div>
+     
+
+     <Feedback/>
+
+
+
+
+
+ 
+   
+     
+
+      
+        
+      </div>
+      
+       
+       
+          
+
+       
+     
+
+  
+
 
 
                         
   
                   
-                                   
-                                        </div>
+                                
                                     </div>
                                 </div>
                                 <br />
