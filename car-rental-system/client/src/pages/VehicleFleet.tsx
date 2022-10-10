@@ -11,8 +11,6 @@ export default function VehicleFleet() {
   const [pCars, setpCars] = useState<any[]>([]);
   const [gCars, setgCars] = useState<any[]>([]);
   const [image, setImage] = useState("");
-  let { car_Id } = useParams();
-  let url = ""
 
   const PF = "http://localhost:5000/images/"
 
@@ -31,7 +29,6 @@ export default function VehicleFleet() {
       const res = await axios.get('http://localhost:5000/api/cars/category/Premium/')
       setpCars(res.data)
       setImage(res.data['image'])
-
     }
     fetchcar()
   }, [])
@@ -58,8 +55,7 @@ export default function VehicleFleet() {
               <img src={PF + lcr.image} className="card-img-top" alt="" />
               <div className="card-body">
                 <h5 className="card-title">{lcr.model}</h5>
-                <a href="/CarDetailsPage/+{lcr.id}" className="btn btn-info">Details</a>
-                {/* <Link to = {`CarDetailsPage/:id`} className="btn btn-info" >Details</Link> */}
+                <Link to = {`/CarDetailsPage/${lcr.car_Id}`} className="btn btn-info" >Details</Link>
               </div>
             </div>
           </div>
@@ -76,7 +72,7 @@ export default function VehicleFleet() {
               <img src={PF + pcr.image} className="card-img-top" alt="" />
               <div className="card-body">
                 <h5 className="card-title">{pcr.model}</h5>
-                <a href="/CarDetailsPage" className="btn btn-info">Details</a>
+                <Link to = {`/CarDetailsPage/${pcr.car_Id}`} className="btn btn-info" >Details</Link>
               </div>
             </div>
           </div>
@@ -93,7 +89,7 @@ export default function VehicleFleet() {
               <img src={PF + gcr.image} className="card-img-top" alt="" />
               <div className="card-body">
                 <h5 className="card-title">{gcr.model}</h5>
-                <a href="/CarDetailsPage" className="btn btn-info">Details</a>
+                <Link to = {`/CarDetailsPage/${gcr.car_Id}`} className="btn btn-info" >Details</Link>
               </div>
             </div>
           </div>

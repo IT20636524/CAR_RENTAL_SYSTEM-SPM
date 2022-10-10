@@ -85,10 +85,20 @@ router.get("/category/:category/", async (req, res) => {
   }
 });
 
-//Get available cars
+//Get available cars according to category
 router.get("/category/available/:category/", async (req, res) => {
   try {
     const car = await Car.find({ 'category': req.params.category, availability:'Available' });
+    res.status(200).json(car);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+//Get available cars
+router.get("/available/", async (req, res) => {
+  try {
+    const car = await Car.find({ availability:'Available' });
     res.status(200).json(car);
   } catch (err) {
     res.status(500).json(err);

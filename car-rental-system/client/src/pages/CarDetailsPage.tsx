@@ -1,14 +1,14 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { Button, Col, Form, Row } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 
 export default function CarDetailsPage() {
 
     let { id } = useParams();
-    // console.log(id);
+    console.log(id);
 
     const [car_Id, setCar_Id] = useState("");
     const [category, setCategory] = useState("");
@@ -38,7 +38,7 @@ export default function CarDetailsPage() {
         availability
     }
 
-    axios.get("http://localhost:5000/api/cars/CI001").then(function (response) {
+    axios.get("http://localhost:5000/api/cars/" + id).then(function (response) {
         setCar_Id(response.data['']);
         setCategory(response.data['category']);
         setModel(response.data['model']);
@@ -130,9 +130,7 @@ export default function CarDetailsPage() {
                                 </Form.Label>
                             </Form.Group>
                             <br />
-                            <Button className="btn btn-info">
-                                Inquiry
-                            </Button>
+                            <Link to = {`/add-booking/${id}`} className="btn btn-info">Inquiry</Link>
 
                         </Col>
                     </div>

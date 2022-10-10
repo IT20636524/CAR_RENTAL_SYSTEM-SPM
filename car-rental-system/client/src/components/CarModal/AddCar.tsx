@@ -104,19 +104,10 @@ export default function AddCar() {
             confirm: { text: 'OK' },
           }
         }).then((value) => {
-          // window.location.href = '/admincarpage';
+          window.location.href = '/admincarpage';
         });
       }).catch(function (error) {
         console.log(error);
-      });
-
-      swal({
-        text: "Successfully Added", icon: "success", buttons: {
-          cancel: { text: 'Cancel' },
-          confirm: { text: 'OK' },
-        }
-      }).then((value) => {
-        // window.location.href = '/admincarpage' + car_Id;
       });
     }
 

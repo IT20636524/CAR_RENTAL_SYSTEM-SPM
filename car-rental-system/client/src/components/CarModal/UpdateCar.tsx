@@ -82,7 +82,6 @@ export default function UpdateCar(props: { car_Id: string; }) {
             alert('invalid')
         });
 
-
     };
 
     function submitForm(e: { preventDefault: () => void; }) {

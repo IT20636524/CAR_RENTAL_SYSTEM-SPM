@@ -30,7 +30,7 @@ export default function AdminCarPage() {
                 <CarReport />
 
                 <div className="container-fluid pt-4 px-4" >
-                    <h1 style={{ "marginLeft": "550px", "marginTop": "10px", "marginBottom": "50px", "color": "white", "fontFamily": "fantasy" }}>Cars</h1>
+                    <h1 style={{ "marginLeft": "550px", "marginTop": "10px", "marginBottom": "50px", "color": "white", "fontFamily": "Poppins" }}>Cars</h1>
                     <div className="bg-secondary text-center rounded p-4" >
                         <div className="d-flex align-items-center justify-content-between mb-4" >
                         </div>
