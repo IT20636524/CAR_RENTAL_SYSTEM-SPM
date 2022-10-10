@@ -20,6 +20,7 @@ export default function CarDetailsPage() {
     const [engineCap, setEngineCap] = useState("");
     const [costPerDay, setCostPerDay] = useState("");
     const [image, setImage] = useState("");
+    const [availability, setAvailability] = useState("");
     const PF = "http://localhost:5000/images/";
     const [file, setFile] = useState<any>();
 
@@ -33,7 +34,8 @@ export default function CarDetailsPage() {
         fuelType,
         engineCap,
         costPerDay,
-        image
+        image,
+        availability
     }
 
     axios.get("http://localhost:5000/api/cars/CI001").then(function (response) {
@@ -47,6 +49,7 @@ export default function CarDetailsPage() {
         setEngineCap(response.data['engineCap']);
         setCostPerDay(response.data['costPerDay']);
         setImage(response.data['image']);
+        setAvailability(response.data['availability']);
 
     }).catch(function (error) {
         console.log(error);
@@ -68,7 +71,7 @@ export default function CarDetailsPage() {
                                         <img className='img-fluid rounded' src={URL.createObjectURL(file)} alt="" />
                                     )}
                                     <img src={PF + image} className='img-fluid rounded' alt='' style={{ width: '500px', height: 'auto', float: 'left', marginBottom: '10px' }} />
-                                    <h5>Availability : </h5>
+                                    <h5>Availability : {availability}</h5>
                                 </Form.Group>
                             </fieldset>
                         </Col>

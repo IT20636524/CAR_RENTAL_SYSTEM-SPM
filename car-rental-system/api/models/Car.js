@@ -43,7 +43,10 @@ const CarSchema = new mongoose.Schema({
       type: String,
       default: ""
     },
-
+    availability: {
+      type: String,
+      default: "Available"
+    },
     code:{
         type: Number,
         required:true

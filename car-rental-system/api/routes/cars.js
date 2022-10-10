@@ -85,4 +85,14 @@ router.get("/category/:category/", async (req, res) => {
   }
 });
 
+//Get available cars
+router.get("/category/available/:category/", async (req, res) => {
+  try {
+    const car = await Car.find({ 'category': req.params.category, availability:'Available' });
+    res.status(200).json(car);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
