@@ -47,7 +47,7 @@ export default function Inquiries() {
   }, [])
 
   return (
-    <div className='inquiry '>
+    <div className='inquiry background-radial-gradient'>
       <Header />
       <br /> <br />
       <h2 style={{ "marginLeft": "15px" }} className='inquiriesHeader'>Luxury Cars</h2>

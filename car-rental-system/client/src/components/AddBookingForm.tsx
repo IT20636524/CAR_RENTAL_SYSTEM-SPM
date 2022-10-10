@@ -6,6 +6,7 @@ import Footer from './Footer'
 import { Context } from '../context/Context';
 import swal from 'sweetalert';
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 export default function AddBookingForm() {
@@ -169,7 +170,8 @@ export default function AddBookingForm() {
                     </Col>
                 </Form.Group>
                 <div className="row">
-                    <button type="button" className="btn btn-warning col-sm-2 add-book-btn">Back</button>
+                    
+                    <Link to='/inquiries' className="btn btn-warning col-sm-2 add-book-btn">Back</Link>
                     <button type="submit" className="btn btn-success col-sm-2 add-book-btn">Inquiry</button>
                 </div>
             </Form>
