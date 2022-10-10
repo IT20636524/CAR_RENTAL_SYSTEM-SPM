@@ -479,7 +479,7 @@ margin-top: 4px;
 
 .spcard{
   width: 300px;
-  height: 300px;
+  height: 400px;
   margin: 10px;
   box-shadow: 5px 5px 30px black;
   overflow: hidden;
@@ -495,7 +495,7 @@ margin-top: 4px;
   padding: 6px;
   box-sizing: border-box;
   position: absolute;
-  bottom: 279px;
+  bottom: 200px;
   background: rgb(27, 27, 27, .5);
   color: white;
   transform: .5s;
