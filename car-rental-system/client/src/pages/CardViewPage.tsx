@@ -28,7 +28,7 @@ export default function CardViewPage() {
             <div
                 className="hpimage"
                 style={{
-                    backgroundColor: "light", height: "100vh"
+                    backgroundColor: "radial-gradient", height: "100vh"
                 }}
             >
 
