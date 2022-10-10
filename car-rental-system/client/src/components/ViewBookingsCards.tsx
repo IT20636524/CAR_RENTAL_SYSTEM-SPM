@@ -3,6 +3,7 @@ import { builtinModules } from 'module'
 import React, { useEffect, useState } from 'react'
 import DeleteBookingModal from './BookingModal/DeleteBookingModal'
 import UpdateBookingModal from './BookingModal/UpdateBookingModal'
+import { Link } from 'react-router-dom';
 
 interface bookings{
     booking_id:string,
@@ -49,7 +50,8 @@ export default function ViewBookingsCards() {
                                 <p>Location : {bm.location}</p>
                             </div>
                             <div className="card-footer">
-                                <button type="button" className="btn btn-success btn-rounded booking-btn">Pay</button>
+                              
+                                <Link to = {`/add-payment/${bm.booking_id}`}>  <button type="button" className="btn btn-success btn-rounded booking-btn">Pay</button></Link>
                                 <UpdateBookingModal booking_id={bm.booking_id} getData={getData}/>
                                 <DeleteBookingModal booking_id={bm.booking_id} getData={getData}/>
                             </div>

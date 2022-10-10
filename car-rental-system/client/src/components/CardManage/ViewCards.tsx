@@ -39,7 +39,7 @@ export default function CardView() {
   }:{};
 
   useEffect(() => {
-    const fetchcloth = async () => {
+    const fetchCard = async () => {
 
       const res = await axios.get('http://localhost:5000/api/cards',config)
       const cards: CreditCard[] = res.data
@@ -47,7 +47,7 @@ export default function CardView() {
       console.log(cards)
 
     }
-    fetchcloth()
+    fetchCard()
   }, [])
 
 
@@ -113,7 +113,7 @@ export default function CardView() {
         setCardMonth('');
         setCardYear('');
         setCardCVV('');
-        window.location.replace("/view-cards");
+        window.location.replace("/view-cards/booking_id");
       });
 
   }
@@ -123,11 +123,10 @@ export default function CardView() {
       .then(function (response) {
         console.log(response.data);
 
-        window.location.replace("/view-cards");
+        window.location.replace("/view-cards/booking_id");
       });
 
-    window.location.replace('/view-cards');
-
+  
   }
   const DeleteShow = () => {
 

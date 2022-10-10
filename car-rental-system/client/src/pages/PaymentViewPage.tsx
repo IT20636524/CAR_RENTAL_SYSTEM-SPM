@@ -31,7 +31,7 @@ export default function PaymentView() {
                         <br /><br />
                         <div className="col-5">
                             <div className="row"  style={{ marginLeft: "80px" }}>
-                                <BookingCard />
+                                {/* <BookingCard /> */}
                             </div>
                             <div className="card" style={{ width: "500px", marginLeft: "100px" }}>
                                 <div className="card-body">

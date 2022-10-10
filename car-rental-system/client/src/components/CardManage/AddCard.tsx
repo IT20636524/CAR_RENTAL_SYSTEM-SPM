@@ -67,7 +67,7 @@ export default function AddCard() {
         setCardMonth('');
         setCardYear('');
         setCardCVV('');
-        window.location.replace("/view-cards");
+        window.location.replace("/view-cards/booking_id");
       });
 
   }
