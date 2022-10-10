@@ -19,15 +19,28 @@ interface bookings{
 
 export default function ViewBookingsCards() {
     const [bookings, setBookings] = useState<bookings[]>([]);
+    const [name,setName]=useState("");
+
+    //access web token
+    const config = {
+        headers: { Authorization: `Bearer ${localStorage.getItem('access_token')}` }
+    };
+
     useEffect(() => {
         getData()
     },[]);
+
+    useEffect(()=>{
+        const user=JSON.parse(localStorage.getItem('user')||"{}");
+        setName(user?.name);
+    },[])
+
 
     const PF = "http://localhost:5000/images/"
 
     const getData =()=>{
 
-        axios.get("http://localhost:5000/api/bookings").then(res => {
+        axios.get("http://localhost:5000/api/bookings/"+name,config).then(res => {
             console.log(res.data);
             setBookings(res.data);
         }).catch(error => {
