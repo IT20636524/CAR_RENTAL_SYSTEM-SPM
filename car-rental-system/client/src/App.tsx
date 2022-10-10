@@ -28,7 +28,8 @@ import ViewBookings from './pages/ViewBookings';
 // import SignUp from './pages/SignUp';
 
 function App() {
-  const {user}=useContext(Context);
+  // const {user}=useContext(Context);
+  const user=JSON.parse(localStorage.getItem('user')||"{}");
   return (
     <>
       <BrowserRouter>
