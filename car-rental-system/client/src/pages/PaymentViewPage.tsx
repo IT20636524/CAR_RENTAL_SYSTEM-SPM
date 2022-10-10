@@ -12,11 +12,7 @@ export default function PaymentView() {
     return (
         <div>
             <Header />
-            <div
-                className="hpimage"
-                style={{
-                }}
-            >
+            <div className='background-radial-gradient'>
 
                 <br /><br />
                 <div className="container" >
