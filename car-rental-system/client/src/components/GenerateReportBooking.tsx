@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import { useState } from 'react';
 import { Col, Row, Form } from "react-bootstrap";
 import { MDBCol } from 'mdb-react-ui-kit';
-import { useReactToPrint } from "react-to-print"
+import ReactToPrint from 'react-to-print';
 import AcceptedBookings from './AcceptedBookings';
 
 
@@ -15,12 +15,11 @@ export default function GenerateReportBooking(props: any) {
 
     const handleShow = () => setShow(true);
 
-
+ 
     const [radio, setRadio] = useState('false')
+   
     const componentRef = useRef(null);
-    const handlePrint = useReactToPrint({
-        content: () => componentRef.current,
-    });
+
 
     return (
         <>
@@ -29,10 +28,11 @@ export default function GenerateReportBooking(props: any) {
             </Button>
 
             <Modal show={show}
+            onClick={handleClose}
                 size="lg"
                 centered
             >
-                <Modal.Header>
+                <Modal.Header closeButton >
 
                     <Modal.Title id="contained-modal-title-vcenter">Bookings Report</Modal.Title>
 
@@ -44,12 +44,21 @@ export default function GenerateReportBooking(props: any) {
                     </div>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="primary" onClick={handlePrint} >
+                <ReactToPrint
+                        trigger={() => <Button variant="primary" style={{ "width": "300px", "height": "40px", "color": "white", borderRadius: "50px", background: "linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%" }}>
+                            Print Report
+                        </Button>}
+                        content={() => componentRef.current}
+
+
+                    />
+
+                    {/* <Button variant="primary" onClick={handlePrint} >
                         Print Report
-                    </Button>
-                    <Button variant="danger" onClick={handleClose} >
+                    </Button> */}
+                    {/* <Button variant="danger" onClick={handleClose} >
                         Cancel
-                    </Button>
+                    </Button> */}
 
                 </Modal.Footer>
             </Modal>
