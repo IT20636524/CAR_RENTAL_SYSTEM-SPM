@@ -191,7 +191,7 @@ export default function AddStaff() {
     <Col sm="7" >
       {/* <Form.Control type="tel"  placeholder="Enter Contact Number" maxlength="10" value={contact_number} onChange={(e)=>setContactNumber(e.target.value)} /> */}
       <input
-      placeholder="Enter phone number"
+      placeholder="Enter Contact number"
       value={contact_number}
       maxLength={10} size={30}
       onChange={(e)=>setContactNumber(e.target.value)}/>
@@ -239,7 +239,7 @@ export default function AddStaff() {
     Note 
     </Form.Label>
     <Col sm="7">
-      <Form.Control type="textarea"placeholder="Enter Note" value={note} onChange={(e)=>setNote(e.target.value)}  />
+      <textarea style={{width:"360px",height:"60px"}} placeholder="Enter Note" value={note} onChange={(e)=>setNote(e.target.value)}  />
     </Col>
   </Form.Group>
 

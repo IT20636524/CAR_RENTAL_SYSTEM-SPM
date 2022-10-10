@@ -203,7 +203,11 @@ export default function UpdateStaff(props: { driver_code: string; }) {
     Contact Number
     </Form.Label>
     <Col sm="7">
-      <Form.Control type="Email" placeholder="Enter Contact Number"  value={contact_number} onChange={(e)=>setContactNumber(e.target.value)} />
+      <input
+      placeholder="Enter Contact number"
+      value={contact_number}
+      maxLength={10} size={30}
+      onChange={(e)=>setContactNumber(e.target.value)}/>
     </Col>
   </Form.Group>
 
@@ -225,7 +229,11 @@ export default function UpdateStaff(props: { driver_code: string; }) {
     Driving License No
     </Form.Label>
     <Col sm="7">
-      <Form.Control type="Email" placeholder="Enter Driving License No" value={driving_license_no} onChange={(e)=>setDrivingLicenseNo(e.target.value)} />
+    <input
+      placeholder="Enter Driving License No"
+      value={driving_license_no}
+      maxLength={7} size={30}
+      onChange={(e)=>setDrivingLicenseNo(e.target.value)}/>
     </Col>
   </Form.Group>
 
@@ -244,7 +252,7 @@ export default function UpdateStaff(props: { driver_code: string; }) {
     Note 
     </Form.Label>
     <Col sm="7">
-      <Form.Control type="textarea" placeholder="Enter Experience" value={note} onChange={(e)=>setNote(e.target.value)}  />
+      <textarea style={{width:"360px",height:"60px"}} placeholder="Enter Experience" value={note} onChange={(e)=>setNote(e.target.value)}  />
     </Col>
   </Form.Group>
 

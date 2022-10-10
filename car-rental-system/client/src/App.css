@@ -414,3 +414,123 @@ input.form-control, input.form-control:focus {
   font-size: 20px;
 
 }
+
+.heart-btn{
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.heart-content{
+  margin-left: 420px;
+  border: 2px solid red;
+  padding: 3px 12px;
+  border-radius: 5px;
+  width:180px;
+  display: flex;
+  cursor: pointer;
+}
+
+.heart-content .heart{
+margin-left: 10px;
+color: gray;
+margin-top: 4px;
+
+}
+
+.heart:hover{
+  color: red;
+  animation: animate .8s steps(28) 1;
+}
+
+
+
+
+.like{
+  margin-left: 10px;
+  font-size: 21px;
+  font-family: 'montserrat', sans-serif;
+  color: gray;
+}
+
+.numb::before{
+  content: '12';
+  margin-left: 10px;
+  font-size: 21px;
+  font-weight: 600;
+  font-family: sans-serif;
+  color: #9C9496;
+}
+
+.bg {
+  /* The image used */
+  /* background-image: url("https://mdbootstrap.com/img/new/avatars/8.jpg"); */
+
+
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.spcard{
+  width: 300px;
+  height: 300px;
+  margin: 10px;
+  box-shadow: 5px 5px 30px black;
+  overflow: hidden;
+}
+
+.spcontainer{
+  display: flex;
+}
+
+.spintro{
+  height: 50px;
+  width: 286px;
+  padding: 6px;
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 279px;
+  background: rgb(27, 27, 27, .5);
+  color: white;
+  transform: .5s;
+}
+
+.spintro h3{
+  margin: 10px;
+  font-size: 20px;
+}
+
+.spintro p {
+  font-size: 20px;
+  margin: 20px;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.spcard:hover{
+  cursor: pointer;
+}
+
+.spcard:hover .spintro{
+  height: 100px;
+  bottom: 279px;
+  background: black;
+  opacity: 75%;
+}
+
+.spcard:hover p{
+  opacity: 1;
+  visibility: visible;
+}
+
+.spcard:hover img{
+  transform: scale(1.1) rotate(-3deg);
+}
+
+

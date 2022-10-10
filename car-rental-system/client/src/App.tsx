@@ -15,6 +15,7 @@ import AdminStaffPage from './pages/AdminStaffPage';
 import CardViewPage from './pages/CardViewPage';
 import ContactUs from './pages/ContactUs';
 import Dashboard from './pages/Dashboard';
+import DriverView from './pages/DriverView';
 import Homepage from './pages/Home';
 import Login from './pages/Login';
 import PaymentView from './pages/PaymentViewPage';
@@ -51,7 +52,7 @@ function App() {
           <Route path="/staff" element={<Staff />} />
           <Route path="/admincontactus" element={<AdminContactUsPage />} />
           <Route path="/about-us" element={<AboutUsPage />} />
-          
+          <Route path="/:driver_code" element={<DriverView />} />
 
         </Routes>
       </BrowserRouter>
