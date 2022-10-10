@@ -49,12 +49,6 @@ export default function AddPayment() {
             setName(res.data['name']);
             setCostPerDay(res.data['cost_per_day']);
             setContactNumber(res.data['contact_number']);
-
-            // if(type_of_service === 'With Driver'){
-            //   setCostPerDay(res.data['cost_per_day'] + 1000)
-            // }else{
-            // setCostPerDay(res.data['cost_per_day'])
-            // }
            
         })
         .catch(err =>{
@@ -190,13 +184,13 @@ export default function AddPayment() {
     <br />  
 
         <div className="form-floating mb-3">
-            <input className="form-control" id="amount" type="text" placeholder="Amount"  value={posts.cost_per_day} onChange={(e)=>setCostPerDay(e.target.value)}/>
+            <input className="form-control" id="amount" type="text" placeholder="Amount"  value={(posts.type_of_service === 'With Driver') ? (parseInt(posts.cost_per_day) + 4000)*(parseInt(posts.no_of_days)) + "LKR" :  (parseInt(posts.cost_per_day))*(parseInt(posts.no_of_days)) + "LKR"} onChange={(e)=>setCostPerDay(e.target.value)}/>
             <label htmlFor="amount" style={{fontSize:"16px"}}>Amount</label>
            
         </div>
 
         </form>
-   <br />  
+   <br /> 
 
         <div className="text-center">
        
@@ -220,8 +214,9 @@ export default function AddPayment() {
 </section>
 
 </div></div>
-    
+    <br />
     </div>
+  
     <div className="col-5 mt-5" style={{ marginLeft: "80px" }}>
       <BookingDetails/>
     </div>

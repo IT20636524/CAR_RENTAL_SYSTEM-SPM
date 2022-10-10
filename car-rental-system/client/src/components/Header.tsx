@@ -10,7 +10,7 @@ export default function Header() {
   return (
     <>
 
-      <nav className="navbar navbar-expand-lg navbar-light">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light" style={{height:"100px"}}>
 
         <div className="container-fluid">
 
