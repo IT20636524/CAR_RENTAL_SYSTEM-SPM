@@ -15,7 +15,6 @@ export default function Login() {
            });
           localStorage.setItem('user', JSON.stringify(res.data.data.user))
           localStorage.setItem('access_token', res.data.data.access_token)
-          window.location.href = "/";
         } catch (err) {
           console.log(err);
         }

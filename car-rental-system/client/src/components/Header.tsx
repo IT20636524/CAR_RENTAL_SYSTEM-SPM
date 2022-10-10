@@ -66,31 +66,20 @@ export default function Header() {
             </ul>
 
           </div>
-{!localStorage.getItem('user')?(
-  <>
-  <a href="/login">
-  <button type="button" className="btn btn-light me-3" style={{width:"100px", height:"35px", fontSize:"13px"}}>
-    Login
-  </button>
 
-</a>
-<a href="/sign-up">
+          <a href="/login">
+            <button type="button" className="btn btn-light me-3" style={{width:"100px", height:"35px", fontSize:"13px"}}>
+              Login
+            </button>
 
-  <button type="button" className="btn btn-light me-3" style={{width:"100px", height:"35px", fontSize:"13px"}}>
-    Sign up
-  </button>
+          </a>
+          <a href="/sign-up">
 
-</a>
-</>
+            <button type="button" className="btn btn-light me-3" style={{width:"100px", height:"35px", fontSize:"13px"}}>
+              Sign up
+            </button>
 
-):(
-  <></>
-) 
-
-
-
-}
-        
+          </a>
 
           <form className="d-flex input-group w-auto me-4">
             <input
@@ -167,7 +156,7 @@ export default function Header() {
                   <a className="dropdown-item" href="#">Settings</a>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="/logout" >Logout</a>
+                  <a className="dropdown-item" href="" onClick={handleLogout}>Logout</a>
                 </li>
               </ul>
             </div>

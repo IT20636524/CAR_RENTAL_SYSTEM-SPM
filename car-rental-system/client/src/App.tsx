@@ -20,25 +20,22 @@ import DriverView from './pages/DriverView';
 import Homepage from './pages/Home';
 import Inquiries from './pages/Inquiries';
 import Login from './pages/Login';
-import Logout from './pages/Logout';
 import PaymentView from './pages/PaymentViewPage';
 import Register from './pages/Register';
 import Staff from './pages/StaffPage';
 import VehicleFleet from './pages/VehicleFleet';
 import ViewBookings from './pages/ViewBookings';
-
 // import SignUp from './pages/SignUp';
 
 function App() {
   // const {user}=useContext(Context);
-  const user=localStorage.getItem('user');
+  const user=JSON.parse(localStorage.getItem('user')||"{}");
   return (
     <>
       <BrowserRouter>
 
         <Routes>
           <Route path="/" element={<Homepage />} />
-          <Route path="/logout" element={<Logout/>} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/adminstaffpage" element={<AdminStaffPage />} />
           <Route path="/add-payment/:booking_id" element={<AddPayment />} />
@@ -57,7 +54,8 @@ function App() {
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/staff" element={<Staff />} />
           <Route path="/:driver_code" element={<DriverView />} />
-          <Route path="/admincontactus" element={<AdminContactUsPage />} />   
+          <Route path="/admincontactus" element={<AdminContactUsPage />} />
+          <Route path="/staff" element={<Staff />} />       
           <Route path="/about-us" element={<AboutUsPage />} />
           <Route path="/CarDetailsPage/:id" element={<CarDetailsPage />} />
           <Route path='/inquiries' element={<Inquiries/>}/>
