@@ -26,6 +26,7 @@ export default function AddBookingForm() {
     const [vehicle_pic, setVehiclePic]=useState("");
     const [cost,setCost]=useState("");
     const [cost_per_day,setCostPerDay]=useState("");
+    const [availability, setAvailability]=useState("");
     const {id}=useParams();
 //    setName(localStorage.getItem('user').name)
     //access web token
@@ -59,6 +60,9 @@ export default function AddBookingForm() {
         vehicle_pic,
         cost_per_day
     }
+    const carData = {
+        availability:'Not Available'
+    }
 
     useEffect(()=>{
         const user=JSON.parse(localStorage.getItem('user')||"{}");
@@ -82,6 +86,12 @@ export default function AddBookingForm() {
                 setNoOfDays('');
                 setLocation('');
                 swal({ text: "Successfully Added", icon: "success"})
+                axios.put("http://localhost:5000/api/cars/update/"+id,carData).then(function(res){
+                    console.log(res);
+                }).catch(function(err){
+                    console.log(err);
+                    alert('not updated');
+                })
             })
             .catch(function(error) {
                 console.log(error);
