@@ -6,6 +6,7 @@ import AdminSideNav from '../components/AdminSideNav'
 import AddCar from '../components/CarModal/AddCar';
 import CarReport from '../components/CarModal/CarReport';
 import DeleteCar from '../components/CarModal/DeleteCar';
+import SearchCar from '../components/CarModal/SearchCar';
 import UpdateCar from '../components/CarModal/UpdateCar';
 
 export default function AdminCarPage() {
@@ -27,10 +28,10 @@ export default function AdminCarPage() {
             <AdminSideNav />
             <div className="content">
                 <AdminHeader />
-                <CarReport />
+                <SearchCar /><CarReport />
 
-                <div className="container-fluid pt-4 px-4" >
-                    <h1 style={{ "marginLeft": "550px", "marginTop": "10px", "marginBottom": "50px", "color": "white", "fontFamily": "Poppins" }}>Cars</h1>
+                <div className="container-fluid pt-4 px-4">
+                    <h1 style={{ "marginLeft": "550px", "marginTop": "1px", "marginBottom": "10px", "color": "white", "fontFamily": "fantasy" }}>Cars</h1>
                     <div className="bg-secondary text-center rounded p-4" >
                         <div className="d-flex align-items-center justify-content-between mb-4" >
                         </div>
@@ -50,17 +51,17 @@ export default function AdminCarPage() {
                                         <th className="text-center" scope="col" style={{ "fontSize": "20px", "color": "white" }}>Action</th>
                                     </tr>
                                 </thead>
-                                <tbody style={{ color: "white" }}>
+                                <tbody style={{ color: "white", "fontFamily": "sans-serif" }}>
                                     {car.map(cm => (<tr key={cm.car_Id}>
-                                        <td style={{ "fontSize": "20px", "fontFamily": "Arial-Black" }}>{cm.car_Id}</td>
-                                        <td style={{ "fontSize": "20px", "fontFamily": "Arial-Black" }}>{cm.category}</td>
-                                        <td style={{ "fontSize": "20px", "fontFamily": "Arial-Black" }}>{cm.model}</td>
-                                        <td style={{ "fontSize": "20px", "fontFamily": "Arial-Black" }}>{cm.passengers}</td>
-                                        <td style={{ "fontSize": "20px", "fontFamily": "Arial-Black" }}>{cm.transmission}</td>
-                                        <td style={{ "fontSize": "20px", "fontFamily": "Arial-Black" }}>{cm.airCondition}</td>
-                                        <td style={{ "fontSize": "20px", "fontFamily": "Arial-Black" }}>{cm.fuelType}</td>
-                                        <td style={{ "fontSize": "20px", "fontFamily": "Arial-Black" }}>{cm.engineCap}</td>
-                                        <td style={{ "fontSize": "20px", "fontFamily": "Arial-Black" }}>{cm.costPerDay}</td>
+                                        <td style={{ "fontSize": "20px" }}>{cm.car_Id}</td>
+                                        <td style={{ "fontSize": "20px" }}>{cm.category}</td>
+                                        <td style={{ "fontSize": "20px" }}>{cm.model}</td>
+                                        <td style={{ "fontSize": "20px" }}>{cm.passengers}</td>
+                                        <td style={{ "fontSize": "20px" }}>{cm.transmission}</td>
+                                        <td style={{ "fontSize": "20px" }}>{cm.airCondition}</td>
+                                        <td style={{ "fontSize": "20px" }}>{cm.fuelType}</td>
+                                        <td style={{ "fontSize": "20px" }}>{cm.engineCap}</td>
+                                        <td style={{ "fontSize": "20px" }}>{cm.costPerDay}</td>
                                         <td className="text-center">
                                             <UpdateCar car_Id={cm.car_Id} /> &nbsp;&nbsp;
                                             <DeleteCar car_Id={cm.car_Id} />

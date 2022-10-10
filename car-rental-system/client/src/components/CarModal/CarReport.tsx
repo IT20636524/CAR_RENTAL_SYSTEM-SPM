@@ -21,10 +21,10 @@ export default function CarReport() {
             })
 
     })
-    
+
     return (
         <div>
-            <Button className="btn-dashb me-5 rounded " variant="warning" onClick={handleShow} style={{ "width": "300px", "height": "50px", "marginLeft": "900px", "fontSize": "20px", "marginTop": "25px" }}>
+            <Button className="btn-dashb me-5 rounded " variant="warning" onClick={handleShow} style={{ "width": "300px", "height": "50px", "marginLeft": "900px", "fontSize": "20px", "marginTop": "1px" }}>
                 Generate Report
             </Button>
 
