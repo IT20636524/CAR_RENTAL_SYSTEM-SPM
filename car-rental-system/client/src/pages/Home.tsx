@@ -85,7 +85,7 @@ export default function Home() {
             <br />
             <br />
 
-            <Link to={`VehicleFleet`} className="col-md-3 credit-card">
+            <Link to={`/vehiclefleet`} className="col-md-3 credit-card">
 
               <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel" >
                 <div className="carousel-inner">
@@ -127,7 +127,7 @@ export default function Home() {
             <br />
             <br />
 
-            <Link to={`Inquiries`} className="col-md-3 credit-card">
+            <Link to={`/inquiries`} className="col-md-3 credit-card">
 
               <div id="carouselExampleControlss" className="carousel slide" data-bs-ride="carousel" >
                 <div className="carousel-inner">
@@ -169,7 +169,7 @@ export default function Home() {
             <br />
             <br />
 
-            <Link to={`staff`} className="col-md-3 credit-card">
+            <Link to={`/staff`} className="col-md-3 credit-card">
 
               <div id="carouselExampleControlsss" className="carousel slide" data-bs-ride="carousel" >
                 <div className="carousel-inner">

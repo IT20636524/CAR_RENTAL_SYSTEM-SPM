@@ -31,7 +31,7 @@ router.post("/add",protect, async (req,res) => {
 });
 
 //Get all bookings
-router.get("/", async(req,res) => {
+router.get("/all", async(req,res) => {
     const book_id = req.query.booking_id;
     try{
         let bookings;
@@ -39,6 +39,22 @@ router.get("/", async(req,res) => {
             bookings = await Booking.find({ booking_id });
         } else {
             bookings = await Booking.find();
+        }
+        res.status(200).json(bookings);
+    }catch(err){
+        res.status(500).json(err);
+    }
+});
+
+//Get all bookings according to name
+router.get("/:name", async(req,res) => {
+    const book_id = req.query.booking_id;
+    try{
+        let bookings;
+        if(book_id) {
+            bookings = await Booking.find({ booking_id });
+        } else {
+            bookings = await Booking.find({name:req.params.name});
         }
         res.status(200).json(bookings);
     }catch(err){
