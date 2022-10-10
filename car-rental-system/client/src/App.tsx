@@ -37,7 +37,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/adminstaffpage" element={<AdminStaffPage />} />
           <Route path="/add-payment/:booking_id" element={<AddPayment />} />
-          <Route path="/paymentview/:payment_id" element={<PaymentView />} />
+          <Route path="/paymentview/:payment_id/:booking_id" element={<PaymentView />} />
           <Route path="/sign-up" element={<Register />} />
           <Route path="/view-cards/:booking_id" element={<CardViewPage />} />
           <Route path="/login" element={user?<Homepage/> : <Login />} />

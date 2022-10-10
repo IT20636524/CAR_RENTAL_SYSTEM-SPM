@@ -8,7 +8,7 @@ export default function BookingCard() {
     
     const params = useParams();
     const [posts, setPosts] =useState<any>([]);
-    const [vehicle_pic, setVehiclePic] =useState("");
+
     useEffect(()=> {
         axios.get(`http://localhost:5000/api/bookings/${params.booking_id}`)
         .then(res => {

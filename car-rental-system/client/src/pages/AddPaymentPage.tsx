@@ -30,7 +30,9 @@ export default function AddPayment() {
     const [contact_number, setContactNumber] = useState("");
     const [posts, setPosts] =useState<any>([]);
     const [image, setImage] = useState("");
-    const PF = "http://localhost:5000/image/"
+
+    const [no_of_days, setNoOfDays] = useState("");
+    const [type_of_service, setTypeOfService] = useState("");
 
     const [cardNumber, setCardNumber] = useState("");
 
@@ -47,6 +49,12 @@ export default function AddPayment() {
             setName(res.data['name']);
             setCostPerDay(res.data['cost_per_day']);
             setContactNumber(res.data['contact_number']);
+
+            // if(type_of_service === 'With Driver'){
+            //   setCostPerDay(res.data['cost_per_day'] + 1000)
+            // }else{
+            // setCostPerDay(res.data['cost_per_day'])
+            // }
            
         })
         .catch(err =>{
@@ -81,13 +89,9 @@ export default function AddPayment() {
         cost_per_day,
         contact_number,
     }
-    
-    
-  // if(x= ''){
-  //   setAmount((res.data.amount +1000)*no of days)
-  // }else{
-  // setAmount((res.data.amount)*no of days )
-  // }
+
+  
+
     function submitForm(e: { preventDefault: () => void; }){
       e.preventDefault();
       if(card.length === 0 ){
@@ -106,7 +110,7 @@ export default function AddPayment() {
             cancel: { text: 'Cancel' },
             confirm: { text: 'Confirm' },
           }}).then((res: any)=>{
-            navigate(`/paymentview/${response.data.payment_id}`,{replace:true});
+            navigate(`/paymentview/${response.data.payment_id}/${response.data.booking_id}`,{replace:true});
           })
          
           console.log(response.data)
