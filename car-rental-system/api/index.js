@@ -10,6 +10,7 @@ const StaffRoute = require("./routes/staff");
 const carRoute = require("./routes/cars");
 const PaymentRoute = require("./routes/payments");
 const ContactUsRoute = require("./routes/contactus");
+const FeedbackRoute = require("./routes/feedback");
 const multer = require("multer");
 const path = require("path");
 const jwt = require("jsonwebtoken");
@@ -63,6 +64,7 @@ app.use("/api/cards", CardRoute);
 app.use("/api/cars", carRoute);
 app.use("/api/payments", PaymentRoute);
 app.use("/api/contactus", ContactUsRoute);
+app.use("/api/feedback", FeedbackRoute);
 app.use("/images", express.static(path.join(__dirname, "/images")));
 
 app.listen("5000", ()=>{
