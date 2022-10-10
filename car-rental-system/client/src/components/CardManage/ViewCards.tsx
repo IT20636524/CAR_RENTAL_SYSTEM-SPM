@@ -34,17 +34,20 @@ export default function CardView() {
 
   const [cardsDatas, setCardsDatas] = useState<CreditCard[]>([]);
 
+  const config = localStorage.getItem('access_token')?{
+    headers: { Authorization: `Bearer ${localStorage.getItem('access_token')}` }
+  }:{};
 
   useEffect(() => {
-    const fetchcloth = async () => {
+    const fetchCard = async () => {
 
-      const res = await axios.get('http://localhost:5000/api/cards')
+      const res = await axios.get('http://localhost:5000/api/cards',config)
       const cards: CreditCard[] = res.data
       setCardsDatas(cards)
       console.log(cards)
 
     }
-    fetchcloth()
+    fetchCard()
   }, [])
 
 
@@ -52,8 +55,11 @@ export default function CardView() {
     fetchData();
   }, []);
 
+  
+
   async function fetchData() {
-    const cards: CreditCard[] = await axios.get('http://localhost:5000/api/cards')
+    
+    const cards: CreditCard[] = await axios.get('http://localhost:5000/api/cards',config)
     setCardsData(cards);
     if (cards && cards.length > 0) {
       const selectedCard = cards.find((card) => card._id);
@@ -97,7 +103,7 @@ export default function CardView() {
       cardCvv: state.cardCvv,
     };
 
-    axios.put(`http://localhost:5000/api/cards/update/${state._id}`, cardData)
+    axios.put(`http://localhost:5000/api/cards/update/${state._id}`, cardData,config)
 
       .then(function (response) {
         console.log(response.data);
@@ -107,25 +113,24 @@ export default function CardView() {
         setCardMonth('');
         setCardYear('');
         setCardCVV('');
-        window.location.replace("/view-cards");
+        window.location.replace("/view-cards/booking_id");
       });
 
   }
   function handleDeleteAction() {
 
-    axios.delete('http://localhost:5000/api/cards/delete/' + state._id)
+    axios.delete('http://localhost:5000/api/cards/delete/' + state._id,config)
       .then(function (response) {
         console.log(response.data);
 
-        window.location.replace("/view-cards");
+        window.location.replace("/view-cards/booking_id");
       });
 
-    window.location.replace('/view-cards');
-
+  
   }
   const DeleteShow = () => {
 
-    axios.get("http://localhost:5000/api/staff/" + state._id)
+    axios.get("http://localhost:5000/api/staff/" + state._id,config)
       .then(function (response) {
 
         setShow(true)

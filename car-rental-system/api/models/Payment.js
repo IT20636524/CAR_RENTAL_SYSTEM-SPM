@@ -19,8 +19,8 @@ const PaymentSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    amount:{
-      type: Number,
+    cost_per_day:{
+      type: String,
       required:true,
     },
     contact_number:{

@@ -1,14 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState , } from 'react'
 import { Link } from 'react-router-dom';
 import swal from 'sweetalert';
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
 import axios from 'axios';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import BookingDetails from '../components/Payment/BookingDetails';
+import { useParams } from 'react-router-dom';
+import {
+  CreditCard,
+} from '../components/Card/CreditCard';
 
-
+const initialState: CreditCard = {
+  _id: '',
+  cardNumber: '',
+  cardHolder: '',
+  cardMonth: '',
+  cardYear: '',
+  cardCvv: '',
+};
 
 export default function AddPayment() {
 
@@ -16,28 +26,75 @@ export default function AddPayment() {
     const [payment_id, setPaymentId] = useState("");
     const [name, setName] = useState("");
     const [card, setCard] = useState("");
-    const [amount, setAmount] = useState("");
+    const [cost_per_day,setCostPerDay]=useState("");
     const [contact_number, setContactNumber] = useState("");
-  
- 
-    
+    const [posts, setPosts] =useState<any>([]);
+    const [image, setImage] = useState("");
+
+    const [no_of_days, setNoOfDays] = useState("");
+    const [type_of_service, setTypeOfService] = useState("");
+
+    const [cardNumber, setCardNumber] = useState("");
+
     const navigate = useNavigate();
 
-    
+    const params = useParams();
+
+    useEffect(()=> {
+        axios.get(`http://localhost:5000/api/bookings/${params.booking_id}`)
+        .then(res => {
+            console.log(res.data)
+            setPosts(res.data)
+            setBookingId(res.data['booking_id']);
+            setName(res.data['name']);
+            setCostPerDay(res.data['cost_per_day']);
+            setContactNumber(res.data['contact_number']);
+
+            // if(type_of_service === 'With Driver'){
+            //   setCostPerDay(res.data['cost_per_day'] + 1000)
+            // }else{
+            // setCostPerDay(res.data['cost_per_day'])
+            // }
+           
+        })
+        .catch(err =>{
+            console.log(err)
+        })
+    }, [])
+
+  const [cardsDatas, setCardsDatas] = useState<CreditCard[]>([]);
+
+  const config = localStorage.getItem('access_token')?{
+    headers: { Authorization: `Bearer ${localStorage.getItem('access_token')}` }
+  }:{};
+
+  useEffect(() => {
+    const fetchCard = async () => {
+
+      const res = await axios.get('http://localhost:5000/api/cards',config)
+      const cards: CreditCard[] = res.data;
+      setCardsDatas(cards)
+      console.log(cards)
+
+    }
+    fetchCard()
+  }, [])
+
+  
+
     const PayData ={
         booking_id,
-        payment_id,
         name,
         card,
-        amount,
+        cost_per_day,
         contact_number,
     }
-    
+
   
-  
+
     function submitForm(e: { preventDefault: () => void; }){
       e.preventDefault();
-      if(booking_id.length === 0 || name.length === 0 || card.length === 0|| amount.length === 0 || contact_number.length === 0  ){
+      if(card.length === 0 ){
         swal(" Fields Cannot empty !","Please enter all data !", "error");
       }else{
         console.log(PayData);
@@ -47,13 +104,13 @@ export default function AddPayment() {
           setBookingId("");
           setName("");
           setCard("");
-          setAmount("");
+          setCostPerDay("");
           setContactNumber("");
           swal({ text: "Payment Successful", icon: "success",  buttons: {
             cancel: { text: 'Cancel' },
             confirm: { text: 'Confirm' },
           }}).then((res: any)=>{
-            navigate(`/paymentview/${response.data.payment_id}`,{replace:true});
+            navigate(`/paymentview/${response.data.payment_id}/${response.data.booking_id}`,{replace:true});
           })
          
           console.log(response.data)
@@ -102,38 +159,38 @@ export default function AddPayment() {
         <form id="contact-form" name="contact-form" action="mail.php" method="POST" onSubmit={submitForm}>
 
         <div className="form-floating mb-3">
-            <input className="form-control" id="bookingid" type="text" placeholder="Booking ID" value={booking_id} onChange={(e)=>setBookingId(e.target.value)}/>
+            <input className="form-control" id="bookingid" type="text" placeholder="Booking ID" value={posts.booking_id} onChange={(e)=>setBookingId(e.target.value)}/>
             <label htmlFor="bookingid"  style={{fontSize:"16px"}} >Booking ID</label>
           
         </div>
 <br />
         <div className="form-floating mb-3">
-            <input className="form-control" id="name" type="text" placeholder="Name"  value={name} onChange={(e)=>setName(e.target.value)}/>
+            <input className="form-control" id="name" type="text" placeholder="Name"  value={posts.name} onChange={(e)=>setName(e.target.value)}/>
             <label htmlFor="name" style={{fontSize:"16px"}}>Name</label>
            
         </div>
     <br />   
         <div className="form-floating mb-3">
-            <input className="form-control" id="contact" type="text" placeholder="Contact Number"  value={contact_number} onChange={(e)=>setContactNumber(e.target.value)}/>
+            <input className="form-control" id="contact" type="text" placeholder="Contact Number"  value={posts.contact_number} onChange={(e)=>setContactNumber(e.target.value)}/>
             <label htmlFor="contact" style={{fontSize:"16px"}}>Contact Number</label>
            
         </div>   
 <br />
+
         <select className="form-select mb-4 text-grey" aria-label="Disabled select example" onChange={(e)=>setCard(e.target.value)}>
           <option selected style={{fontSize:"16px"}}>Select a Card</option>
-          <option value="1">1234567812345678</option>
          
-<br />
-          {/* {subopt.map(card => {
+
+          {cardsDatas.map(card => {
                     // eslint-disable-next-line react/jsx-key
-                    return <option value={card}>{card}</option>
-                  })} */}
+                    return <option value={card.cardNumber}>{card.cardNumber}</option>
+                  })}
         </select>
 
     <br />  
 
         <div className="form-floating mb-3">
-            <input className="form-control" id="amount" type="text" placeholder="Amount"  value={amount} onChange={(e)=>setAmount(e.target.value)}/>
+            <input className="form-control" id="amount" type="text" placeholder="Amount"  value={posts.cost_per_day} onChange={(e)=>setCostPerDay(e.target.value)}/>
             <label htmlFor="amount" style={{fontSize:"16px"}}>Amount</label>
            
         </div>

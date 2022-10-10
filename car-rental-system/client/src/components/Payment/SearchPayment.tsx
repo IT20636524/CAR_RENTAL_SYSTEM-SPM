@@ -21,22 +21,28 @@ const SearchPayment = () => {
   const [contact_number, setContactNumber] = useState("");
   const [createdAt, setCreatedAt] = useState("");
 
-  useEffect(() => {
-    const fetchPayment = async () => {
 
-      const res = await axios.get(`http://localhost:5000/api/payments/`+ payment_id)
-      const pays = res.data
-      setPayment(pays)
-      console.log(pays)
 
-    }
-    fetchPayment()
-  }, [])
+  const fetchPayment = async () => {
 
-  function searchId(e:any,payment_id:any) {
+    const res = await axios.get(`http://localhost:5000/api/payments/`+ payment_id)
+    const pays = res.data
+    setName(pays.name);
+    setPaymentId(pays.payment_id);
+    setAmount(pays.amount);
+    setContactNumber(pays.contact_number);
+    setName(pays.name);
+    setCreatedAt(pays.createdAt);
+    console.log(pays)
+
+  }
+
+  function searchId(e:any) {
+   
     if (e.keyCode === 13) {
-      setState(pay[payment_id]);
+      fetchPayment()
         console.log(pay)   
+        
       setShow(true)
     }
   }
@@ -44,9 +50,9 @@ const SearchPayment = () => {
 
   return (
     <>
-      <form className="d-none d-md-flex ms-4">
-        <input className="form-control bg-dark border-1" type="search" placeholder="Search" onChange={(e)=>setPaymentId(e.target.value)} onKeyDown={(e) => searchId(e,payment_id)} style={{ backgroundColor: "#8c9399!important", color: "white" }} />
-      </form>
+      <div className="d-none d-md-flex ms-4">
+        <input className="form-control bg-dark border-1" type="search" placeholder="Search" onChange={(e)=>setPaymentId(e.target.value)} value={payment_id} onKeyDown={searchId} style={{ backgroundColor: "#8c9399!important", color: "white" }} />
+      </div>
       <Modal show={show}
         onHide={handleClose}
         size="lg"
@@ -63,9 +69,8 @@ const SearchPayment = () => {
         <Modal.Body style={{ backgroundColor: "grey" }}>
           <div className="container" >
             <div className="row">
-              {pay.map(dm => (
-
-                <div key={dm.payment_id} className="card">
+             
+                <div key={payment_id} className="card">
                   <div className="card-body">
                     <h2 className='text-center'>payment Invoice</h2>
                     <div className="container mb-6 mt-3">
@@ -77,7 +82,7 @@ const SearchPayment = () => {
 
 
                       <div className="container" >
-                        <p style={{ color: "#7e8d9f", fontSize: "20px" }}>Invoice---<strong>ID: {dm.payment_id}</strong></p>
+                        <p style={{ color: "#7e8d9f", fontSize: "20px" }}>Invoice---<strong>ID: {payment_id}</strong></p>
 
                         <div className="col-md-12">
                           <div className="text-center">
@@ -97,17 +102,17 @@ const SearchPayment = () => {
                         <div className="row">
                           <div className="col-xl-8">
                             <ul className="list-unstyled">
-                              <li className="text-muted">To: <span style={{ color: "#5d9fc5" }}>{dm.name}</span></li>
-                              <li className="text-muted"><i className="fas fa-phone"></i>{dm.contact_number}</li>
+                              <li className="text-muted">To: <span style={{ color: "#5d9fc5" }}>{name}</span></li>
+                              <li className="text-muted"><i className="fas fa-phone"></i>{contact_number}</li>
                             </ul>
                           </div>
                           <div className="col-xl-4">
                             <p className="text-muted">Invoice</p>
                             <ul className="list-unstyled">
                               <li className="text-muted"><i className="fas fa-circle" style={{ color: "#84B0CA" }}></i> <span
-                                className="fw-bold">ID:</span>{dm.payment_id}</li>
+                                className="fw-bold">ID:</span>{payment_id}</li>
                               <li className="text-muted"><i className="fas fa-circle" style={{ color: "#84B0CA" }}></i> <span
-                                className="fw-bold">Creation Date: </span>{dm.createdAt}</li>
+                                className="fw-bold">Creation Date: </span>{createdAt}</li>
                               <li className="text-muted"><i className="fas fa-circle" style={{ color: "#84B0CA" }}></i> <span
                                 className="me-1 fw-bold">Status:</span><span className="badge bg-warning text-black fw-bold">
                                   Paid</span></li>
@@ -132,7 +137,7 @@ const SearchPayment = () => {
                                 <td>Pro Package</td>
                                 <td>4</td>
                                 <td>$200</td>
-                                <td>{dm.amount}</td>
+                                <td>{amount}</td>
                               </tr>
 
                             </tbody>
@@ -166,8 +171,7 @@ const SearchPayment = () => {
                     </div>
                   </div>
                 </div>
-              ))}
-
+             
             </div>
           
 

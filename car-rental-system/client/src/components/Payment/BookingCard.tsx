@@ -1,7 +1,28 @@
-import React from 'react'
+import axios from 'axios';
+import { builtinModules } from 'module'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 export default function BookingCard() {
+    
+    const params = useParams();
+    const [posts, setPosts] =useState<any>([]);
+
+    useEffect(()=> {
+        axios.get(`http://localhost:5000/api/bookings/${params.booking_id}`)
+        .then(res => {
+            console.log(res.data)
+            setPosts(res.data)
+        })
+        .catch(err =>{
+            console.log(err)
+        })
+    }, [])
+
+    const PF = "http://localhost:5000/images/"
+
+
     return (
         <div>
 
@@ -12,14 +33,14 @@ export default function BookingCard() {
                     <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
                         <div className="carousel-inner">
                             <div className="carousel-item active">
-                                <img src="https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?cs=srgb&dl=pexels-mike-b-170811.jpg&fm=jpg" className="d-block w-100" style={{ height: "200px" }} />
+                                <img src={PF+posts.vehicle_pic} className="d-block w-100" style={{ height: "200px" }} />
                             </div>
-                            <div className="carousel-item">
+                            {/* <div className="carousel-item">
                                 <img src="https://fastly-production.24c.in/cars24/seo/exterior/BMW/3%20Series%20GT/IMG_5044_1222_1582186327.jpg?auto=format" className="d-block w-100" style={{ height: "200px" }} />
                             </div>
                             <div className="carousel-item">
                                 <img src="https://static.autox.com/uploads/2016/11/bmw-3-series-gran-turismo-exterior-photo-front-left-view-1.jpg" className="d-block w-100" style={{ height: "200px" }} />
-                            </div>
+                            </div> */}
 
                         </div>
                         <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -37,29 +58,30 @@ export default function BookingCard() {
                         <div className="row">
                             <div className="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                 <div className="car-info-left">
-                                    <h6>Brand: <span>Peugeot</span></h6>
-                                    <h6>Model: <span>208</span></h6>
-                                    <h6>Coupe type: <span>Hatchback</span></h6>
-                                    <h6>Fuel type: <span>Gasoline</span></h6>
-                                    <h6>Gearbox: <span>Manual</span></h6>
-                                    <h6>Doors: <span>5</span></h6>
+                                    <h6>Name: <span>{posts.name}</span></h6>
+                                    <h6>Email: <span>{posts.email}</span></h6>
+                                    <h6>Address: <span>{posts.address}</span></h6>
+                                    <h6>Contact Number: <span>{posts.contact_number}</span></h6>
+                                    <h6>Type of Service: <span>{posts.type_of_service}</span></h6>
                                 </div>
                             </div>
                             <div className="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                 <div className="car-info-right">
-                                    <h6>Seats: <span>5</span></h6>
-                                    <h6>Volume of trunk: <span>44 l</span></h6>
-                                    <h6>Fuel consumption: <span>4.8 l/100 km</span></h6>
-                                    <h6>Trunk volume: <span>265-1106 l</span></h6>
-                                    <h6>HP: <span>100</span></h6>
-                                    <h6>Engine volume: <span>1200 cm3</span></h6>
+                                    
+                                    <h6>Selected Model: <span>{posts.selected_model}</span></h6>
+                                    <h6>Number of Days: <span>{posts.no_of_days}</span></h6>
+                                    <h6>Location: <span>{posts.location}</span></h6>
+                                    <h6>Cost Per Day: <span>{posts.cost_per_day}</span></h6>
+                                   
                                 </div>
                             </div>
 
                         </div>
                     </div>
                 </div>
-            </div><br /><br />
+            </div>
+           
+               <br /><br />
         </div>
     )
 }

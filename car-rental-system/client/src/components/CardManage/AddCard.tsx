@@ -39,8 +39,14 @@ export default function AddCard() {
     [state],
   );
 
-  function handleSubmitAction() {
+   
+  
 
+
+  function handleSubmitAction() {
+    const config = localStorage.getItem('access_token')?{
+      headers: { Authorization: `Bearer ${localStorage.getItem('access_token')}` }
+    }:{};
     const cardData = {
       id: '',
       cardNumber: state.cardNumber,
@@ -52,7 +58,7 @@ export default function AddCard() {
     console.log(cardData);
     console.log(state);
 
-    axios.post('http://localhost:5000/api/cards', cardData)
+    axios.post('http://localhost:5000/api/cards', cardData, config)
       .then(function (response) {
         console.log(response.data);
         setID('');
@@ -61,7 +67,7 @@ export default function AddCard() {
         setCardMonth('');
         setCardYear('');
         setCardCVV('');
-        window.location.replace("/view-cards");
+        window.location.replace("/view-cards/booking_id");
       });
 
   }

@@ -37,10 +37,10 @@ function App() {
           <Route path="/" element={<Homepage />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/adminstaffpage" element={<AdminStaffPage />} />
-          <Route path="/add-payment" element={<AddPayment />} />
-          <Route path="/paymentview/:payment_id" element={<PaymentView />} />
+          <Route path="/add-payment/:booking_id" element={<AddPayment />} />
+          <Route path="/paymentview/:payment_id/:booking_id" element={<PaymentView />} />
           <Route path="/sign-up" element={<Register />} />
-          <Route path="/view-cards" element={<CardViewPage />} />
+          <Route path="/view-cards/:booking_id" element={<CardViewPage />} />
           <Route path="/login" element={user?<Homepage/> : <Login />} />
           <Route path="/add-booking/:id" element={<AddBooking/>}/>
           <Route path="/admin-booking" element={<AdminBookingPage/>} />
@@ -54,6 +54,7 @@ function App() {
           <Route path="/staff" element={<Staff />} />
           <Route path="/:driver_code" element={<DriverView />} />
           <Route path="/admincontactus" element={<AdminContactUsPage />} />
+          <Route path="/staff" element={<Staff />} />       
           <Route path="/about-us" element={<AboutUsPage />} />
           <Route path="/CarDetailsPage/:id" element={<CarDetailsPage />} />
           <Route path='/inquiries' element={<Inquiries/>}/>

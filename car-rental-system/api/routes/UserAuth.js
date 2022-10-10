@@ -13,14 +13,15 @@ const sendTokenResponse = async (res, user, message) => {
     })
   }
   
-   const generateToken = (user) => {
-    return jwt.sign({ data: user }, process.env.JWT_SECRET, {
+
+  const generateToken = (user) => {
+    return jwt.sign({ data: user }, process.env.JWT_SECRET || 'jsecret', {
       expiresIn: `30d`
     })
   }
   
    const decodeJwtToken = (token) => {
-    return jwt.verify(token, process.env.JWT_SECRET)
+    return jwt.verify(token, process.env.JWT_SECRET || 'jsecret')
   }
 
 //Register
