@@ -39,8 +39,8 @@ box-shadow: inset 20px 20px 60px #0e0e86,
 
 .neo-button:active {
    border-radius: 50%;
-background: #160ca1;
-box-shadow:  28px 28px 57px #250c95, 
+background: #272731;
+box-shadow:  28px 28px 57px #2e0c95, 
              -28px -28px 57px #230da2;
 }
 
