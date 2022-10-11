@@ -108,6 +108,7 @@ export default function AddCar() {
         });
       }).catch(function (error) {
         console.log(error);
+        alert("Not added");
       });
     }
 
