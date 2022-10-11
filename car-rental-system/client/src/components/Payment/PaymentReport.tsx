@@ -55,7 +55,7 @@ export default function PaymentReport() {
 
                         <div>
 
-                            <h1 className='text-center' style={{ "marginBottom": "50px", "color": "black", "fontFamily": "fantasy" }}> Month End Payment Summary</h1>
+                            <h1 className='text-center' style={{ "marginBottom": "50px", "color": "black", "fontFamily": "fantasy" }}> Payment Summary</h1>
                             <div className="bg-secondary text-center rounded p-4" >
 
                                 <div className="table-responsive">

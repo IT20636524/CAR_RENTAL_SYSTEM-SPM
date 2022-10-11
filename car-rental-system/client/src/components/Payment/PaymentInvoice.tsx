@@ -27,7 +27,7 @@ export default function PaymentInvoice() {
     const paramsb = useParams();
   
     useEffect(() => {
-      axios.get(`http://localhost:5000/api/bookings/${paramsb.booking_id}`)
+      axios.get(`http://localhost:5000/api/bookings/getone/${paramsb.booking_id}`)
   
         .then(res => {
         
@@ -85,7 +85,7 @@ export default function PaymentInvoice() {
                             <ul className="list-unstyled">
                               <li className="text-muted"><i className="fas fa-circle" style={{ color: "#84B0CA" }}></i> 
                               <span
-                                className="fw-bold">ID:</span>{posts.payment_id}</li>
+                                className="fw-bold">Booking ID:</span>{posts.booking_id}</li>
                               <li className="text-muted"><i className="fas fa-circle" style={{ color: "#84B0CA" }}></i> 
                               <span
                                 className="fw-bold">Creation Date: </span>{posts.createdAt}</li>
@@ -103,8 +103,8 @@ export default function PaymentInvoice() {
                               <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Model</th>
-                                <th scope="col">Location</th>
-                                <th scope="col">Address</th>
+                                <th scope="col">Pick-up Location</th>
+                                <th scope="col">Drop Location</th>
                                 <th scope="col">Amount</th>
                               </tr>
                             </thead>
@@ -112,8 +112,8 @@ export default function PaymentInvoice() {
                               <tr>
                                 <th scope="row">{posts.payment_id}</th>
                                 <td>{bookposts.selected_model}</td>
-                                <td>{bookposts.location}</td>
-                                <td>{bookposts.address}</td>                   
+                                <td>{bookposts.address}</td>
+                                <td>{bookposts.location}</td>                   
                                 <td>{posts.cost_per_day}</td>
                               </tr>
 

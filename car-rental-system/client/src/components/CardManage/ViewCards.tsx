@@ -59,7 +59,7 @@ export default function CardView() {
   const params = useParams();
   const [posts, setPosts] =useState<any>([]);
   useEffect(()=> {
-      axios.get(`http://localhost:5000/api/bookings/${params.booking_id}`)
+      axios.get(`http://localhost:5000/api/bookings/getone/${params.booking_id}`)
       .then(res => {
           console.log(res.data)
           setPosts(res.data)
