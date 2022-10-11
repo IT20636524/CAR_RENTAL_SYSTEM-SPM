@@ -85,7 +85,7 @@ export default function PaymentInvoice() {
                             <ul className="list-unstyled">
                               <li className="text-muted"><i className="fas fa-circle" style={{ color: "#84B0CA" }}></i> 
                               <span
-                                className="fw-bold">ID:</span>{posts.payment_id}</li>
+                                className="fw-bold">Booking ID:</span>{posts.booking_id}</li>
                               <li className="text-muted"><i className="fas fa-circle" style={{ color: "#84B0CA" }}></i> 
                               <span
                                 className="fw-bold">Creation Date: </span>{posts.createdAt}</li>
