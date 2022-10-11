@@ -81,7 +81,7 @@ export default function CarDetailsPage() {
                         <h5>Specifications</h5>
                         <br />
                         <Col sm={10}>
-                            
+
                             <Form.Group as={Row} className="mb-0.5" >
                                 <Form.Label column sm="6">
                                     <h6>Category : {category}</h6>
@@ -130,7 +130,7 @@ export default function CarDetailsPage() {
                                 </Form.Label>
                             </Form.Group>
                             <br />
-                            <Link to = {`/add-booking/${id}`} className="btn btn-info">Inquiry</Link>
+                            <Link to={`/add-booking/${id}`} className="btn btn-info">Inquiry</Link>
 
                         </Col>
                     </div>

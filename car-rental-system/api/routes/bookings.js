@@ -31,7 +31,7 @@ router.post("/add",protect, async (req,res) => {
 });
 
 //Get all bookings
-router.get("/", async(req,res) => {
+router.get("/all", async(req,res) => {
     const book_id = req.query.booking_id;
     try{
         let bookings;
@@ -46,8 +46,24 @@ router.get("/", async(req,res) => {
     }
 });
 
+//Get all bookings according to name
+router.get("/:name", async(req,res) => {
+    const book_id = req.query.booking_id;
+    try{
+        let bookings;
+        if(book_id) {
+            bookings = await Booking.find({ booking_id });
+        } else {
+            bookings = await Booking.find({name:req.params.name});
+        }
+        res.status(200).json(bookings);
+    }catch(err){
+        res.status(500).json(err);
+    }
+});
+
 //Get one booking
-router.get("/:booking_id", async(req,res) => {
+router.get("/getone/:booking_id", async(req,res) => {
     try{
         const booking = await Booking.findOne({ 'booking_id':req.params.booking_id });
         res.status(200).json(booking);

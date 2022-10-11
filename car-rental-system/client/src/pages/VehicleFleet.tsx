@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 import CarDetailsPage from './CarDetailsPage';
@@ -55,7 +55,7 @@ export default function VehicleFleet() {
               <img src={PF + lcr.image} className="card-img-top" alt="" />
               <div className="card-body">
                 <h5 className="card-title">{lcr.model}</h5>
-                <Link to = {`/CarDetailsPage/${lcr.car_Id}`} className="btn btn-info" >Details</Link>
+                <Link to={`/CarDetailsPage/${lcr.car_Id}`} className="btn btn-info" >Details</Link>
               </div>
             </div>
           </div>
@@ -72,7 +72,7 @@ export default function VehicleFleet() {
               <img src={PF + pcr.image} className="card-img-top" alt="" />
               <div className="card-body">
                 <h5 className="card-title">{pcr.model}</h5>
-                <Link to = {`/CarDetailsPage/${pcr.car_Id}`} className="btn btn-info" >Details</Link>
+                <Link to={`/CarDetailsPage/${pcr.car_Id}`} className="btn btn-info" >Details</Link>
               </div>
             </div>
           </div>
@@ -89,7 +89,7 @@ export default function VehicleFleet() {
               <img src={PF + gcr.image} className="card-img-top" alt="" />
               <div className="card-body">
                 <h5 className="card-title">{gcr.model}</h5>
-                <Link to = {`/CarDetailsPage/${gcr.car_Id}`} className="btn btn-info" >Details</Link>
+                <Link to={`/CarDetailsPage/${gcr.car_Id}`} className="btn btn-info" >Details</Link>
               </div>
             </div>
           </div>
