@@ -41,15 +41,20 @@ export default function AddPayment() {
 
   const params = useParams();
 
+  
   useEffect(() => {
     axios.get(`http://localhost:5000/api/bookings/${params.booking_id}`)
+
       .then(res => {
+      
         console.log(res.data)
         setPosts(res.data)
         setBookingId(res.data['booking_id']);
-        setName(res.data['name']);
-        setCostPerDay(res.data['cost_per_day']);
+        setName(res.data['name']);       
         setContactNumber(res.data['contact_number']);
+        var cost = (posts.type_of_service === 'With Driver') ? (parseInt(posts.cost_per_day) + 4000) * (parseInt(posts.no_of_days)) + "LKR" : (parseInt(posts.cost_per_day)) * (parseInt(posts.no_of_days)) + "LKR"
+        setCostPerDay(cost);
+        console.log(cost)
 
       })
       .catch(err => {
