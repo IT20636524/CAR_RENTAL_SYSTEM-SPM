@@ -9,7 +9,7 @@ export default function BookingDetails() {
     const params = useParams();
     const [posts, setPosts] =useState<any>([]);
     useEffect(()=> {
-        axios.get(`http://localhost:5000/api/bookings/${params.booking_id}`)
+        axios.get(`http://localhost:5000/api/bookings/getone/${params.booking_id}`)
         .then(res => {
             console.log(res.data)
             setPosts(res.data)
@@ -23,7 +23,7 @@ export default function BookingDetails() {
         <div>
 
 
-            <Link to = {`/view-cards/${posts.booking_id}`}><button type="button" className="btn btn-warning" style={{ width: "200px", height: "50px", float: "right" }}>
+            <Link to = {`/view-cards/${posts.booking_id}`}><button type="button" className="btn btn-info btn-grad" style={{ width: "250px", height: "50px", float: "right" }}>
                 see Your Cards
             </button></Link>
 

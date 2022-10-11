@@ -43,7 +43,7 @@ export default function AddCard() {
   const params = useParams();
   const [posts, setPosts] =useState<any>([]);
   useEffect(()=> {
-      axios.get(`http://localhost:5000/api/bookings/${params.booking_id}`)
+      axios.get(`http://localhost:5000/api/bookings/getone/${params.booking_id}`)
       .then(res => {
           console.log(res.data)
           setPosts(res.data)
@@ -90,7 +90,7 @@ export default function AddCard() {
     <>
 
       <div className="text-center">
-        <button type="button" className="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal2" style={{ width: "200px", height: "50px", marginRight: "100px" }}>
+        <button type="button" className="btn btn-info  btn-grad" data-bs-toggle="modal" data-bs-target="#exampleModal2" style={{ width: "250px", height: "50px", marginRight: "100px" }}>
           Add New Card
         </button>
 

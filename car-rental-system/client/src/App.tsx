@@ -31,22 +31,23 @@ import ViewBookings from './pages/ViewBookings';
 // import SignUp from './pages/SignUp';
 
 function App() {
-  // const {user}=useContext(Context);
-  const user=localStorage.getItem('user');
+  const {user}=useContext(Context);
+  // const user=localStorage.getItem('user');
   return (
     <>
       <BrowserRouter>
 
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/logout" element={<Logout/>} />
-          <Route path="/dashboard" element={<Dashboard />} />
+        <Routes>         
+          <Route path="/logout" element={<Logout/>} />       
           <Route path="/adminstaffpage" element={<AdminStaffPage />} />
           <Route path="/add-payment/:booking_id" element={<AddPayment />} />
           <Route path="/paymentview/:payment_id/:booking_id" element={<PaymentView />} />
           <Route path="/sign-up" element={<Register />} />
           <Route path="/view-cards/:booking_id" element={<CardViewPage />} />
-          <Route path="/login" element={user?<Homepage/> : <Login />} />
+          <Route path="/login" element={user ? user.email === "admin@gmail.com" ?  <Dashboard/> : <Homepage/> :<Login/>} />
+          <Route path="/" element={<Homepage />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          {/* <Route path="/login" element={user?<Homepage/> : <Login />} /> */}
           <Route path="/add-booking/:id" element={<AddBooking/>}/>
           <Route path="/admin-booking" element={<AdminBookingPage/>} />
           <Route path="/admincarpage" element={<AdminCarPage />} />

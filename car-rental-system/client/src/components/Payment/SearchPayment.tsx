@@ -63,9 +63,7 @@ const SearchPayment = () => {
       >
 
         <Modal.Header closeButton style={{ backgroundColor: "grey" }}>
-          <Modal.Title>
-            <h2 className='float-center'>Payment And Booking Details</h2>
-          </Modal.Title>
+        
         </Modal.Header>
 
         <Modal.Body style={{ backgroundColor: "grey" }}>
@@ -74,7 +72,7 @@ const SearchPayment = () => {
              
                 <div key={payment_id} className="card">
                   <div className="card-body">
-                    <h2 className='text-center'>payment Invoice</h2>
+                    <h2 className='text-center'>payment Details</h2>
                     <div className="container mb-6 mt-3">
                       <div className="row d-flex align-items-baseline">
                         <div className="col-xl-8"></div>
@@ -107,9 +105,7 @@ const SearchPayment = () => {
                             <p className="text-muted">Invoice</p>
                             <ul className="list-unstyled">
                               <li className="text-muted"><i className="fas fa-circle" style={{ color: "#84B0CA" }}></i> 
-                              <span
-                                className="fw-bold">ID:</span>{payment_id}</li>
-                              <li className="text-muted"><i className="fas fa-circle" style={{ color: "#84B0CA" }}></i> 
+                            
                               <span
                                 className="fw-bold">Creation Date: </span>{createdAt}</li>
                               <li className="text-muted"><i className="fas fa-circle" style={{ color: "#84B0CA" }}></i>

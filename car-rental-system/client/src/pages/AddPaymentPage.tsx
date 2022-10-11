@@ -142,7 +142,7 @@ export default function AddPayment() {
           <div className="row">
             <div className="col">
 
-              <div className="card" style={{ height: "660px", background: "linear-gradient(140deg, rgba(72, 115, 150, 1) 50%, rgba(57, 108, 150, 0.65) 65%, rgba(42, 102, 150, 0.6) 50%, rgba(27, 95, 150, 0.95) 80%, rgba(12, 88, 150, 1) 90%, rgba(0, 83, 150, 0.8) 70%)", marginTop: "50px" }}>
+              <div className="card" style={{ height: "700px", background: "linear-gradient(140deg, rgba(72, 115, 150, 1) 50%, rgba(57, 108, 150, 0.65) 65%, rgba(42, 102, 150, 0.6) 50%, rgba(27, 95, 150, 0.95) 80%, rgba(12, 88, 150, 1) 90%, rgba(0, 83, 150, 0.8) 70%)", marginTop: "50px" }}>
                 <div className="card-body px-4 px-md-5">
                   <section className="mb-4">
 
@@ -162,19 +162,19 @@ export default function AddPayment() {
                         <form id="contact-form" name="contact-form" action="mail.php" method="POST" onSubmit={submitForm}>
 
                           <div className="form-floating mb-3">
-                            <input className="form-control" id="bookingid" type="text" placeholder="Booking ID" value={posts.booking_id} onChange={(e) => setBookingId(e.target.value)} />
+                            <input className="form-control" id="bookingid" type="text" placeholder="Booking ID" value={posts.booking_id} onChange={(e) => setBookingId(e.target.value)} readOnly />
                             <label htmlFor="bookingid" style={{ fontSize: "16px" }} >Booking ID</label>
 
                           </div>
                           <br />
                           <div className="form-floating mb-3">
-                            <input className="form-control" id="name" type="text" placeholder="Name" value={posts.name} onChange={(e) => setName(e.target.value)} />
+                            <input className="form-control" id="name" type="text" placeholder="Name" value={posts.name} onChange={(e) => setName(e.target.value)} readOnly />
                             <label htmlFor="name" style={{ fontSize: "16px" }}>Name</label>
 
                           </div>
                           <br />
                           <div className="form-floating mb-3">
-                            <input className="form-control" id="contact" type="text" placeholder="Contact Number" value={posts.contact_number} onChange={(e) => setContactNumber(e.target.value)} />
+                            <input className="form-control" id="contact" type="text" placeholder="Contact Number" value={posts.contact_number} onChange={(e) => setContactNumber(e.target.value)} readOnly/>
                             <label htmlFor="contact" style={{ fontSize: "16px" }}>Contact Number</label>
 
                           </div>
@@ -193,7 +193,7 @@ export default function AddPayment() {
                           <br />
 
                           <div className="form-floating mb-3">
-                            <input className="form-control" id="amount" type="text" placeholder="Amount" value={(posts.type_of_service === 'With Driver') ? (parseInt(posts.cost_per_day) + 4000) * (parseInt(posts.no_of_days)) + "LKR" : (parseInt(posts.cost_per_day)) * (parseInt(posts.no_of_days)) + "LKR"} onChange={(e) => setCostPerDay(e.target.value)} />
+                            <input className="form-control" id="amount" type="text" placeholder="Amount" value={(posts.type_of_service === 'With Driver') ? (parseInt(posts.cost_per_day) + 4000) * (parseInt(posts.no_of_days)) + "LKR" : (parseInt(posts.cost_per_day)) * (parseInt(posts.no_of_days)) + "LKR"} onChange={(e) => setCostPerDay(e.target.value)}/>
                             <label htmlFor="amount" style={{ fontSize: "16px" }}>Amount</label>
 
                           </div>
