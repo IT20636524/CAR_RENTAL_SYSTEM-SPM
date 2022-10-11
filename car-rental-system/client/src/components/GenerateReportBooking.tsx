@@ -6,6 +6,7 @@ import { Col, Row, Form } from "react-bootstrap";
 import { MDBCol } from 'mdb-react-ui-kit';
 import ReactToPrint from 'react-to-print';
 import AcceptedBookings from './AcceptedBookings';
+import AcceptedBookingHeader from './AcceptedBookingHeader';
 
 
 export default function GenerateReportBooking(props: any) {
@@ -15,9 +16,9 @@ export default function GenerateReportBooking(props: any) {
 
     const handleShow = () => setShow(true);
 
- 
+
     const [radio, setRadio] = useState('false')
-   
+
     const componentRef = useRef(null);
 
 
@@ -28,7 +29,7 @@ export default function GenerateReportBooking(props: any) {
             </Button>
 
             <Modal show={show}
-            onClick={handleClose}
+                onClick={handleClose}
                 size="lg"
                 centered
             >
@@ -38,13 +39,15 @@ export default function GenerateReportBooking(props: any) {
 
                 </Modal.Header>
                 <Modal.Body>
+
                     <div ref={componentRef}>
-                        <AcceptedBookings/>
+                        <AcceptedBookingHeader/>
+                        <AcceptedBookings />
 
                     </div>
                 </Modal.Body>
                 <Modal.Footer>
-                <ReactToPrint
+                    <ReactToPrint
                         trigger={() => <Button variant="primary" style={{ "width": "300px", "height": "40px", "color": "white", borderRadius: "50px", background: "linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%" }}>
                             Print Report
                         </Button>}
