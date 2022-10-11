@@ -59,7 +59,7 @@ export default function AdminPayments() {
                                                     <td style={{ "fontSize": "20px", "fontFamily": "Arial-Black" }}>{dm.booking_id}</td>
                                                     <td style={{ "fontSize": "20px", "fontFamily": "Arial-Black" }}>{dm.name}</td>
                                                     <td style={{ "fontSize": "20px", "fontFamily": "Arial-Black" }}>{dm.card}</td>
-                                                    <td style={{ "fontSize": "20px", "fontFamily": "Arial-Black" }}>{dm.amount}</td>
+                                                    <td style={{ "fontSize": "20px", "fontFamily": "Arial-Black" }}>{dm.cost_per_day}</td>
                                                     <td style={{ "fontSize": "20px", "fontFamily": "Arial-Black" }}>{dm.contact_number}</td>
                                                     <td style={{ "fontSize": "20px", "fontFamily": "Arial-Black" }}>{dm.createdAt}</td>
 

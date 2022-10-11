@@ -1,9 +1,10 @@
-import React, { Fragment, useCallback, useState } from 'react';
+import React, { Fragment, useCallback, useState , useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 import CardForm from '../Card/CardForm';
 import { CreditCard } from '../Card/CreditCard';
 import Cards from '../Card/Card';
 import axios from 'axios';
+import { useParams } from 'react-router-dom';
 
 const initialState: CreditCard = {
   _id: '',
@@ -39,7 +40,18 @@ export default function AddCard() {
     [state],
   );
 
-   
+  const params = useParams();
+  const [posts, setPosts] =useState<any>([]);
+  useEffect(()=> {
+      axios.get(`http://localhost:5000/api/bookings/${params.booking_id}`)
+      .then(res => {
+          console.log(res.data)
+          setPosts(res.data)
+      })
+      .catch(err =>{
+          console.log(err)
+      })
+  }, [])
   
 
 
@@ -67,7 +79,7 @@ export default function AddCard() {
         setCardMonth('');
         setCardYear('');
         setCardCVV('');
-        window.location.replace("/view-cards/booking_id");
+        window.location.replace(`/view-cards/${posts.booking_id}`);
       });
 
   }

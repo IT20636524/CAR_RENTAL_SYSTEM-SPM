@@ -6,6 +6,7 @@ export default function PaymentInvoice() {
 
    
     const [posts, setPosts] =useState<any>([]);
+    const [bookposts, setBookPosts] =useState<any>([]);
     const [payment_id, setPaymentId] = useState("");
    
     const params = useParams();
@@ -20,6 +21,23 @@ export default function PaymentInvoice() {
         })
         .catch(err =>{
             console.log(err)
+        })
+    }, [])
+
+    const paramsb = useParams();
+  
+    useEffect(() => {
+      axios.get(`http://localhost:5000/api/bookings/${paramsb.booking_id}`)
+  
+        .then(res => {
+        
+          console.log(res.data)
+          setBookPosts(res.data)
+         
+  
+        })
+        .catch(err => {
+          console.log(err)
         })
     }, [])
  
@@ -56,20 +74,23 @@ export default function PaymentInvoice() {
 
 
                         <div className="row">
-                          <div className="col-xl-8">
+                          <div className="col-xl-5">
                             <ul className="list-unstyled">
-                              <li className="text-muted">To: <span style={{ color: "#5d9fc5" }}>{posts.name}</span></li>
+                              <li className="text-muted">To: <span style={{ color: "#5d9fc5" }}>{posts.name}</span></li><br />
                               <li className="text-muted"><i className="fas fa-phone"></i>{posts.contact_number}</li>
                             </ul>
                           </div>
-                          <div className="col-xl-4">
+                          <div className="col-xl-7">
                             <p className="text-muted">Invoice</p>
                             <ul className="list-unstyled">
-                              <li className="text-muted"><i className="fas fa-circle" style={{ color: "#84B0CA" }}></i> <span
+                              <li className="text-muted"><i className="fas fa-circle" style={{ color: "#84B0CA" }}></i> 
+                              <span
                                 className="fw-bold">ID:</span>{posts.payment_id}</li>
-                              <li className="text-muted"><i className="fas fa-circle" style={{ color: "#84B0CA" }}></i> <span
+                              <li className="text-muted"><i className="fas fa-circle" style={{ color: "#84B0CA" }}></i> 
+                              <span
                                 className="fw-bold">Creation Date: </span>{posts.createdAt}</li>
-                              <li className="text-muted"><i className="fas fa-circle" style={{ color: "#84B0CA" }}></i> <span
+                              <li className="text-muted"><i className="fas fa-circle" style={{ color: "#84B0CA" }}></i>
+                               <span
                                 className="me-1 fw-bold">Status:</span><span className="badge bg-warning text-black fw-bold">
                                   Paid</span></li>
                             </ul>
@@ -81,18 +102,18 @@ export default function PaymentInvoice() {
                             <thead style={{ backgroundColor: "#84B0CA" }} className="text-white">
                               <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Description</th>
-                                <th scope="col">Qty</th>
-                                <th scope="col">Unit Price</th>
+                                <th scope="col">Model</th>
+                                <th scope="col">Location</th>
+                                <th scope="col">Address</th>
                                 <th scope="col">Amount</th>
                               </tr>
                             </thead>
                             <tbody>
                               <tr>
-                                <th scope="row">1</th>
-                                <td>Pro Package</td>
-                                <td>4</td>
-                                <td>$200</td>
+                                <th scope="row">{posts.payment_id}</th>
+                                <td>{bookposts.selected_model}</td>
+                                <td>{bookposts.location}</td>
+                                <td>{bookposts.address}</td>                   
                                 <td>{posts.cost_per_day}</td>
                               </tr>
 
@@ -102,18 +123,21 @@ export default function PaymentInvoice() {
                         </div>
                         <div className="row">
                           <div className="col-xl-8">
-                            <p className="ms-3">See Additional Booking information</p>
+                            <h5>See Payment information</h5><br />
 
                           </div>
-                          <div className="col-xl-3">
+                         
                             <ul className="list-unstyled">
-                              <li className="text-muted ms-3"><span className="text-black me-4">SubTotal</span>$1110</li>
-                              <li className="text-muted ms-3 mt-2"><span className="text-black me-4">Tax(15%)</span>$111</li>
+                              <li className="text-muted ms-3"><span className="text-black me-4">Type of Service</span>{bookposts.type_of_service}</li>
+                              <li className="text-muted ms-3 mt-2"><span className="text-black me-4">Number of Days</span>{bookposts.no_of_days}</li>
+                              <li className="text-muted ms-3 mt-2"><span className="text-black me-4">Cost Per day</span>{bookposts.cost_per_day}</li>
                             </ul>
-                            <p className="text-black float-start"><span className="text-black me-3"> Total Amount</span><span
-                              style={{ fontSize: "25px" }}>$1221</span></p>
+                            <h6 className="text-black float-start"><span className="text-danger me-3" > Total Amount</span></h6>
+                            <p className="text-black float-start"><span className="text-black me-3" style={{ fontSize: "25px" }}>{bookposts.cost_per_day} * {bookposts.no_of_days} =</span> 
+                            <span style={{ fontSize: "25px", color:"Red" }}>{posts.cost_per_day}</span></p>
                           </div>
-                        </div>
+                        <h6 style={{color:"#84B0CA"}}>Note : Additional Cost Added Only For With Driver Services</h6>
+                        <h6 style={{color:"#84B0CA"}}>Additional Cost : 4000LKR per day</h6>
                         <hr />
                         <div className="row">
                           <div className="col-xl-10">

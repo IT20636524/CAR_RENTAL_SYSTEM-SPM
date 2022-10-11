@@ -10,6 +10,7 @@ import Card from 'react-bootstrap/Card';
 import CreditCardBox from '../Card/Card';
 import axios from 'axios';
 import Modal from 'react-bootstrap/Modal';
+import { useParams } from 'react-router-dom';
 
 const initialState: CreditCard = {
   _id: '',
@@ -54,6 +55,19 @@ export default function CardView() {
   useEffect(() => {
     fetchData();
   }, []);
+
+  const params = useParams();
+  const [posts, setPosts] =useState<any>([]);
+  useEffect(()=> {
+      axios.get(`http://localhost:5000/api/bookings/${params.booking_id}`)
+      .then(res => {
+          console.log(res.data)
+          setPosts(res.data)
+      })
+      .catch(err =>{
+          console.log(err)
+      })
+  }, [])
 
   
 
@@ -113,7 +127,7 @@ export default function CardView() {
         setCardMonth('');
         setCardYear('');
         setCardCVV('');
-        window.location.replace("/view-cards/booking_id");
+        window.location.replace(`/view-cards/${posts.booking_id}`);
       });
 
   }
@@ -123,7 +137,7 @@ export default function CardView() {
       .then(function (response) {
         console.log(response.data);
 
-        window.location.replace("/view-cards/booking_id");
+        window.location.replace(`/view-cards/${posts.booking_id}`);
       });
 
   
