@@ -43,7 +43,7 @@ export default function UserProfile() {
     },[])
     
     return (
-        <div className='profilepage'>
+        <div className='profilepage background-radial-gradient'>
             <Header/>
             <div className="container d-flex justify-content-center">
                 <div className="card-user p-3 py-4">
