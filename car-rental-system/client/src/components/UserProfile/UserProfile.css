@@ -1,11 +1,10 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 
 .card-user {
 	color:#fff;
     width: 350px;
     border-radius: 16px;
-   background: linear-gradient(145deg, #2e2d3b, #3a3746);
-box-shadow:  20px 20px 60px #25262a, 
+    box-shadow:  20px 20px 60px #25262a, 
              -20px -20px 60px #3d3d40;
     border: 1px solid rgb(255, 255, 255,0.3);
     background: rgb(255,255,255,0.2);
@@ -63,4 +62,4 @@ box-shadow:  28px 28px 57px #1c19a1,
 .profilepage{
     background: rgb(2,0,36);
     background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(6,6,89,1) 22%, rgba(8,8,106,1) 38%, rgba(9,9,121,1) 52%, rgba(7,60,155,1) 82%, rgba(0,212,255,1) 100%); 
-} */
+} 

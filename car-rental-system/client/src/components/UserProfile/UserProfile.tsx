@@ -43,7 +43,7 @@ export default function UserProfile() {
     },[])
     
     return (
-        <div className=' background-radial-gradient'>
+        <div className='background-radial-gradient'>
             <Header/>
             <div className="container d-flex justify-content-center">
                 <div className="card-user p-3 py-4">
@@ -73,18 +73,18 @@ export default function UserProfile() {
 
 
                             <div className="social-buttons mt-5">
-                            <a className='btn btn-outline-light btn-floating m-1'  href='#!' role='button'>
-                              <MDBIcon fab icon='facebook-f' />
-                            </a>
                             <a className='btn btn-outline-light btn-floating m-1' href='#!' role='button'>
-                                <MDBIcon fab icon='whatsapp' />
-                             </a>
-                             <a className='btn btn-outline-light btn-floating m-1' href='#!' role='button'>
-                                <MDBIcon fab icon='google' />
-                            </a>
-                            <a className='btn btn-outline-light btn-floating m-1' href='#!' role='button'>
-                                <MDBIcon fab icon='twitter' />
-                            </a>
+            <MDBIcon fab icon='facebook-f' />
+          </a>
+          <a className='btn btn-outline-light btn-floating m-1' href='#!' role='button'>
+            <MDBIcon fab icon='whatsapp' />
+          </a>
+          <a className='btn btn-outline-light btn-floating m-1' href='#!' role='button'>
+            <MDBIcon fab icon='google' />
+          </a>
+          <a className='btn btn-outline-light btn-floating m-1' href='#!' role='button'>
+            <MDBIcon fab icon='twitter' />
+          </a>
                             </div>
 
                             <div className="profile mt-5">
