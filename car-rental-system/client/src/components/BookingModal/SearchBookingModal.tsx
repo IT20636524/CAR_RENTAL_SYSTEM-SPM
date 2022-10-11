@@ -20,7 +20,7 @@ export default function SearchBookingModal({bookingId}:any) {
     const [vehicle_pic, setVehiclePic]=useState("");
 
 
-    axios.get("http://localhost:5000/api/bookings/"+bookingId)
+    axios.get("http://localhost:5000/api/bookings/getone/"+bookingId)
     .then(function(response){
         setBookingId(response.data['booking_id']);
         setName(response.data['name']);

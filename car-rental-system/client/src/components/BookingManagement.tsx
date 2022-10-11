@@ -36,7 +36,7 @@ export default function BookingManagement() {
 
     const getData = () => {
 
-        axios.get("http://localhost:5000/api/bookings").then(res => {
+        axios.get("http://localhost:5000/api/bookings/all").then(res => {
             console.log(res.data);
             setBookings(res.data);
         }).catch(error => {

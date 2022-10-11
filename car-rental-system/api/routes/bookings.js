@@ -63,7 +63,7 @@ router.get("/:name", async(req,res) => {
 });
 
 //Get one booking
-router.get("/:booking_id", async(req,res) => {
+router.get("/getone/:booking_id", async(req,res) => {
     try{
         const booking = await Booking.findOne({ 'booking_id':req.params.booking_id });
         res.status(200).json(booking);

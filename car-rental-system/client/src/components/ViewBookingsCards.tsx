@@ -41,7 +41,7 @@ export default function ViewBookingsCards() {
 
     const getData =()=>{
 
-        axios.get("http://localhost:5000/api/bookings/"+name,config).then(res => {
+        axios.get("http://localhost:5000/api/bookings/Prathibha",config).then(res => {
             console.log(res.data);
             setBookings(res.data);
         }).catch(error => {
