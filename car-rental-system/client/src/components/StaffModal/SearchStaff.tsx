@@ -18,7 +18,7 @@ export default function SearchStaff() {
 
   return (
     <>
-     <Button className="stfbtn" variant="info" onClick={handleShow} style={{"marginLeft":"200px","marginTop":"40px","color":"white"}}>
+     <Button className="stfbtn" variant="info" onClick={handleShow} style={{"marginLeft":"30px","marginTop":"40px","color":"white",width:"350px",height:"45px"}}>
             Search Staff
         </Button>
 

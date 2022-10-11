@@ -42,7 +42,7 @@ export default function Staff() {
     
 
     return (
-        <div>
+        <div className='background-radial-gradient'>
             <Header/>
             <br /><br />
             
@@ -96,6 +96,8 @@ export default function Staff() {
    
   </div>
 </div>
+<br/>
+<br/>
 
             
           <Footer/>
