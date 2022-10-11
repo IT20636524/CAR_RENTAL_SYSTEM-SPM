@@ -595,18 +595,7 @@ margin-top: 4px;
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 
-.card-user {
-	color:#fff;
-    width: 350px;
-    border-radius: 10px;
-   background: linear-gradient(145deg, #140fac, #361bbd);
-box-shadow:  20px 20px 60px #143795, 
-             -20px -20px 60px #1b127b;
-    border: none;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    
-}
+
 
 .neo-button {
     width: 40px;
