@@ -5,9 +5,8 @@ import { Signup } from './SignUp';
 
 function Register() {
     return (
-
-        <>
-           <div className="container mt-3">
+        <div className='background-radial-gradient'>
+           <div className="container mt-3 ">
                 <div className="row">
                     <div className="col-md-5">
                         <div className="card" style={{ height: "660px", width: "1000px", background: "white", margin: "50px 0px 50px 150px" }}>
@@ -24,7 +23,7 @@ function Register() {
             </div>
 
 
-        </>
+        </div>
 
     );
 }
