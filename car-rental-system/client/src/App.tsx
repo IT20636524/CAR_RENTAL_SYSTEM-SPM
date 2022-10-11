@@ -10,7 +10,6 @@ import AddPayment from './pages/AddPaymentPage';
 import AdminBookingPage from './pages/AdminBookingPage';
 import AdminCarPage from './pages/AdminCarPage';
 import AdminContactUsPage from './pages/AdminContactUsPage';
-import AdminFeedback from './pages/AdminFeedback';
 import AdminFeedbackPage from './pages/AdminFeedbackPage';
 import AdminPaymentView from './pages/AdminPaymentView';
 import AdminStaffPage from './pages/AdminStaffPage';
