@@ -25,4 +25,15 @@ router.post("/", async (req, res) => {
   });
 
 
+  //GET VIEW ALL FEEDBACK DETAILS
+router.get("/", async (req, res) => {
+  try {
+    const feedback = await Feedback.find();
+    res.status(200).json(feedback);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
   module.exports = router;
