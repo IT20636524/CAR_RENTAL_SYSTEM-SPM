@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import Button from 'react-bootstrap/Button';
 import { Col, Row, Form } from "react-bootstrap";
 import Modal from 'react-bootstrap/Modal';
-import { MDBCol } from 'mdb-react-ui-kit';
+import { MDBCol, MDBIcon } from 'mdb-react-ui-kit';
 import { useState } from 'react';
 import './UserProfile.css'
 import Header from '../Header';
@@ -43,7 +43,7 @@ export default function UserProfile() {
     },[])
     
     return (
-        <div className='profilepage background-radial-gradient'>
+        <div className=' background-radial-gradient'>
             <Header/>
             <div className="container d-flex justify-content-center">
                 <div className="card-user p-3 py-4">
@@ -73,10 +73,18 @@ export default function UserProfile() {
 
 
                             <div className="social-buttons mt-5">
-                                <button className="neo-button"><i className="fab fa-facebook"></i> </button>
-                                <button className="neo-button"><i className="fab fa-whatsapp"></i></button>
-                                <button className="neo-button"><i className="fab fa-google"></i> </button>
-                                <button className="neo-button"><i className="fab fa-twitter"></i> </button>
+                            <a className='btn btn-outline-light btn-floating m-1'  href='#!' role='button'>
+                              <MDBIcon fab icon='facebook-f' />
+                            </a>
+                            <a className='btn btn-outline-light btn-floating m-1' href='#!' role='button'>
+                                <MDBIcon fab icon='whatsapp' />
+                             </a>
+                             <a className='btn btn-outline-light btn-floating m-1' href='#!' role='button'>
+                                <MDBIcon fab icon='google' />
+                            </a>
+                            <a className='btn btn-outline-light btn-floating m-1' href='#!' role='button'>
+                                <MDBIcon fab icon='twitter' />
+                            </a>
                             </div>
 
                             <div className="profile mt-5">
