@@ -10,6 +10,8 @@ import AddPayment from './pages/AddPaymentPage';
 import AdminBookingPage from './pages/AdminBookingPage';
 import AdminCarPage from './pages/AdminCarPage';
 import AdminContactUsPage from './pages/AdminContactUsPage';
+import AdminFeedback from './pages/AdminFeedback';
+import AdminFeedbackPage from './pages/AdminFeedbackPage';
 import AdminPaymentView from './pages/AdminPaymentView';
 import AdminStaffPage from './pages/AdminStaffPage';
 import CarDetailsPage from './pages/CarDetailsPage';
@@ -59,6 +61,7 @@ function App() {
           <Route path="/about-us" element={<AboutUsPage />} />
           <Route path="/CarDetailsPage/:id" element={<CarDetailsPage />} />
           <Route path='/inquiries' element={<Inquiries/>}/>
+          <Route path='/feedback' element={<AdminFeedbackPage/>}/>
         </Routes>
       </BrowserRouter>
     </>
