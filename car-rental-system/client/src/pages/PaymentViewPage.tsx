@@ -7,7 +7,7 @@ import PaymentInvoice from '../components/Payment/PaymentInvoice'
 
 export default function PaymentView() {
     const componentRef = useRef(null);
-
+   
 
     return (
         <div>
@@ -27,7 +27,9 @@ export default function PaymentView() {
                         <br /><br />
                         <div className="col-5">
                             <div className="row"  style={{ marginLeft: "80px" }}>
+                           
                                 <BookingCard />
+                               
                             </div>
                             <div className="card" style={{ width: "500px", marginLeft: "100px" }}>
                                 <div className="card-body">
@@ -43,9 +45,25 @@ export default function PaymentView() {
 
 
                                             />
+                                             
 
 
                                         </div>
+                                        {/* <h5 style={{color:"red"}}>Save a Copy of Your Booking Details for your purpose...!!!</h5>
+                                        <div className="col-xl-5" style={{ marginLeft: "300px" }}>
+                                           
+                                            <ReactToPrint
+                                                trigger={() => <a className="btn btn-light text-capitalize" data-mdb-ripple-color="dark">
+                                                    <i className="far fa-file-pdf text-danger"></i> Export <br /> OR <br /> <i
+                                                className="fas fa-print text-primary"></i> Print</a>}
+                                                content={() => componentRef.current}
+
+
+                                            />
+                                             
+
+
+                                        </div> */}
                                     </div>
                                 </div></div><br />
                         </div>

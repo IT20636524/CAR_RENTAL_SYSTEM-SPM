@@ -10,7 +10,7 @@ export default function BookingCard() {
     const [posts, setPosts] =useState<any>([]);
 
     useEffect(()=> {
-        axios.get(`http://localhost:5000/api/bookings/${params.booking_id}`)
+        axios.get(`http://localhost:5000/api/bookings/getone/${params.booking_id}`)
         .then(res => {
             console.log(res.data)
             setPosts(res.data)
@@ -26,7 +26,7 @@ export default function BookingCard() {
     return (
         <div>
 
-            <div className="card" style={{ background: "#eee", marginTop: "5px", marginLeft: "10px", width: "500px" }}>
+            <div className="card" style={{ background: "#eee", marginTop: "5px", marginLeft: "10px", width: "550px" }}>
                 <h4 className='text-center mt-2'>Booking Details</h4>
                 <div className="card-body px-4 px-md-5">
 
@@ -56,22 +56,47 @@ export default function BookingCard() {
                     <h4>Technical specifications</h4><br />
                     <div className="car-info">
                         <div className="row">
-                            <div className="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                            <div className="col-xxl-5 col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                 <div className="car-info-left">
-                                    <h6>Name: <span>{posts.name}</span></h6>
-                                    <h6>Email: <span>{posts.email}</span></h6>
-                                    <h6>Address: <span>{posts.address}</span></h6>
-                                    <h6>Contact Number: <span>{posts.contact_number}</span></h6>
-                                    <h6>Type of Service: <span>{posts.type_of_service}</span></h6>
+                                    <h6>Name </h6>
+                                    <h6>Email </h6>
+                                    <h6>Pick up Location</h6>
+                                    <h6>Drop Location </h6>
+                                    <h6>Contact Number</h6>
+                                    <h6>Type of Service  </h6>
+                                    <h6>Selected Model</h6>
+                                    <h6>Number of Days</h6>
+                                    <h6>Cost Per Day </h6>
                                 </div>
+                               
                             </div>
+                            <div className="col-xxl-1 col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                <div className="car-info-left">
+                                    <h6> : </h6>
+                                    <h6> : </h6>
+                                    <h6> : </h6>
+                                    <h6> : </h6>
+                                    <h6> : </h6>
+                                    <h6> : </h6>
+                                    <h6> :</h6>
+                                    <h6> : </h6>
+                                    <h6> : </h6>
+                                </div>
+                               
+                            </div>
+                            
+                            
                             <div className="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                 <div className="car-info-right">
-                                    
-                                    <h6>Selected Model: <span>{posts.selected_model}</span></h6>
-                                    <h6>Number of Days: <span>{posts.no_of_days}</span></h6>
-                                    <h6>Location: <span>{posts.location}</span></h6>
-                                    <h6>Cost Per Day: <span>{posts.cost_per_day}</span></h6>
+                                <h6>{posts.name}</h6>
+                                <h6>{posts.email}</h6>
+                                <h6>{posts.address}</h6>
+                                <h6>{posts.location}</h6>
+                                <h6>{posts.contact_number}</h6>
+                                <h6>{posts.type_of_service}</h6>
+                                <h6>{posts.selected_model}</h6>
+                                <h6>{posts.no_of_days}</h6>
+                                <h6>{posts.cost_per_day}</h6>
                                    
                                 </div>
                             </div>

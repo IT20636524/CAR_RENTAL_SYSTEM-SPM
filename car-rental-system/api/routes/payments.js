@@ -47,5 +47,19 @@ router.get("/", async (req, res) => {
     }
   });
 
+//Get monthly payment details
+
+//GET ALL PAYMENTS
+router.get("/getmonth/", async (req, res) => {
+  try {
+    // const month = new Date().getMonth()
+    const payment = await Payment.find().moment().format("MMMM");;
+    res.status(200).json(payment);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
 
   module.exports = router;
