@@ -30,19 +30,18 @@ export default function AddPayment() {
   const [contact_number, setContactNumber] = useState("");
   const [posts, setPosts] = useState<any>([]);
   const [image, setImage] = useState("");
-
   const [no_of_days, setNoOfDays] = useState("");
   const [type_of_service, setTypeOfService] = useState("");
-
   const [cardNumber, setCardNumber] = useState("");
-    const [payment_status,setPaymentStatus] = useState("");
+  const [payment_status,setPaymentStatus] = useState("");
 
   const navigate = useNavigate();
 
   const params = useParams();
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/bookings/${params.booking_id}`)
+    axios.get(`http://localhost:5000/api/bookings/getone/${params.booking_id}`)
+
       .then(res => {
         console.log(res.data)
         setPosts(res.data)
@@ -85,6 +84,10 @@ export default function AddPayment() {
     contact_number,
   }
 
+  const BookingData={
+    payment_status:'paid'
+  }
+
   
 
   function submitForm(e: { preventDefault: () => void; }) {
@@ -101,6 +104,14 @@ export default function AddPayment() {
           setCard("");
           setCostPerDay("");
           setContactNumber("");
+          axios.put("http://localhost:5000/api/bookings/update/"+booking_id,BookingData)
+            .then(function(res) {
+                console.log(res);
+            })
+            .catch(function(error) {
+                console.log(error);
+                alert("Not updated");
+            });
           swal({ text: "Payment Successful", icon: "success",  buttons: {
             cancel: { text: 'Cancel' },
             confirm: { text: 'Confirm' },
