@@ -33,7 +33,7 @@ export default function UpdateBookingModal({booking_id,getData}:any) {
     }
 
     const updateShow = () =>{
-        axios.get("http://localhost:5000/api/bookings/"+booking_id)
+        axios.get("http://localhost:5000/api/bookings/getone/"+booking_id)
         .then(function(response){
             setName(response.data['name']);
             setAddress(response.data['address']);
