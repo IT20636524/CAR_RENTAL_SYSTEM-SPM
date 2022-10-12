@@ -139,7 +139,7 @@ export default function AddStaff() {
   <Form onSubmit={handleSubmit}>
   <div className='row justify-content-center' >
   <Col sm={3}>
-  <fieldset >
+  {/* <fieldset >
 
     <Form.Group  className="p-2 bd-highlight d-flex flex-column justify-content-center"  >
       
@@ -152,19 +152,19 @@ export default function AddStaff() {
   
       
     </Form.Group>
-  </fieldset>
+  </fieldset> */}
   </Col>
   </div>
   <Col sm={10}>
 
-  <Form.Group as={Row} className="mb-3" >
+  {/* <Form.Group as={Row} className="mb-3" >
   <Form.Label column sm="3">
           Select Image
   </Form.Label>
   <Col sm="7">
     <Form.Control type="file" id="fileInput" onChange={handleChange} required/>
   </Col>
-</Form.Group>
+</Form.Group> */}
 
   <Form.Group as={Row} className="mb-3" >
     <Form.Label column sm="3">

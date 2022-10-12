@@ -151,7 +151,7 @@ export default function UpdateStaff(props: { driver_code: string; }) {
   <Form onSubmit={submitForm} >
   <div className='row justify-content-center'>
   <Col sm={3}>
-  <fieldset>
+  {/* <fieldset>
   <Form.Group >
 
 {file && (
@@ -167,18 +167,18 @@ export default function UpdateStaff(props: { driver_code: string; }) {
 </Form.Group>
       
     
-  </fieldset>
+  </fieldset> */}
   </Col>
   </div>
   <Col sm={10}>
 
-  <Form.Group as={Row} className="mb-3" >
+  {/* <Form.Group as={Row} className="mb-3" >
   <Form.Label column sm="3">       
   </Form.Label>
   <Col sm="7">
   <Form.Control type="file" id="fileInput"  onChange={handleUpdate} required/>
   </Col>
-  </Form.Group>
+  </Form.Group> */}
 
   <Form.Group as={Row} className="mb-3" >
     <Form.Label column sm="3">
