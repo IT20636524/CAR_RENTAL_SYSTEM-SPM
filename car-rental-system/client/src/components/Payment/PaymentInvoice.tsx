@@ -46,7 +46,7 @@ export default function PaymentInvoice() {
        
        <div className="card">
                   <div className="card-body">
-                    <h2 className='text-center'>payment Invoice</h2>
+                    <h2 className='text-center'>Payment Invoice</h2>
                     <div className="container mb-6 mt-3">
                       <div className="row d-flex align-items-baseline">
                         <div className="col-xl-8"></div>
