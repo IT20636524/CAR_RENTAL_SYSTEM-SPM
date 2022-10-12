@@ -26,7 +26,7 @@ export default function BookingCard() {
     return (
         <div>
 
-            <div className="card" style={{ background: "#eee", marginTop: "5px", marginLeft: "10px", width: "550px" }}>
+            <div className="card" style={{ background: "#eee", marginTop: "5px", marginLeft: "10px", width: "500px" }}>
                 <h4 className='text-center mt-2'>Booking Details</h4>
                 <div className="card-body px-4 px-md-5">
 
