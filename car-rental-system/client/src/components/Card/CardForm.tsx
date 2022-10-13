@@ -143,7 +143,7 @@ export default function CardForm(props: CardFormProps) {
           </Form.Control.Feedback>
         </div>
 
-        <div className="card-form__row">
+        {/* <div className="card-form__row">
           <div className="card-form__col">
             <div className="card-form__group mb-4">
               <label htmlFor="cardMonth" className="card-input__label">
@@ -198,8 +198,8 @@ export default function CardForm(props: CardFormProps) {
             </div>
           </div>
 
-        </div>
-        <div className="card-form__col -cvv">
+        </div> */}
+        {/* <div className="card-form__col -cvv">
           <div className="card-input mb-5">
             <label htmlFor="cardCvv" className="card-input__label">
               CVV (Security Code)
@@ -220,7 +220,7 @@ export default function CardForm(props: CardFormProps) {
               {errors.cardCvv}
             </Form.Control.Feedback>
           </div>
-        </div>
+        </div> */}
         <div className="card-form__row">
           <div className="card-form__col">
             <div className="d-grid gap-2">
