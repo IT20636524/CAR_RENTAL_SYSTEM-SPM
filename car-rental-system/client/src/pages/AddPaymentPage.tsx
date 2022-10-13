@@ -41,24 +41,11 @@ export default function AddPayment() {
 
   
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/bookings/getone/${params.booking_id}`)
+    var cost = (posts.type_of_service === 'With Driver') ? (parseInt(posts.cost_per_day) + 4000) * (parseInt(posts.no_of_days)) + "LKR" : (parseInt(posts.cost_per_day)) * (parseInt(posts.no_of_days)) + "LKR"
+    setCostPerDay(cost);
+    console.log(cost)
 
-      .then(res => {
-      
-        console.log(res.data)
-        setPosts(res.data)
-        setBookingId(res.data['booking_id']);
-        setName(res.data['name']);       
-        setContactNumber(res.data['contact_number']);
-        var cost = (posts.type_of_service === 'With Driver') ? (parseInt(posts.cost_per_day) + 4000) * (parseInt(posts.no_of_days)) + "LKR" : (parseInt(posts.cost_per_day)) * (parseInt(posts.no_of_days)) + "LKR"
-        setCostPerDay(cost);
-        console.log(cost)
-
-      })
-      .catch(err => {
-        console.log(err)
-      })
-  }, [])
+  }, [posts])
 
   const [cardsDatas, setCardsDatas] = useState<CreditCard[]>([]);
 
@@ -76,6 +63,21 @@ export default function AddPayment() {
 
     }
     fetchCard()
+    axios.get(`http://localhost:5000/api/bookings/getone/${params.booking_id}`)
+
+    .then(res => {
+    
+      console.log(res.data)
+      setPosts(res.data)
+      setBookingId(res.data['booking_id']);
+      setName(res.data['name']);       
+      setContactNumber(res.data['contact_number']);
+      
+
+    })
+    .catch(err => {
+      console.log(err)
+    })
   }, [])
 
 
@@ -153,7 +155,7 @@ export default function AddPayment() {
 
 
 
-                    <h2 className="h1-responsive font-weight-bold text-center my-4" style={{ color: "hsl(218, 81%, 95%)" }}>Place Your Installment Here...!!!</h2>
+                    <h2 className="h1-responsive font-weight-bold text-center my-4" style={{ color: "hsl(218, 81%, 95%)" }}>Place Your Instalment Here</h2>
 
 
                     <div className="row">
