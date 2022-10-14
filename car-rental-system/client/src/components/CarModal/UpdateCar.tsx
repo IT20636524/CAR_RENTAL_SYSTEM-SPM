@@ -133,8 +133,8 @@ export default function UpdateCar(props: { car_Id: string; }) {
                     <Form onSubmit={submitForm} >
                         <div className='row justify-content-center'>
                             <Col sm={3}>
-                                <fieldset>
-                                    <Form.Group >
+                                {/* <fieldset> */}
+                                    {/* <Form.Group >
                                         <h5  >Car Image</h5>
                                         {file && (
                                             <img className='img-fluid rounded' src={URL.createObjectURL(file)} alt="" />
@@ -142,7 +142,7 @@ export default function UpdateCar(props: { car_Id: string; }) {
                                         )}
                                         <img src={PF + image} className='img-fluid rounded' alt='' style={{ width: '300px', height: 'auto', float: 'left', marginBottom: '10px' }} />
                                     </Form.Group>
-                                </fieldset>
+                                </fieldset> */}
                             </Col>
                         </div>
 

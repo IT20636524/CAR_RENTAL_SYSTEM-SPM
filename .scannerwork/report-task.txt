@@ -1,0 +1,6 @@
+projectKey=CAR_RENTAL_SYSTEM-SPM
+serverUrl=http://localhost:9000
+serverVersion=7.5.0.20543
+dashboardUrl=http://localhost:9000/dashboard?id=CAR_RENTAL_SYSTEM-SPM
+ceTaskId=AYPVWMWa0pUnZKkSI4Re
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AYPVWMWa0pUnZKkSI4Re

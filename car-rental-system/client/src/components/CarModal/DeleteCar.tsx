@@ -7,10 +7,8 @@ import swal from 'sweetalert'
 export default function DeleteCar(props: { car_Id: string; }) {
 
     const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
 
     const [show, setShow] = useState(false);
-    const [car, setCar] = useState([]);
 
     const [car_Id, setCar_Id] = useState("");
     const [category, setCategory] = useState("");
@@ -22,19 +20,6 @@ export default function DeleteCar(props: { car_Id: string; }) {
     const [engineCap, setEngineCap] = useState("");
     const [costPerDay, setCostPerDay] = useState("");
     const [image, setImage] = useState("aa");
-
-    const carData = {
-        car_Id,
-        category,
-        model,
-        passengers,
-        transmission,
-        airCondition,
-        fuelType,
-        engineCap,
-        costPerDay,
-        image
-    }
 
     const DeleteShow = () => {
         console.log(props.car_Id)
