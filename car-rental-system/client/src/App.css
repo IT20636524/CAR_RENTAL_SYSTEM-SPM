@@ -355,7 +355,6 @@ input.form-control, input.form-control:focus {
   border-radius: 0;
   box-shadow: none;
   font-size: 14px;
-  border-radius: 0;
 }
 
 .contact .php-email-form input:focus,
