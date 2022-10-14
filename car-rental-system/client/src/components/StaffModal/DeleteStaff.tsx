@@ -91,7 +91,7 @@ export default function DeleteStaff(props: { driver_code: string; }) {
 
     return (
         <>
-            <Button className='stfbtn me-2' variant='danger' onClick={DeleteShow} style={{width:"100px"}}>
+            <Button className='stfbtn me-6' variant='danger' onClick={DeleteShow} style={{width:"100px"}}>
                 Delete
             </Button>
 

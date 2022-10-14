@@ -36,10 +36,10 @@ const PF = "http://localhost:5000/images/"
     }, [])
  
     return (
-      <div >
+      <div className=' background-radial-gradient' >
       <Header/>
       
-        <div className='background-radial-gradient' >
+        <div  >
                          
                                 <div className="card-body">
                                     <h2 className='text-center warning' style={{color:"white"}}>HI I AM {posts.driver_name}</h2>
@@ -72,6 +72,10 @@ const PF = "http://localhost:5000/images/"
     </div>
   </div>
 </section>
+
+<br/>
+<br/>
+<br/>
 
 
 <div className="container">

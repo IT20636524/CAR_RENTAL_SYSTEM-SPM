@@ -17,9 +17,20 @@ export default function AdminStaffPage() {
           
           <div className="content">
           <AdminHeader/> 
-          <SearchStaff/>
-            <StaffReport/>
+          
+            
+            <div className="container">
+  <div className="row">
+    <div className="col-sm">
+    <SearchStaff/>
+    </div>
+    <div className="col-sm">
+    <StaffReport/>
+    </div>
+  </div>
+</div>
           <DriversManagemant/>
+
           <AdminFooter/>
           
           </div>

@@ -11,7 +11,6 @@ import { Link } from 'react-router-dom';
 
 export default function AddBookingForm() {
 
-    const { user } = useContext(Context);
     const [car_Id, setCar_Id] = useState("")
     const [model, setModel] = useState("");
     const [image, setImage] = useState("");
