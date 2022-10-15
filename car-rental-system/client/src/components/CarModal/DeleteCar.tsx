@@ -10,31 +10,10 @@ export default function DeleteCar(props: { car_Id: string; }) {
 
     const [show, setShow] = useState(false);
 
-    const [car_Id, setCar_Id] = useState("");
-    const [category, setCategory] = useState("");
-    const [model, setModel] = useState("");
-    const [passengers, setPassengers] = useState("");
-    const [transmission, setTransmission] = useState("");
-    const [airCondition, setAirCondition] = useState("");
-    const [fuelType, setFuelType] = useState("");
-    const [engineCap, setEngineCap] = useState("");
-    const [costPerDay, setCostPerDay] = useState("");
-    const [image, setImage] = useState("aa");
-
     const DeleteShow = () => {
         console.log(props.car_Id)
 
         axios.get("http://localhost:5000/api/cars/" + props.car_Id).then(function (response) {
-            setCar_Id('');
-            setCategory('');
-            setModel('');
-            setPassengers('');
-            setTransmission('');
-            setAirCondition('');
-            setFuelType('');
-            setEngineCap('');
-            setCostPerDay('');
-            setImage('');
 
             setShow(true)
 

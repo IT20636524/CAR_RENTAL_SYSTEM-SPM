@@ -3,14 +3,13 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import Footer from '../components/Footer'
 import Header from '../components/Header'
-import CarDetailsPage from './CarDetailsPage';
 
 export default function VehicleFleet() {
 
   const [lCars, setlCars] = useState<any[]>([]);
   const [pCars, setpCars] = useState<any[]>([]);
   const [gCars, setgCars] = useState<any[]>([]);
-  const [image, setImage] = useState("");
+  const [, setImage] = useState("");
 
   const PF = "http://localhost:5000/images/"
 

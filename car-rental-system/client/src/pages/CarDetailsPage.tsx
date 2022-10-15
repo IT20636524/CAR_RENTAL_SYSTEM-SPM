@@ -24,20 +24,6 @@ export default function CarDetailsPage() {
     const PF = "http://localhost:5000/images/";
     const [file, setFile] = useState<any>();
 
-    const carData = {
-        car_Id,
-        category,
-        model,
-        passengers,
-        transmission,
-        airCondition,
-        fuelType,
-        engineCap,
-        costPerDay,
-        image,
-        availability
-    }
-
     axios.get("http://localhost:5000/api/cars/" + id).then(function (response) {
         setCar_Id(response.data['']);
         setCategory(response.data['category']);
