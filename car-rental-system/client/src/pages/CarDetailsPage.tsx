@@ -22,7 +22,7 @@ export default function CarDetailsPage() {
     const [image, setImage] = useState("");
     const [availability, setAvailability] = useState("");
     const PF = "http://localhost:5000/images/";
-    const [file, setFile] = useState<any>();
+    const [file] = useState<any>();
 
     axios.get("http://localhost:5000/api/cars/" + id).then(function (response) {
         setCar_Id(response.data['']);
