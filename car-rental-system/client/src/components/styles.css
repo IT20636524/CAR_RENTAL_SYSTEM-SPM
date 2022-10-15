@@ -164,7 +164,7 @@
     right: 15px;
     border: none;
     content: "\f107";
-    font-family: "Font Awesome 5 Free";
+    /* font-family: "Font Awesome 5 Free"; */
     font-weight: 900;
     transition: .5s;
 }
@@ -221,7 +221,7 @@
     vertical-align: middle;
     border: none;
     content: "\f107";
-    font-family: "Font Awesome 5 Free";
+    /* font-family: "Font Awesome 5 Free"; */
     font-weight: 900;
     transition: .5s;
 }
