@@ -10,7 +10,7 @@ export default function CarDetailsPage() {
     let { id } = useParams();
     console.log(id);
 
-    const [car_Id, setCar_Id] = useState("");
+    // const [car_Id, setCar_Id] = useState("");
     const [category, setCategory] = useState("");
     const [model, setModel] = useState("");
     const [passengers, setPassengers] = useState("");
@@ -25,7 +25,7 @@ export default function CarDetailsPage() {
     const [file] = useState<any>();
 
     axios.get("http://localhost:5000/api/cars/" + id).then(function (response) {
-        setCar_Id(response.data['']);
+        // setCar_Id(response.data['']);
         setCategory(response.data['category']);
         setModel(response.data['model']);
         setPassengers(response.data['passengers']);
