@@ -10,8 +10,8 @@ export default function Inquiries() {
   const [lCars, setlCars] = useState<any[]>([]);
   const [pCars, setpCars] = useState<any[]>([]);
   const [gCars, setgCars] = useState<any[]>([]);
-  const [image, setImage] = useState("");
-  let { car_Id } = useParams();
+  // const [image, setImage] = useState("");
+  // let { car_Id } = useParams();
   let url = ""
 
   const PF = "http://localhost:5000/images/"
@@ -20,7 +20,7 @@ export default function Inquiries() {
     const fetchcar = async () => {
       const res = await axios.get('http://localhost:5000/api/cars/category/available/Luxury/')
       setlCars(res.data)
-      setImage(res.data['image'])
+      // setImage(res.data['image'])
 
     }
     fetchcar()
@@ -30,7 +30,7 @@ export default function Inquiries() {
     const fetchcar = async () => {
       const res = await axios.get('http://localhost:5000/api/cars/category/available/Premium/')
       setpCars(res.data)
-      setImage(res.data['image'])
+      // setImage(res.data['image'])
 
     }
     fetchcar()
@@ -40,7 +40,7 @@ export default function Inquiries() {
     const fetchcar = async () => {
       const res = await axios.get('http://localhost:5000/api/cars/category/available/General/')
       setgCars(res.data)
-      setImage(res.data['image'])
+      // setImage(res.data['image'])
 
     }
     fetchcar()
