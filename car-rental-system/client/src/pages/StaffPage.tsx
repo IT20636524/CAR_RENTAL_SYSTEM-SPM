@@ -15,7 +15,7 @@ export default function Staff() {
 
     const [staff, setStaff] = useState<any[]>([]);
     
-    const [image , setImages] = useState("");
+    // const [image , setImages] = useState("");
 
     
     const PF = "http://localhost:5000/images/"
@@ -27,7 +27,7 @@ export default function Staff() {
     .then(res => {   
       
       setStaff(res.data);
-      setImages(res.data['image'])
+      // setImages(res.data['image'])
       
 
       console.log(res.data);
