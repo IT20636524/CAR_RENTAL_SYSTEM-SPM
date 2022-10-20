@@ -12,7 +12,7 @@ export default function BookingSidebar() {
     const [fuelType, setFuelType] = useState("");
     const [engineCap, setEngineCap] = useState("");
     const [costPerDay, setCostPerDay] = useState("");
-    const [model, setModel] = useState("");
+    // const [model, setModel] = useState("");
     const [image, setImage] = useState("");
     const PF = "http://localhost:5000/images/"
     const {id}=useParams();
@@ -26,7 +26,7 @@ export default function BookingSidebar() {
         setFuelType(response.data['fuelType']);
         setEngineCap(response.data['engineCap']);
         setCostPerDay(response.data['costPerDay']);
-        setModel(response.data['model']);
+        // setModel(response.data['model']);
         setImage(response.data['image']);
     })
 
