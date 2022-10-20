@@ -10,7 +10,7 @@ router.post("/add", async (req, res) => {
       const contactuscount = await ContactUs.find().sort({_id:-1}).limit(1)   
       if(contactuscount.length > 0)
         code += contactuscount[0].code
-        newContactUs.messege_code = 'M00'+ code;
+        // newContactUs.messege_code = 'M00'+ code;
         newContactUs.code = code;
     try {
       const savedContactUs = await newContactUs.save();
