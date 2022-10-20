@@ -10,7 +10,7 @@ router.post("/", async (req, res) => {
       const staffcount = await Staff.find().sort({_id:-1}).limit(1)   
       if(staffcount.length > 0)
         code += staffcount[0].code
-        newStaff.driver_code = 'DC00'+ code;
+        // newStaff.driver_code = 'DC00'+ code;
         newStaff.code = code;
     try {
       const savedStaff = await newStaff.save();
