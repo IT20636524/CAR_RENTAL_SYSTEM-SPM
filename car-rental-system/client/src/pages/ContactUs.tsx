@@ -17,14 +17,14 @@ import { Link } from 'react-router-dom';
 export default function ContactUs() {
 
 
-  const [messege_code, setMessegeCode] = useState("");
+  // const [messege_code, setMessegeCode] = useState("");
   const [customer_name, setCustomerName] = useState("");
   const [email, setEmail] = useState("");
   const [messege, setMessege] = useState("");
 
   
   const userData ={
-    messege_code,
+    // messege_code,
     customer_name,
     email,
     messege,
