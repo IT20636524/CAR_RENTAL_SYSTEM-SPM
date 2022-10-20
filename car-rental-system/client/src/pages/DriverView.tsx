@@ -17,9 +17,9 @@ export default function DriverView() {
 const params = useParams()
     
 const [posts, setPosts] =useState<any>([]);
-const [staff, setStaff] = useState<any[]>([]);
+// const [staff, setStaff] = useState<any[]>([]);
 
-const [image , setImages] = useState("");
+// const [image , setImages] = useState("");
 
     
 const PF = "http://localhost:5000/images/"
