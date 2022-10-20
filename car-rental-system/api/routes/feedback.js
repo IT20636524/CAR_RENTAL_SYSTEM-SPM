@@ -10,7 +10,7 @@ router.post("/", async (req, res) => {
       const feedbackcount = await Feedback.find().sort({_id:-1}).limit(1)   
       if(feedbackcount.length > 0)
         code += feedbackcount[0].code
-        newFeedback.feedback_code = 'F00'+ code;
+        // newFeedback.feedback_code = 'F00'+ code;
         newFeedback.code = code;
     try {
       const savedFeedback = await newFeedback.save();
