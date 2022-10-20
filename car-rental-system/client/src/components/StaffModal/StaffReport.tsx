@@ -64,16 +64,16 @@ export default function StaffReport() {
   async function handleSubmit(e: { preventDefault: () => void; }) {
 
     e.preventDefault();
-    const staffData = {
-      driver_code,
-      driver_name,
-      address,
-      contact_number,
-      gender,
-      driving_license_no,
-      experience,
-      image,
-    };
+    // const staffData = {
+    //   driver_code,
+    //   driver_name,
+    //   address,
+    //   contact_number,
+    //   gender,
+    //   driving_license_no,
+    //   experience,
+    //   image,
+    // };
 
 
 
