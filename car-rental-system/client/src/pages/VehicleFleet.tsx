@@ -9,7 +9,7 @@ export default function VehicleFleet() {
   const [lCars, setlCars] = useState<any[]>([]);
   const [pCars, setpCars] = useState<any[]>([]);
   const [gCars, setgCars] = useState<any[]>([]);
-  const [, setImage] = useState("");
+  const [image, setImage] = useState("");
 
   const PF = "http://localhost:5000/images/"
 
