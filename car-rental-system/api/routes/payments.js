@@ -10,7 +10,7 @@ router.post("/", async (req, res) => {
       const paymentcount = await Payment.find().sort({_id:-1}).limit(1)
       if(paymentcount.length > 0)
         code += paymentcount[0].code
-        newPayment.payment_id = 'PID00'+ code;
+        // newPayment.payment_id = 'PID00'+ code;
         newPayment.code = code;
   
         try {
