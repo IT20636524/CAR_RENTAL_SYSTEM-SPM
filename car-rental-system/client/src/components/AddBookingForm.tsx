@@ -11,10 +11,10 @@ import { Link } from 'react-router-dom';
 
 export default function AddBookingForm() {
 
-    const [car_Id, setCar_Id] = useState("")
+    // const [car_Id, setCar_Id] = useState("")
     const [model, setModel] = useState("");
-    const [image, setImage] = useState("");
-    const PF = "http://localhost:5000/image/"
+    // const [image, setImage] = useState("");
+    // const PF = "http://localhost:5000/image/";
     const [name, setName] = useState('');
     const [email,setEmail] = useState("");
     const [address, setAddress] = useState("");
@@ -24,9 +24,9 @@ export default function AddBookingForm() {
     const [no_of_days, setNoOfDays] = useState("");
     const [location, setLocation] = useState("");
     const [vehicle_pic, setVehiclePic]=useState("");
-    const [cost,setCost]=useState("");
+    // const [cost,setCost]=useState("");
     const [cost_per_day,setCostPerDay]=useState("");
-    const [availability, setAvailability]=useState("");
+    // const [availability, setAvailability]=useState("");
     const {id}=useParams();
 //    setName(localStorage.getItem('user').name)
     //access web token
@@ -38,12 +38,12 @@ export default function AddBookingForm() {
     // get car details
     axios.get("http://localhost:5000/api/cars/"+id,config).then(function (response) {
         console.log(response);
-        setCar_Id(response.data['car_Id']);
+        // setCar_Id(response.data['car_Id']);
         setModel(response.data['model']);
-        setImage(response.data['image']);
+        // setImage(response.data['image']);
         setSelectedModel(response.data['model']);
         setVehiclePic(response.data['image']);
-        setCost(response.data['costPerDay']);
+        // setCost(response.data['costPerDay']);
         setCostPerDay(response.data['costPerDay']);
 
     })
