@@ -31,9 +31,9 @@ Each functions had full crud operations.
 1.	Download a zip folder of this project and unzip or clone the repository.
 2.	Open the project in vs code
 3.	Open a new terminal.
-4.	Navigate to backend folder -> cd Backend
-5.	Type ‘npm install’ and click enter
-6.	After the node modules getting downloaded, type ‘npm start’ and click enter.
-7.	Navigate to frontend folder -> cd myfirstapp
-8.	Type ‘npm install’ and click enter
-9.	After the node modules getting downloaded, type ‘npm start’ and click enter.ggg
+4.	Navigate to api folder -> cd api
+5.	Type ‘yarn install’ and click enter
+6.	After the node modules getting downloaded, type ‘yarn start’ and click enter.
+7.	Navigate to client folder -> cd client
+8.	Type ‘yarn install’ and click enter
+9.	After the node modules getting downloaded, type ‘yarn start’
