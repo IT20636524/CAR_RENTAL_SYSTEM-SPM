@@ -39,7 +39,7 @@ export default function UserProfile() {
     useEffect(()=>{
         const user=JSON.parse(localStorage.getItem('user')||"{}");
         setName(user?.name);
-        setEmail(user?.email);
+        // setEmail(user?.email);
     },[])
     
     return (
