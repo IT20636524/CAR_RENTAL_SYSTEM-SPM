@@ -7,7 +7,7 @@ export default function PaymentInvoice() {
    
     const [posts, setPosts] =useState<any>([]);
     const [bookposts, setBookPosts] =useState<any>([]);
-    const [payment_id, setPaymentId] = useState("");
+    // const [payment_id, setPaymentId] = useState("");
    
     const params = useParams();
 
