@@ -49,13 +49,13 @@ export default function CardForm(props: CardFormProps) {
     onUpdateState(name, value);
   };
 
-  const onCvvFocus = () => {
-    setIsCardFlipped(true);
-  };
+  // const onCvvFocus = () => {
+  //   setIsCardFlipped(true);
+  // };
 
-  const onCvvBlur = () => {
-    setIsCardFlipped(false);
-  };
+  // const onCvvBlur = () => {
+  //   setIsCardFlipped(false);
+  // };
 
   const handleConfirmAction = (e: any) => {
     // validate errors
