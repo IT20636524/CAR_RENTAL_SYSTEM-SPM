@@ -19,15 +19,15 @@ interface bookings {
 
 export default function BookingManagement() {
     const [bookings, setBookings] = useState<bookings[]>([]);
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [address, setAddress] = useState("");
-    const [contact_number, setContactNumber] = useState("");
-    const [type_of_service, setTypeOfService] = useState("");
-    const [selected_model, setSelectedModel] = useState("");
-    const [no_of_days, setNoOfDays] = useState("");
-    const [location, setLocation] = useState("");
-    const [vehicle_pic, setVehiclePic] = useState("");
+    // const [name, setName] = useState("");
+    // const [email, setEmail] = useState("");
+    // const [address, setAddress] = useState("");
+    // const [contact_number, setContactNumber] = useState("");
+    // const [type_of_service, setTypeOfService] = useState("");
+    // const [selected_model, setSelectedModel] = useState("");
+    // const [no_of_days, setNoOfDays] = useState("");
+    // const [location, setLocation] = useState("");
+    // const [vehicle_pic, setVehiclePic] = useState("");
     const PF = "http://localhost:5000/images/"
 
     useEffect(() => {
@@ -44,17 +44,17 @@ export default function BookingManagement() {
         })
     }
 
-    const bookingData = {
-        name,
-        email,
-        address,
-        contact_number,
-        type_of_service,
-        selected_model,
-        no_of_days,
-        location,
-        vehicle_pic
-    }
+    // const bookingData = {
+    //     name,
+    //     email,
+    //     address,
+    //     contact_number,
+    //     type_of_service,
+    //     selected_model,
+    //     no_of_days,
+    //     location,
+    //     vehicle_pic
+    // }
 
     // accept booking details
     const handleSubmit = (e: any) => {
