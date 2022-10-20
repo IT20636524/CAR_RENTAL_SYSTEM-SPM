@@ -19,7 +19,7 @@ export default function UserProfile() {
     const [pending,setPending] = useState(0);
     const [newly_created,setNewlyCreated] = useState(0);
     const [name, setName] = useState('');
-    const [email,setEmail] = useState("");
+    // const [email,setEmail] = useState("");
 
     useEffect(()=>{
         const data1=(`http://localhost:5000/api/bookings/countDocuments/${name}`) ;
