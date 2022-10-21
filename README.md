@@ -21,7 +21,7 @@ Each functions had full crud operations.
 > Other tools
 - SonarQube
 - Selenium
-- Azure Boads
+- Azure Boards
 
 ## Prerequisites
 1. VS code should be installed.
