@@ -101,7 +101,7 @@ export default function AddBookingForm() {
     }
 
     return (
-        <div className='bookingForm'>
+        <div className='bookingForm background-radial-gradient'>
             <br /><br />
             <div className="row">
                 <h3 className='bfFormTitle'>Reserve Your Car Here</h3>
