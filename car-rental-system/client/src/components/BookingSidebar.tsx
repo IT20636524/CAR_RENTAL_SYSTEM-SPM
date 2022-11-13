@@ -31,7 +31,7 @@ export default function BookingSidebar() {
     })
 
     return (
-        <div className="bSidebar">
+        <div className="bSidebar background-radial-gradient">
             <div className="bSidebarItem">
                 <Form>
                     <img
