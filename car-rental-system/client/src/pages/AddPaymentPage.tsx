@@ -23,17 +23,17 @@ const initialState: CreditCard = {
 export default function AddPayment() {
 
   const [booking_id, setBookingId] = useState("");
-  // const [payment_id, setPaymentId] = useState("");
+  const [payment_id, setPaymentId] = useState("");
   const [name, setName] = useState("");
   const [card, setCard] = useState("");
   const [cost_per_day, setCostPerDay] = useState("");
   const [contact_number, setContactNumber] = useState("");
   const [posts, setPosts] = useState<any>([]);
-  // const [image, setImage] = useState("");
-  // const [no_of_days, setNoOfDays] = useState("");
-  // const [type_of_service, setTypeOfService] = useState("");
-  // const [cardNumber, setCardNumber] = useState("");
-  // const [payment_status,setPaymentStatus] = useState("");
+  const [image, setImage] = useState("");
+  const [no_of_days, setNoOfDays] = useState("");
+  const [type_of_service, setTypeOfService] = useState("");
+  const [cardNumber, setCardNumber] = useState("");
+  const [payment_status,setPaymentStatus] = useState("");
 
   const navigate = useNavigate();
 
